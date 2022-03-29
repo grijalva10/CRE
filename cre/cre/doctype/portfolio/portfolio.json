@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2022-03-23 12:47:40.513867",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab1_tab",
+  "portfolio_name",
+  "links",
+  "tab_2_tab",
+  "date",
+  "signature",
+  "button",
+  "tab_3_tab",
+  "duration",
+  "autocomplete",
+  "code",
+  "html_editor"
+ ],
+ "fields": [
+  {
+   "fieldname": "portfolio_name",
+   "fieldtype": "Data",
+   "label": "Portfolio Name"
+  },
+  {
+   "fieldname": "links",
+   "fieldtype": "Table",
+   "label": "Links",
+   "options": "Dynamic Link"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Signature",
+   "label": "signature"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "duration"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "date"
+  },
+  {
+   "fieldname": "autocomplete",
+   "fieldtype": "Autocomplete",
+   "label": "autocomplete"
+  },
+  {
+   "fieldname": "tab1_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab1"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab 2"
+  },
+  {
+   "fieldname": "button",
+   "fieldtype": "Button",
+   "label": "button"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab 3"
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Code",
+   "label": "code"
+  },
+  {
+   "fieldname": "html_editor",
+   "fieldtype": "HTML Editor",
+   "label": "html editor"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-03-23 13:09:35.212468",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Portfolio",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

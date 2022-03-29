@@ -1,0 +1,20 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+<div class="row row-cards">
+    <div class="card">
+        <div class="card-header">
+              <h3 class="card-title"> Property Overview</h3>
+        </div>
+      
+        <div class="card-body">body areaa</div>
+    </div>
+    
+</div>
+<h2>more thingas</h2>
+ {% set meta = frappe.get_meta('Property') %}
+ {{ doc.as_dict() }}
+{% endblock %}
+
+<!-- this is a sample default web page template -->

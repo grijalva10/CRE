@@ -1,0 +1,69 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Console</span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Properties\",\"col\":4}}]",
+ "creation": "2022-03-28 11:02:57.215766",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "dashboard",
+ "idx": 0,
+ "label": "Console",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Properties",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Properties",
+   "link_count": 0,
+   "link_to": "Property",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-03-28 13:10:33.220124",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Console",
+ "owner": "Administrator",
+ "parent_page": "Build",
+ "public": 1,
+ "roles": [],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "icon": "",
+   "label": "Leads",
+   "link_to": "Lead",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Projects",
+   "link_to": "Project",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Contacts",
+   "link_to": "Contact",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Property",
+   "link_to": "Property",
+   "type": "DocType"
+  }
+ ],
+ "title": "Console"
+}

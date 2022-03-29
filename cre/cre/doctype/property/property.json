@@ -1,0 +1,320 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2022-03-16 14:10:16.545320",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "overview_tab",
+  "property_name",
+  "property_type",
+  "executive_summary_section",
+  "text1",
+  "building_info_section",
+  "building_sqft",
+  "number_of_units",
+  "power",
+  "clear_height",
+  "year_built",
+  "parking",
+  "drive_ins",
+  "docks",
+  "construction",
+  "rail_service",
+  "section_break_10",
+  "land_acres",
+  "apn",
+  "zoning",
+  "connections_tab",
+  "ownership_tab",
+  "property_owner",
+  "website_tab",
+  "is_published",
+  "route",
+  "title",
+  "image",
+  "location_tab",
+  "section_break_12",
+  "address",
+  "city",
+  "column_break_15",
+  "state",
+  "zip_code",
+  "county",
+  "section_break_18",
+  "longitude",
+  "latitude",
+  "tenancy",
+  "listing_status"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Property Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "overview_tab",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "text1",
+   "fieldtype": "Text Editor",
+   "label": "Property Description"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "Zip Code"
+  },
+  {
+   "fieldname": "county",
+   "fieldtype": "Data",
+   "label": "County"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "is published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "title"
+  },
+  {
+   "fieldname": "website_tab",
+   "fieldtype": "Tab Break",
+   "label": "Website"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "image"
+  },
+  {
+   "fieldname": "location_tab",
+   "fieldtype": "Tab Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "ownership_tab",
+   "fieldtype": "Tab Break",
+   "label": "Ownership"
+  },
+  {
+   "fieldname": "property_owner",
+   "fieldtype": "Link",
+   "label": "Property Owner",
+   "options": "Property Owner"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "building_info_section",
+   "fieldtype": "Section Break",
+   "label": "Building Info"
+  },
+  {
+   "fieldname": "building_sqft",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Building Sqft"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections"
+  },
+  {
+   "fieldname": "land_acres",
+   "fieldtype": "Data",
+   "label": "Land Acres"
+  },
+  {
+   "fieldname": "apn",
+   "fieldtype": "Data",
+   "label": "APN"
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Link",
+   "label": "Property Type",
+   "options": "Property Type"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Data",
+   "label": "Year Built"
+  },
+  {
+   "fieldname": "docks",
+   "fieldtype": "Data",
+   "label": "Docks"
+  },
+  {
+   "fieldname": "drive_ins",
+   "fieldtype": "Data",
+   "label": "Drive Ins"
+  },
+  {
+   "fieldname": "parking",
+   "fieldtype": "Data",
+   "label": "Parking"
+  },
+  {
+   "fieldname": "zoning",
+   "fieldtype": "Data",
+   "label": "Zoning"
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Data",
+   "label": "Construction"
+  },
+  {
+   "fieldname": "tenancy",
+   "fieldtype": "Data",
+   "label": "Tenancy"
+  },
+  {
+   "fieldname": "number_of_units",
+   "fieldtype": "Data",
+   "label": "Number of Units"
+  },
+  {
+   "fieldname": "clear_height",
+   "fieldtype": "Data",
+   "label": "Clear Height"
+  },
+  {
+   "fieldname": "rail_service",
+   "fieldtype": "Data",
+   "label": "Rail Service"
+  },
+  {
+   "fieldname": "power",
+   "fieldtype": "Data",
+   "label": "Power"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Land Info"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "executive_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Executive Summary"
+  },
+  {
+   "fieldname": "listing_status",
+   "fieldtype": "Select",
+   "label": "Listing Status",
+   "options": "\nFor Sale\nFor Lease\nFor Sale & Lease"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "image",
+ "is_published_field": "is_published",
+ "links": [
+  {
+   "link_doctype": "Building",
+   "link_fieldname": "property",
+   "table_fieldname": "connections_tab"
+  },
+  {
+   "link_doctype": "Land",
+   "link_fieldname": "property"
+  }
+ ],
+ "modified": "2022-03-28 09:19:21.025035",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Property",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "route": "property",
+ "search_fields": "property_name",
+ "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "property_name",
+ "track_seen": 1,
+ "track_views": 1,
+ "website_search_field": "property_name"
+}
