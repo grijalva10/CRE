@@ -50,7 +50,7 @@
 {% endmacro %}
 
 {% if top_bar_items -%}
-<ul class="mr-auto navbar-nav">
+<ul class="navbar-nav">
 	{%- for item in top_bar_items -%}
 		{% if not item.parent_label and not item.right -%}
 			{{ render_item(item, parent=True) }}
@@ -58,7 +58,7 @@
 	{%- endfor %}
 </ul>
 {%- endif %}
-<ul class="ml-auto navbar-nav">
+<ul class="navbar-nav">
 	{% include "templates/includes/navbar/navbar_search.html" %}
 	{%- for item in top_bar_items -%}
 		{% if not item.parent_label and item.right -%}

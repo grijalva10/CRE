@@ -1,0 +1,17 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("Client Dashboard") }}
+{% endblock %}
+{% block header %}
+<h3 class="my-account-header">{{_("Dashboard") }}</h3>
+{% endblock %}
+{% block page_content %}
+
+<div class="row row-cards">
+  <div class="card">
+    {{ projects }}
+  </div>
+</div>
+  
+{% endblock %}
