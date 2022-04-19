@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+        </svg>
+        {% if task.status == 'Completed' %}
+        <span class="text-muted text-decoration-line-through">{{ task.subject|e }}</span>
+        {% else %}
+         <span class="text-muted">{{ task.subject|e }}</span>
+        {% endif %}
+        
+        
+    </div>
+    <div class="col-3">{{ task.exp_start_date }}</div>
+    <div class="col-auto">
+        {% if task.status == 'Open' %}
+        <span class="status status-cyan"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        {% if task.status == 'Working' %}
+        <span class="status status-green"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        {% if task.status == 'Pending Review' %}
+        <span class="status status-yellow"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        
+        {% if task.status == 'Overdue' %}
+        <span class="status status-red"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        
+        {% if task.status == 'Completed' %}
+        <span class="status status-blue"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+    </div>
+</div>

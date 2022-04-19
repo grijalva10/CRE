@@ -8,7 +8,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "investor_name"
+  "investor_name",
+  "account",
+  "user"
  ],
  "fields": [
   {
@@ -17,11 +19,23 @@
    "in_list_view": 1,
    "label": "Investor Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-03-24 12:00:12.717017",
+ "modified": "2022-03-29 11:50:32.103272",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Investor",

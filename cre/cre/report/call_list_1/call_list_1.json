@@ -1,0 +1,34 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2022-04-14 15:08:15.659491",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[[\"Lead\",\"broker\",\"=\",0,false],[\"Lead\",\"territory\",\"=\",\"United States\"]],\"fields\":[[\"name\",\"Lead\"],[\"docstatus\",\"Lead\"],[\"title\",\"Lead\"],[\"property_account\",\"Lead\"],[\"notes\",\"Lead\"],[\"email_id\",\"Lead\"],[\"phone\",\"Lead\"],[\"phone2\",\"Lead\"],[\"phone3\",\"Lead\"],[\"property\",\"Lead\"]],\"order_by\":\"`tabLead`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"title\":120,\"property_account\":120,\"notes\":120,\"email_id\":120,\"phone\":120,\"phone2\":120,\"phone3\":120,\"property\":120},\"group_by\":null}",
+ "letter_head": "DAUM",
+ "modified": "2022-04-14 15:16:40.331710",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Call List 1",
+ "owner": "grijalva10@gmail.com",
+ "prepared_report": 0,
+ "ref_doctype": "Lead",
+ "report_name": "Call List 1",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "System Manager"
+  }
+ ]
+}

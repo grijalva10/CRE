@@ -1,0 +1,14 @@
+{
+	"css/cre.min.css": [
+		"public/css/cre.css"
+	],
+	"js/cre.min.js": [
+		"public/frappe/frappe/public/js/frappe/ui/page.html",
+		"public/frappe/frappe/public/js/frappe/ui/page.js",
+		"public/frappe/frappe/public/js/frappe/ui/toolbar/navbar.html"
+	],
+	"js/react.min.js": [
+		"public/js/hello.jsx"
+	]
+	
+}

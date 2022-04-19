@@ -1,0 +1,175 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("Client Dashboard") }}
+{% endblock %}
+{% block header %}
+<h3 class="my-account-header">{{_("Projects") }}</h3>
+{% endblock %}
+{% block page_content %}
+
+<div class="layout-main-section frappe-card">
+    <div class="page-form flex">
+        <div class="standard-filter-section flex">
+            <div class="form-group frappe-control input-max-width col-md-2" data-fieldtype="Data" data-fieldname="name" title="" data-original-title="Name"><input type="text" autocomplete="off" class="input-with-feedback form-control input-xs" maxlength="140" data-fieldtype="Data" data-fieldname="name" placeholder="Name"></div>
+            <div class="form-group frappe-control input-max-width col-md-2" data-fieldtype="Data" data-fieldname="title" title="" data-original-title="Title"><input type="text" autocomplete="off" class="input-with-feedback form-control input-xs" maxlength="140" data-fieldtype="Data" data-fieldname="title" placeholder="Title"></div>
+            <div class="form-group frappe-control input-max-width col-md-2" data-fieldtype="Link" data-fieldname="company" title="" data-original-title="Company">
+                <div class="link-field ui-front" style="position: relative;">
+                    <div class="awesomplete"><input type="text" class="input-with-feedback form-control input-xs" maxlength="140" data-fieldtype="Link" data-fieldname="company" placeholder="Company" data-target="Company" autocomplete="off" aria-expanded="false" aria-owns="awesomplete_list_34" role="combobox">
+                        <ul hidden="" role="listbox" id="awesomplete_list_34"></ul><span class="visually-hidden" role="status" aria-live="assertive" aria-atomic="true">Begin typing for results.</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group frappe-control input-max-width col-md-2" data-fieldtype="Select" data-fieldname="status" title="" data-original-title="Status"><select type="text" autocomplete="off" class="input-with-feedback form-control input-xs ellipsis" maxlength="140" data-fieldtype="Select" data-fieldname="status" placeholder="Status">
+                    <option></option>
+                    <option value="Draft">Draft</option>
+                    <option value="To Bill">To Bill</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Return Issued">Return Issued</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Closed">Closed</option>
+                </select>
+                <div class="select-icon xs">
+                    <svg class="icon  icon-xs" style="">
+                        <use class="" href="#icon-select"></use>
+                    </svg>
+                </div>
+                <div class="placeholder ellipsis text-extra-muted xs">
+                    <span>Status</span>
+                </div>
+            </div>
+        </div>
+        <div class="filter-section flex">
+            <div class="filter-selector">
+                <button class="btn btn-default btn-sm filter-button" data-original-title="" title="">
+                    <span class="filter-icon">
+                        <svg class="icon  icon-sm" style="">
+                            <use class="" href="#icon-filter"></use>
+                        </svg>
+                    </span>
+                    <span class="button-label hidden-xs">
+                        Filter
+                        <span>
+                        </span></span></button>
+            </div>
+            <div class="sort-selector">
+                <div class="btn-group"> <button class="btn btn-default btn-sm btn-order" data-value="desc" title="descending"> <span class="sort-order"> <svg class="icon icon-sm">
+                                <use xlink:href="#icon-sort-descending"></use>
+                            </svg> </span> </button> <button type="button" class="btn btn-default btn-sm sort-selector-button" data-toggle="dropdown"> <span class="dropdown-text">Last Modified On</span>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li> <a class="dropdown-item option" data-value="modified"> Last Modified On </a> </li>
+                            <li> <a class="dropdown-item option" data-value="title"> Title </a> </li>
+                            <li> <a class="dropdown-item option" data-value="name"> Name </a> </li>
+                            <li> <a class="dropdown-item option" data-value="creation"> Created On </a> </li>
+                            <li> <a class="dropdown-item option" data-value="idx"> Most Used </a> </li>
+                            <li> <a class="dropdown-item option" data-value="supplier"> Supplier </a> </li>
+                            <li> <a class="dropdown-item option" data-value="supplier_name"> Supplier Name </a> </li>
+                            <li> <a class="dropdown-item option" data-value="posting_date"> Date </a> </li>
+                            <li> <a class="dropdown-item option" data-value="grand_total"> Grand Total </a> </li>
+                        </ul>
+                    </button> </div>
+            </div>
+        </div>
+    </div>
+    <div class="frappe-list">
+        <div class="result" style="display: none;">
+            <header class="level list-row-head text-muted">
+                <div class="level-left list-header-subject">
+
+                    <div class="list-row-col ellipsis list-subject level  ">
+
+                        <input class="level-item list-check-all" type="checkbox" title="Select All">
+                        <span class="level-item list-liked-by-me hidden-xs">
+                            <span title="Likes"><svg class="icon  icon-sm" style="">
+                                    <use class="like-icon" href="#icon-heart"></use>
+                                </svg></span>
+                        </span>
+                        <span class="level-item">Title</span>
+
+                    </div>
+
+                    <div class="list-row-col ellipsis hidden-xs tag-col hide ">
+
+                        <span>Tag</span>
+                    </div>
+
+                    <div class="list-row-col ellipsis hidden-xs  ">
+
+                        <span>Status</span>
+                    </div>
+
+                    <div class="list-row-col ellipsis hidden-xs  ">
+
+                        <span>Date</span>
+                    </div>
+
+                    <div class="list-row-col ellipsis hidden-xs  text-right">
+
+                        <span>Grand Total</span>
+                    </div>
+
+                    <div class="list-row-col ellipsis hidden-xs  ">
+
+                        <span>Name</span>
+                    </div>
+
+                </div>
+                <div class="level-left checkbox-actions" style="display: none;">
+                    <div class="level list-subject">
+                        <input class="level-item list-check-all" type="checkbox" title="Select All">
+                        <span class="level-item list-header-meta"></span>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <span class="list-count"><span>0 of 0</span></span>
+                </div>
+            </header>
+            <div class="freeze flex justify-center align-center text-muted" style="display: none;">
+                Loading...
+            </div>
+
+        </div>
+        <div class="no-result text-muted flex justify-center align-center" style="">
+            <div class="no-result text-muted flex justify-center align-center">
+                <div class="msg-box no-border">
+                    <div>
+                        <img src="/assets/frappe/images/ui-states/list-empty-state.svg" alt="Generic Empty State" class="null-state">
+                    </div>
+                    <p>No Purchase Receipt found</p>
+                    <p><button class="btn btn-primary btn-sm btn-new-doc hidden-xs">
+                            Create a new Purchase Receipt
+                        </button> <button class="btn btn-primary btn-new-doc visible-xs">
+                            Create New
+                        </button></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="list-paging-area level" style="">
+            <div class="level-left">
+                <div class="btn-group">
+
+                    <button type="button" class="btn btn-default btn-sm btn-paging btn-info" data-value="20">
+                        20
+                    </button>
+
+                    <button type="button" class="btn btn-default btn-sm btn-paging" data-value="100">
+                        100
+                    </button>
+
+                    <button type="button" class="btn btn-default btn-sm btn-paging" data-value="500">
+                        500
+                    </button>
+
+                </div>
+            </div>
+            <div class="level-right">
+                <button class="btn btn-default btn-more btn-sm" style="display: none;">
+                    Load More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

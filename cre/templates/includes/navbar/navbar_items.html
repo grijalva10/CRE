@@ -5,27 +5,22 @@
 
 {%- set dropdown_id = 'id-' + frappe.utils.generate_hash('Dropdown', 12) -%}
 <li class="nav-item dropdown {% if submenu %} dropdown-submenu {% endif %}">
-	<a class="nav-link dropdown-toggle" href="#" id="{{ dropdown_id }}" role="button"
-		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		{{ _(item.label) }}
-	</a>
-  	<ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
+	<ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
 		{% for child in item.child_items %}
-			{{ render_item(child, True) }}
-	  {% endfor %}
+		{{ render_item(child, True) }}
+		{% endfor %}
 	</ul>
 </li>
 {% else %}
 {%- set dropdown_id = 'id-' + frappe.utils.generate_hash('Dropdown', 12) -%}
 <li class="dropdown {% if submenu %} dropdown-submenu {% endif %}">
-	<a class="dropdown-item dropdown-toggle" href="#" id="{{ dropdown_id }}" role="button"
-		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<a class="dropdown-item dropdown-toggle" href="#" id="{{ dropdown_id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		{{ _(item.label) }}
 	</a>
 	<ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
 		{% for child in item.child_items %}
-			{{ render_item(child, True) }}
-	{% endfor %}
+		{{ render_item(child, True) }}
+		{% endfor %}
 	</ul>
 </li>
 {% endif %}
@@ -34,15 +29,31 @@
 
 {% if parent %}
 <li class="nav-item">
-	<a class="nav-link" href="{{ (item.url or '')|abs_url }}"
-		{% if item.open_in_new_tab %} target="_blank" {% endif %}>
-		{{ _(item.label) }}
+	<a class="nav-link" href="{{ (item.url or '')|abs_url }}" {% if item.open_in_new_tab %} target="_blank" {% endif %}>
+		{% if item.tabler_icon %}
+		<span class="nav-link-icon d-md-none d-lg-inline-block">
+			<svg width="24" height="24">
+				<use xlink:href="assets/cre/icons/tabler-sprite.svg#{{item.tabler_icon}}" />
+			</svg>
+		</span>
+		{% endif %}
+		<span class="nav-link-title">
+			{{ _(item.label) }}
+		</span>
 	</a>
 </li>
 {% else %}
-<a class="dropdown-item" href="{{ (item.url or '') | abs_url }}"
-	{% if item.open_in_new_tab %} target="_blank" {% endif %}>
-	{{ _(item.label) }}
+<a class="dropdown-item" href="{{ (item.url or '') | abs_url }}" {% if item.open_in_new_tab %} target="_blank" {% endif %}>
+	{% if item.tabler_icon %}
+	<span class="nav-link-icon d-md-none d-lg-inline-block">
+		<svg width="24" height="24">
+			<use xlink:href="assets/cre/icons/tabler-sprite.svg#{{item.tabler_icon}}" />
+		</svg>
+	</span>
+	{% endif %}
+	<span class="nav-link-title">
+		{{ _(item.label) }}
+	</span>
 </a>
 {% endif %}
 
@@ -52,21 +63,21 @@
 {% if top_bar_items -%}
 <ul class="navbar-nav">
 	{%- for item in top_bar_items -%}
-		{% if not item.parent_label and not item.right -%}
-			{{ render_item(item, parent=True) }}
-		{%- endif -%}
+	{% if not item.parent_label and not item.right -%}
+	{{ render_item(item, parent=True) }}
+	{%- endif -%}
 	{%- endfor %}
 </ul>
 {%- endif %}
 <ul class="navbar-nav">
 	{% include "templates/includes/navbar/navbar_search.html" %}
 	{%- for item in top_bar_items -%}
-		{% if not item.parent_label and item.right -%}
-			{{ render_item(item, parent=True) }}
-		{%- endif -%}
+	{% if not item.parent_label and item.right -%}
+	{{ render_item(item, parent=True) }}
+	{%- endif -%}
 	{%- endfor %}
 	{% if not only_static %}
-		{% block navbar_right_extension %}{% endblock %}
+	{% block navbar_right_extension %}{% endblock %}
 	{% endif %}
 
 	{% if show_sidebar and sidebar_items %}
@@ -75,10 +86,9 @@
 		{% for item in sidebar_items -%}
 		<li class="nav-item">
 			{% if item.type != 'input' %}
-				<a href="{{ item.route }}" class="nav-link {{ 'text-dark' if pathname==item.route else 'text-muted'}}"
-					{% if item.target %}target="{{ item.target }}"{% endif %}>
-					{{ _(item.title or item.label) }}
-				</a>
+			<a href="{{ item.route }}" class="nav-link {{ 'text-dark' if pathname==item.route else 'text-muted'}}" {% if item.target %}target="{{ item.target }}" {% endif %}>
+				{{ _(item.title or item.label) }}
+			</a>
 			{% endif %}
 		</li>
 		{%- endfor %}

@@ -1,0 +1,42 @@
+{
+ "__islocal": true,
+ "__unsaved": 1,
+ "creation": "2022-04-07 09:43:39.781623",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "__islocal": 1,
+   "__unsaved": 1,
+   "fieldname": "label_1",
+   "fieldtype": "Data",
+   "label": "label 1",
+   "reqd": 0
+  },
+  {
+   "__islocal": 1,
+   "__unsaved": 1,
+   "fieldname": "label_2",
+   "fieldtype": "Link",
+   "label": "label 2",
+   "reqd": 0
+  },
+  {
+   "__islocal": 1,
+   "__unsaved": 1,
+   "fieldname": "label_3",
+   "fieldtype": "Int",
+   "label": "label 3",
+   "reqd": 0
+  }
+ ],
+ "idx": 0,
+ "modified": "2022-04-07 09:43:39.781623",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "CRE Property Template",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

@@ -8,10 +8,129 @@
 {% endblock %}
 {% block page_content %}
 
-<div class="row row-cards">
-  <div class="card">
-    {{ projects }}
-  </div>
+<div class="row row-deck row-cards">
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h4>Recent Properties</h4>
+                    </div>
+                    <div class="col-auto">
+                        <a href="#" class="btn">
+                            New
+                        </a>
+                    </div>
+                </div>
+                <ul class="list-unstyled space-y-1">
+                    {% for property in properties %}
+                    <li>
+                        <div class="row align-items-center">
+
+                            <div class="col-auto">
+                                {% if property.image %}
+                                <span class="avatar rounded-3" style="background-image: url({{ property.image }})"></span>
+
+                                {% else %}
+                                <span>
+                                    <svg width="24" height="24">
+                                        <use xlink:href="assets/cre/icons/tabler-sprite.svg#tabler-activity" />
+                                    </svg>
+                                </span>
+                                {% endif %}
+
+
+                            </div>
+                            <div class="col">
+                                <a href="/property/{{property.property_name}}">
+
+                                    {{ property.property_name }}
+
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <h4>
+                    <div class="hr-text">Recent Activity</div>
+                </h4>
+                <div class="text-muted">When you take actions across JMG Industrial, we’ll provide links to that activity here.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="row row-cards">
+            <div class="card-tabs">
+                <!-- Cards navigation -->
+                <ul class="nav nav-bordered mb-4">
+                    <li class="nav-item"><a href="#tab-top-1" class="nav-link active" data-bs-toggle="tab">Overview</a></li>
+                    <li class="nav-item"><a href="#tab-top-2" class="nav-link" data-bs-toggle="tab">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    
+                                    For You
+                                </div>
+                                <div class="col-auto">
+                                    <h4>
+                                        <span class="badge badge-outline text-green">Beta</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Content of card #1 -->
+                    <div id="tab-top-1" class="card tab-pane show active">
+                        <div class="card-body">
+                            <div class="alert alert-dismissible" role="alert">
+                                <div class="d-flex">
+                                    <div>
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                                        <!-- SVG icon code with class="alert-icon" -->
+                                    </div>
+                                    <div>
+                                        <h4 class="alert-title">Welcome to the new portal!</h4>
+                                        <div class="text-muted"> Hi {{ frappe.get_fullname() }} and welcome to your investor portal!</div>
+                                        <div class="text-muted"> Here you will find everything you need to effectively and effeciently close deals.</div>
+                                    </div>
+                                </div>
+                                <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
+                            </div>
+                            <div class="row row-cards">
+                                {% for todo in todos %} 
+                                <div class="col-auto">
+                                    <p> {{ todo.reference_type }}</p>
+                                </div>
+                                <div class="col">
+                                    <p> {{ todo.reference_name }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content of card #2 -->
+                    <div id="tab-top-2" class="card tab-pane">
+                        <div class="card-body">
+                            <div class="card-title">For You</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-  
+<div class="row row-deck row-cards">
+
+</div>
 {% endblock %}
+
+{% macro card_1(title, text, button_url, button_text) -%}
+{{ frappe.render_template('templates/includes/cards/card-1.html', {'title': title, 'text': text, 'button_url': button_url, 'button_text': button_text} ) }}
+{%- endmacro %}
+
+{% macro card_1(title, text, button_url, button_text, projects) -%}
+{{ frappe.render_template('templates/includes/cards/projects-1.html', {'title': title, 'text': text, 'button_url': button_url, 'button_text': button_text, 'projects': projects} ) }}
+{%- endmacro %}

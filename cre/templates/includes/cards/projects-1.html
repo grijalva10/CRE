@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">{{ title }}</h3>
+    <p class="text-muted">{{ text }}</p>
+    <div class="divide-y-2 mt-4">
+      {% for project in projects %}
+      <div class="row">
+
+        <div class="col">
+          <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+          <a href="projects?project={{ project.name }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-arcs" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <circle cx="12" cy="12" r="1"></circle>
+              <path d="M16.924 11.132a5 5 0 1 0 -4.056 5.792"></path>
+              <path d="M3 12a9 9 0 1 0 9 -9"></path>
+            </svg> {{ project.project_name }}
+          </a>
+        </div>
+        <div class="col-auto">{{ frappe.format(project.expected_end_date, {'fieldtype': 'Date'}) }}</div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Card footer -->
+  <div class="card-footer">
+    <div class="d-flex">
+      <a href="{{ button_url }}" class="btn btn-primary ms-auto">{{ button_text }}</a>
+    </div>
+  </div>
+</div>

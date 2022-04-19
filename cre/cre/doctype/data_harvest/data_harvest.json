@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-04-05 12:16:04.496781",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "harvest_daum_market_reports"
+ ],
+ "fields": [
+  {
+   "fieldname": "harvest_daum_market_reports",
+   "fieldtype": "Button",
+   "label": "Harvest DAUM Market Reports"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-04-05 12:16:04.496781",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Data Harvest",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

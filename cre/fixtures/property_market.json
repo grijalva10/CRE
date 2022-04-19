@@ -1,0 +1,72 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Los Angeles",
+  "modified": "2022-04-05 12:05:21.851093",
+  "name": "Los Angeles"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Los Angeles Central / Southeast",
+  "modified": "2022-04-05 12:06:10.280495",
+  "name": "Los Angeles Central / Southeast"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Los Angeles North",
+  "modified": "2022-04-05 12:06:51.124092",
+  "name": "Los Angeles North"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Los Angeles San Gabriel Valley",
+  "modified": "2022-04-05 12:07:19.698451",
+  "name": "Los Angeles San Gabriel Valley"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Los Angeles West/ South",
+  "modified": "2022-04-05 12:07:50.257512",
+  "name": "Los Angeles West/ South"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Orange County",
+  "modified": "2022-04-05 12:07:55.484334",
+  "name": "Orange County"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Ventura",
+  "modified": "2022-04-05 12:08:03.571020",
+  "name": "Ventura"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Inland Empire",
+  "modified": "2022-04-05 12:08:36.864205",
+  "name": "Inland Empire"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "San Gabriel Valley",
+  "modified": "2022-04-05 12:09:07.494272",
+  "name": "San Gabriel Valley"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Property Market",
+  "market": "Phoenix, Arizona",
+  "modified": "2022-04-05 12:09:48.332604",
+  "name": "Phoenix, Arizona"
+ }
+]

@@ -13,11 +13,11 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/cre/css/cre.css"
-# app_include_js = "/assets/cre/js/cre.js"
+# app_include_css = "assets/css/cre.min.css"
+app_include_js = ["cre.bundle.js", "/assets/js/react.min.js"]
 
 # include js, css files in header of web template
-# web_include_css = "/assets/cre/css/cre.css"
+web_include_css = "/assets/cre/css/cre.css"
 # web_include_js = "/assets/cre/js/cre.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -188,3 +188,13 @@ app_license = "MIT"
 # 	"cre.auth.validate"
 # ]
 
+website_route_rules = [
+    {"from_route": "/projects/<name>", "to_route": "project"},
+    {"from_route": "/portfolios/<name>", "to_route": "portfolio"},
+    {"from_route": "/offering/<name>", "to_route": "offering"}
+    
+]
+
+fixtures = [{'dt':'Property Type'},
+{'dt': 'Property Market'},
+{'dt':'Custom Field', "filters": [["name", "in", ["tabler_icon"]]]}]

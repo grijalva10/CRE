@@ -1,54 +1,35 @@
-{% if doc.status == "Open" %}
-  <div class="web-list-item transaction-list-item">
-    <div class="row">
-      <div class="col-xs-2">
-        <a class="transaction-item-link" href="/projects?project={{ doc.name | urlencode }}">Link</a>
-        {{ doc.name }}
-      </div>
-      <div class="col-xs-2">
-        {{ doc.project_name }}
-      </div>
-      <div class="col-xs-3 text-center">
-        {% if doc.percent_complete %}
-          {% set pill_class = "green" if doc.percent_complete | round == 100 else
-            "orange" %}
-          <div class="ellipsis">
-            <span class="indicator-pill {{ pill_class }} filterable ellipsis">
-              <span>{{ frappe.utils.cint(doc.percent_complete) }}
-                %</span>
-            </span>
-          </div>
+<div class="row">
+    <div class="col-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+        </svg>
+        {% if task.status == 'Completed' %}
+        <span class="text-muted text-decoration-line-through">{{ project.project_name|e }}</span>
         {% else %}
-          <span class="indicator-pill {{ " red" if doc.status=="Open" else "darkgrey" }}">
-            {{ doc.status }}</span>
+         <span class="text-muted">{{ task.subject|e }}</span>
         {% endif %}
-      </div>
-      {% if doc["_assign"] %}
-        {% set assigned_users = json.loads(doc["_assign"])%}
-        <div class="col-xs-2">
-          {% for user in assigned_users %}
-            {% set user_details = frappe
-              .db
-              .get_value("User", user, [
-                "full_name", "user_image"
-              ], as_dict = True) %}
-            {% if user_details.user_image %}
-              <span class="avatar avatar-small" style="width:32px; height:32px;" title="{{ user_details.full_name }}">
-                <img src="{{ user_details.user_image }}">
-              </span>
-            {% else %}
-              <span class="avatar avatar-small" style="width:32px; height:32px;" title="{{ user_details.full_name }}">
-                <div class='standard-image' style="background-color: #F5F4F4; color: #000;">
-                  {{ frappe.utils.get_abbr(user_details.full_name) }}
-                </div>
-              </span>
-            {% endif %}
-          {% endfor %}
-        </div>
-      {% endif %}
-      <div class="col-xs-3 text-right small text-muted">
-        {{ frappe.utils.pretty_date(doc.modified) }}
-      </div>
+        
+        
     </div>
-  </div>
-{% endif %}
+    <div class="col-3">{{ task.exp_start_date }}</div>
+    <div class="col-auto">
+        {% if task.status == 'Open' %}
+        <span class="status status-cyan"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        {% if task.status == 'Working' %}
+        <span class="status status-green"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        {% if task.status == 'Pending Review' %}
+        <span class="status status-yellow"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        
+        {% if task.status == 'Overdue' %}
+        <span class="status status-red"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+        
+        {% if task.status == 'Completed' %}
+        <span class="status status-blue"><span class="status-dot status-dot-animated"></span>{{ task.status }}</span>
+        {% endif %}
+    </div>
+</div>

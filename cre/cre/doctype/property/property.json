@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_events_in_timeline": 1,
  "allow_import": 1,
  "allow_rename": 1,
  "autoname": "hash",
@@ -285,7 +286,7 @@
    "link_fieldname": "property"
   }
  ],
- "modified": "2022-03-28 09:19:21.025035",
+ "modified": "2022-04-08 12:10:33.131744",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",
@@ -314,6 +315,7 @@
  "sort_order": "DESC",
  "states": [],
  "title_field": "property_name",
+ "track_changes": 1,
  "track_seen": 1,
  "track_views": 1,
  "website_search_field": "property_name"

@@ -1,0 +1,72 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("Client Dashboard") }}
+{% endblock %}
+{% block header %}
+<div class="row">
+  <div class="col">
+    <h3 class="page-title">Name</h3>
+  </div>
+  <div class="col-auto">
+    <h4><span class="badge bg-green">Name</span></h4>
+  </div>
+
+</div>
+
+{% endblock %}
+{% block page_content %}
+
+<p>
+  {{portfolio}}
+</p>
+
+{% set docinfo = doctype.as_dict() %}
+{% for k in docinfo %}
+<p>{{k}}</p>
+<p>{{docinfo[k]}}</p>
+{% endfor %}
+
+<div class="row row-cards">
+  <div class="card-tabs">
+    <!-- Cards navigation -->
+    <ul class="nav nav-bordered mb-4">
+      {% for field in doctype.as_dict().fields %}
+      {% if field.fieldtype == 'Tab Break' %}
+      <li class="nav-item"><a href="#" class="nav-link {% if loop.index == 1 %}active{% endif %}" data-bs-toggle="tab">{{field.label}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="tab-content">
+      <!-- Content of card #1 -->
+      {% for field in doctype.as_dict().fields %}
+      {% if field.fieldtype == 'Tab Break' %}
+      <div id="{{field.label}}" class="card tab-pane show {% if loop.index == 1 %}active{% endif %}">
+        <div class="card-body">
+          <div class="card-title">Project Overview</div>
+          <div class="row">
+            <dt class="col-5">Client</dt>
+            <dd class="col-7">{{portfolio}}</dd>
+
+            <dt class="col-5">Project Type</dt>
+            <dd class="col-7">{{portfolio}}</dd>
+
+            <dt class="col-5">Project Status</dt>
+            <dd class="col-7">{{portfolio}}</dd>
+          </div>
+
+        </div>
+      </div>
+
+
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% macro task_row(task) -%}
+{{ frappe.render_template('templates/includes/projects/task_row.html', {'task': task} ) }}
+{%- endmacro %}

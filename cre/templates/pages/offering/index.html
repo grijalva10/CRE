@@ -1,0 +1,46 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("Offering Memorandum Download") }}
+{% endblock %}
+{% block header %}
+
+{% endblock %}
+{% block page_content %}
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">{{offering.offering_name}}</h3>
+    <p class="card-subtitle">Please fill out the form to download the offering memorandum.</p>
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" name="first_name" placeholder="First Name">
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+    <label class="form-label">Email</label>
+    <input type="text" class="form-control" name="email" placeholder="Email Address">
+    <label class="form-label">Cell Phone</label>
+    <input type="text" name="cell_phone" class="form-control" data-mask="(000) 000-0000" data-mask-visible="true" placeholder="(000) 000-0000" autocomplete="off">
+  </div>
+  <div class="card-footer">
+    <div class="row align-items-center">
+      <div class="col">
+        <a href="{{file.file_url}}" class="btn btn-success" , id="download_button" style="display:none;">
+          Download
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="#" class="btn btn-primary btn-send" , id="download_button">
+          Submit
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% macro task_row(task) -%}
+{{ frappe.render_template('templates/includes/projects/task_row.html', {'task': task} ) }}
+{%- endmacro %}

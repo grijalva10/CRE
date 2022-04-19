@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2022-03-31 17:09:54.656818",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2022-03-31 17:10:09.056900",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "secure",
+ "owner": "Administrator",
+ "page_name": "Secure",
+ "roles": [
+  {
+   "role": "Investor User"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "Secure"
+}

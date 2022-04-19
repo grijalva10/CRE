@@ -1,5 +1,11 @@
 {
- "actions": [],
+ "actions": [
+  {
+   "action": "dashboard",
+   "action_type": "Route",
+   "label": "New"
+  }
+ ],
  "allow_rename": 1,
  "autoname": "hash",
  "creation": "2022-03-23 12:47:40.513867",
@@ -11,14 +17,7 @@
   "portfolio_name",
   "links",
   "tab_2_tab",
-  "date",
-  "signature",
-  "button",
-  "tab_3_tab",
-  "duration",
-  "autocomplete",
-  "code",
-  "html_editor"
+  "properties"
  ],
  "fields": [
   {
@@ -33,59 +32,25 @@
    "options": "Dynamic Link"
   },
   {
-   "fieldname": "signature",
-   "fieldtype": "Signature",
-   "label": "signature"
-  },
-  {
-   "fieldname": "duration",
-   "fieldtype": "Duration",
-   "label": "duration"
-  },
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "date"
-  },
-  {
-   "fieldname": "autocomplete",
-   "fieldtype": "Autocomplete",
-   "label": "autocomplete"
-  },
-  {
    "fieldname": "tab1_tab",
    "fieldtype": "Tab Break",
-   "label": "Tab1"
+   "label": "Overview"
   },
   {
    "fieldname": "tab_2_tab",
    "fieldtype": "Tab Break",
-   "label": "Tab 2"
+   "label": "Properties"
   },
   {
-   "fieldname": "button",
-   "fieldtype": "Button",
-   "label": "button"
-  },
-  {
-   "fieldname": "tab_3_tab",
-   "fieldtype": "Tab Break",
-   "label": "Tab 3"
-  },
-  {
-   "fieldname": "code",
-   "fieldtype": "Code",
-   "label": "code"
-  },
-  {
-   "fieldname": "html_editor",
-   "fieldtype": "HTML Editor",
-   "label": "html editor"
+   "fieldname": "properties",
+   "fieldtype": "Table",
+   "label": "Properties",
+   "options": "Portfolio Property"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-03-23 13:09:35.212468",
+ "modified": "2022-04-02 16:17:11.887304",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Portfolio",
@@ -103,9 +68,19 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Investor User",
+   "share": 1
   }
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_views": 1
 }
