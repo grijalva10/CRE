@@ -192,7 +192,8 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-</div>`;
+</div>
+`;
 
   // ../cre/cre/public/frappe/frappe/public/js/frappe/ui/page.js
   frappe.ui.make_app_page = function(opts) {
@@ -252,8 +253,9 @@
 				<div class="row layout-main">
 					<div class="col-lg-2 layout-side-section"></div>
 					<div class="col layout-main-section-wrapper">
-						<div class="layout-main-section"></div>
-						<div class="layout-footer hide"></div>
+							<div class="layout-main-section"></div>
+							<div class="layout-footer hide"></div>
+
 					</div>
 				</div>
 			`);
@@ -847,4 +849,4 @@
     }
   };
 })();
-//# sourceMappingURL=cre.bundle.O37IW5QY.js.map
+//# sourceMappingURL=cre.bundle.55KOTTNM.js.map

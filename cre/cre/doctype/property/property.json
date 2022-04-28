@@ -3,194 +3,83 @@
  "allow_events_in_timeline": 1,
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "hash",
- "creation": "2022-03-16 14:10:16.545320",
+ "autoname": "format:{address}, {city}, {state} {zip_code}",
+ "creation": "2022-04-26 15:40:01.612465",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "overview_tab",
+  "tab_break_1",
   "property_name",
   "property_type",
-  "executive_summary_section",
-  "text1",
-  "building_info_section",
-  "building_sqft",
-  "number_of_units",
-  "power",
-  "clear_height",
-  "year_built",
-  "parking",
-  "drive_ins",
-  "docks",
-  "construction",
-  "rail_service",
-  "section_break_10",
-  "land_acres",
+  "property_subtype",
+  "column_break_4",
+  "rba",
+  "land_area",
   "apn",
-  "zoning",
-  "connections_tab",
-  "ownership_tab",
-  "property_owner",
-  "website_tab",
-  "is_published",
-  "route",
-  "title",
-  "image",
-  "location_tab",
-  "section_break_12",
+  "costar_id",
+  "section_break_4",
   "address",
   "city",
-  "column_break_15",
+  "column_break_10",
   "state",
-  "zip_code",
   "county",
+  "zip_code",
+  "section_break_10",
+  "status",
+  "class",
+  "construction",
+  "column_break_18",
+  "year_built",
+  "year_renovated",
   "section_break_18",
-  "longitude",
-  "latitude",
+  "floors",
+  "typical_floor",
   "tenancy",
-  "listing_status"
+  "percent_leased",
+  "column_break_26",
+  "sprinklers",
+  "parking",
+  "parking_ratio",
+  "section_break_24",
+  "zoning",
+  "column_break_34",
+  "zoning_description",
+  "section_break_30",
+  "clear_height_feet",
+  "clear_height_inches",
+  "column_width",
+  "column_depth",
+  "floor_thickness",
+  "drive_ins",
+  "drive_ins_width",
+  "truck_wells",
+  "cranes",
+  "drive_ins_height",
+  "column_break_45",
+  "docks_external",
+  "docks_internal",
+  "cross_docks",
+  "rail_access",
+  "levelators_external",
+  "levelators_internal",
+  "section_break_41",
+  "heavy_power",
+  "amps_min",
+  "amps_max",
+  "volts_min",
+  "volts_max",
+  "phase",
+  "wire",
+  "tab_break_63",
+  "published",
+  "route"
  ],
  "fields": [
   {
-   "allow_in_quick_entry": 1,
    "fieldname": "property_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Property Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "overview_tab",
-   "fieldtype": "Tab Break",
-   "label": "Overview"
-  },
-  {
-   "fieldname": "text1",
-   "fieldtype": "Text Editor",
-   "label": "Property Description"
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Data",
-   "label": "Address"
-  },
-  {
-   "fieldname": "city",
-   "fieldtype": "Data",
-   "label": "City"
-  },
-  {
-   "fieldname": "state",
-   "fieldtype": "Data",
-   "label": "State"
-  },
-  {
-   "fieldname": "zip_code",
-   "fieldtype": "Data",
-   "label": "Zip Code"
-  },
-  {
-   "fieldname": "county",
-   "fieldtype": "Data",
-   "label": "County"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_published",
-   "fieldtype": "Check",
-   "label": "is published"
-  },
-  {
-   "fieldname": "route",
-   "fieldtype": "Data",
-   "label": "route"
-  },
-  {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "title"
-  },
-  {
-   "fieldname": "website_tab",
-   "fieldtype": "Tab Break",
-   "label": "Website"
-  },
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "label": "image"
-  },
-  {
-   "fieldname": "location_tab",
-   "fieldtype": "Tab Break",
-   "label": "Location"
-  },
-  {
-   "fieldname": "longitude",
-   "fieldtype": "Data",
-   "label": "Longitude"
-  },
-  {
-   "fieldname": "latitude",
-   "fieldtype": "Data",
-   "label": "Latitude"
-  },
-  {
-   "fieldname": "ownership_tab",
-   "fieldtype": "Tab Break",
-   "label": "Ownership"
-  },
-  {
-   "fieldname": "property_owner",
-   "fieldtype": "Link",
-   "label": "Property Owner",
-   "options": "Property Owner"
-  },
-  {
-   "fieldname": "section_break_12",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_15",
-   "fieldtype": "Column Break"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "building_info_section",
-   "fieldtype": "Section Break",
-   "label": "Building Info"
-  },
-  {
-   "fieldname": "building_sqft",
-   "fieldtype": "Float",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Building Sqft"
-  },
-  {
-   "fieldname": "connections_tab",
-   "fieldtype": "Tab Break",
-   "label": "Connections"
-  },
-  {
-   "fieldname": "land_acres",
-   "fieldtype": "Data",
-   "label": "Land Acres"
-  },
-  {
-   "fieldname": "apn",
-   "fieldtype": "Data",
-   "label": "APN"
+   "label": "Property Name"
   },
   {
    "fieldname": "property_type",
@@ -199,24 +88,91 @@
    "options": "Property Type"
   },
   {
+   "fieldname": "property_subtype",
+   "fieldtype": "Link",
+   "label": "Property Subtype",
+   "options": "Property Subtype"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nExisting\nUnder Renovation"
+  },
+  {
+   "fieldname": "rba",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "RBA",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "floors",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Floors",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "typical_floor",
+   "fieldtype": "Int",
+   "label": "Typical Floor",
+   "non_negative": 1
+  },
+  {
    "fieldname": "year_built",
-   "fieldtype": "Data",
-   "label": "Year Built"
+   "fieldtype": "Int",
+   "label": "Year Built",
+   "non_negative": 1
   },
   {
-   "fieldname": "docks",
-   "fieldtype": "Data",
-   "label": "Docks"
+   "fieldname": "year_renovated",
+   "fieldtype": "Int",
+   "label": "Year Renovated",
+   "non_negative": 1
   },
   {
-   "fieldname": "drive_ins",
-   "fieldtype": "Data",
-   "label": "Drive Ins"
+   "fieldname": "tenancy",
+   "fieldtype": "Select",
+   "label": "Tenancy",
+   "options": "\nMulti\nSingle"
+  },
+  {
+   "fieldname": "percent_leased",
+   "fieldtype": "Percent",
+   "label": "Percent Leased"
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Select",
+   "label": "Class",
+   "options": "A\nB\nC"
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Select",
+   "label": "Construction",
+   "options": "\nMasonry\nMetal\nReinforced Concrete\nSteel\nWood Frame"
+  },
+  {
+   "fieldname": "sprinklers",
+   "fieldtype": "Select",
+   "label": "Sprinklers",
+   "options": "\nDry\nESFR\nWet"
   },
   {
    "fieldname": "parking",
-   "fieldtype": "Data",
-   "label": "Parking"
+   "fieldtype": "Int",
+   "label": "Parking",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "parking_ratio",
+   "fieldtype": "Percent",
+   "label": "Parking Ratio",
+   "precision": "0"
   },
   {
    "fieldname": "zoning",
@@ -224,69 +180,283 @@
    "label": "Zoning"
   },
   {
-   "fieldname": "construction",
-   "fieldtype": "Data",
-   "label": "Construction"
+   "fieldname": "zoning_description",
+   "fieldtype": "Text",
+   "label": "Zoning Description"
   },
   {
-   "fieldname": "tenancy",
-   "fieldtype": "Data",
-   "label": "Tenancy"
+   "fieldname": "land_area",
+   "fieldtype": "Float",
+   "label": "Land Area",
+   "non_negative": 1,
+   "precision": "2"
   },
   {
-   "fieldname": "number_of_units",
-   "fieldtype": "Data",
-   "label": "Number of Units"
+   "fieldname": "clear_height_feet",
+   "fieldtype": "Int",
+   "label": "Clear Height Feet",
+   "non_negative": 1
   },
   {
-   "fieldname": "clear_height",
-   "fieldtype": "Data",
-   "label": "Clear Height"
+   "fieldname": "clear_height_inches",
+   "fieldtype": "Int",
+   "label": "Clear Height Inches",
+   "non_negative": 1
   },
   {
-   "fieldname": "rail_service",
-   "fieldtype": "Data",
-   "label": "Rail Service"
+   "fieldname": "column_width",
+   "fieldtype": "Int",
+   "label": "Column Width",
+   "non_negative": 1
   },
   {
-   "fieldname": "power",
+   "fieldname": "column_depth",
+   "fieldtype": "Int",
+   "label": "Column Depth",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "floor_thickness",
+   "fieldtype": "Int",
+   "label": "Floor Thickness",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "drive_ins",
+   "fieldtype": "Int",
+   "label": "Drive Ins",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "drive_ins_width",
+   "fieldtype": "Int",
+   "label": "Drive Ins Width",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "drive_ins_height",
+   "fieldtype": "Int",
+   "label": "Drive Ins Height",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "docks_external",
+   "fieldtype": "Int",
+   "label": "Docks External",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "docks_internal",
+   "fieldtype": "Int",
+   "label": "Docks Internal",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "cross_docks",
+   "fieldtype": "Select",
+   "label": "Cross Docks",
+   "non_negative": 1,
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "rail_access",
+   "fieldtype": "Select",
+   "label": "Rail Access",
+   "non_negative": 1,
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "levelators_external",
+   "fieldtype": "Int",
+   "label": "Levelators External",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "levelators_internal",
+   "fieldtype": "Int",
+   "label": "Levelators Internal",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "heavy_power",
+   "fieldtype": "Check",
+   "label": "Heavy Power"
+  },
+  {
+   "fieldname": "amps_min",
+   "fieldtype": "Int",
+   "label": "Amps Min",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "amps_max",
+   "fieldtype": "Int",
+   "label": "Amps Max",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "volts_min",
+   "fieldtype": "Int",
+   "label": "Volts Min",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "volts_max",
+   "fieldtype": "Int",
+   "label": "Volts Max",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "phase",
+   "fieldtype": "Select",
+   "label": "Phase",
+   "non_negative": 1,
+   "options": "\n1\n3"
+  },
+  {
+   "fieldname": "wire",
+   "fieldtype": "Select",
+   "label": "Wire",
+   "non_negative": 1,
+   "options": "\n3\n4"
+  },
+  {
+   "fieldname": "cranes",
+   "fieldtype": "Int",
+   "label": "Cranes",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "truck_wells",
+   "fieldtype": "Int",
+   "label": "Truck Wells",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "apn",
    "fieldtype": "Data",
+   "label": "APN"
+  },
+  {
+   "fieldname": "costar_id",
+   "fieldtype": "Data",
+   "label": "Costar ID"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "county",
+   "fieldtype": "Data",
+   "label": "County"
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "Zip Code",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Building Basic"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_41",
+   "fieldtype": "Section Break",
    "label": "Power"
   },
   {
-   "fieldname": "section_break_10",
-   "fieldtype": "Section Break",
-   "label": "Land Info"
-  },
-  {
-   "bold": 1,
    "collapsible": 1,
-   "fieldname": "executive_summary_section",
+   "fieldname": "section_break_24",
    "fieldtype": "Section Break",
-   "label": "Executive Summary"
+   "label": "Land"
   },
   {
-   "fieldname": "listing_status",
-   "fieldtype": "Select",
-   "label": "Listing Status",
-   "options": "\nFor Sale\nFor Lease\nFor Sale & Lease"
-  }
- ],
- "has_web_view": 1,
- "image_field": "image",
- "is_published_field": "is_published",
- "links": [
-  {
-   "link_doctype": "Building",
-   "link_fieldname": "property",
-   "table_fieldname": "connections_tab"
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
   },
   {
-   "link_doctype": "Land",
-   "link_fieldname": "property"
+   "collapsible": 1,
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Building Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break",
+   "label": "Industrial"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "tab_break_63",
+   "fieldtype": "Tab Break",
+   "label": "Web"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
- "modified": "2022-04-08 12:10:33.131744",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-27 13:27:14.525211",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",
@@ -306,17 +476,8 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
- "route": "property",
- "search_fields": "property_name",
- "show_name_in_global_search": 1,
- "show_title_field_in_link": 1,
+ "search_fields": "address,city,state,zip_code",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "property_name",
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1,
- "website_search_field": "property_name"
+ "states": []
 }

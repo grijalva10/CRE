@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[]",
+ "creation": "2022-04-25 12:40:42.773025",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "label": "Leads",
+ "links": [],
+ "modified": "2022-04-25 12:43:28.560734",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Leads",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "roles": [
+  {
+   "role": "Broker User"
+  }
+ ],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Lead",
+   "link_to": "Lead",
+   "type": "DocType"
+  }
+ ],
+ "title": "Leads"
+}

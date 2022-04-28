@@ -1,0 +1,32 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-04-25 17:32:00.204026",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "todo"
+ ],
+ "fields": [
+  {
+   "fieldname": "todo",
+   "fieldtype": "Link",
+   "label": "Todo",
+   "options": "ToDo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-04-25 17:32:00.204026",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Today Todo",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
