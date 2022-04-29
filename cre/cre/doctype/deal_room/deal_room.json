@@ -1,36 +1,36 @@
 {
  "actions": [],
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:type",
- "creation": "2022-03-21 17:12:06.216352",
+ "creation": "2022-04-28 16:04:58.431015",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "type"
+  "listing",
+  "documents"
  ],
  "fields": [
   {
-   "allow_in_quick_entry": 1,
-   "fieldname": "type",
-   "fieldtype": "Data",
-   "in_filter": 1,
+   "fieldname": "listing",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Type",
-   "reqd": 1,
-   "unique": 1
+   "label": "Listing",
+   "options": "Listing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Deal Room Documents"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-28 18:49:34.737008",
+ "modified": "2022-04-28 16:27:14.349407",
  "modified_by": "Administrator",
  "module": "CRE",
- "name": "Property Type",
- "name_case": "Title Case",
- "naming_rule": "By fieldname",
+ "name": "Deal Room",
  "owner": "Administrator",
  "permissions": [
   {
@@ -46,10 +46,9 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "type"
+ "track_seen": 1,
+ "track_views": 1
 }

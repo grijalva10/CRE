@@ -1,15 +1,57 @@
 {
  "actions": [],
+ "allow_events_in_timeline": 1,
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "field:listing_name",
  "creation": "2022-04-27 13:23:30.496019",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "listing_name",
   "property",
-  "offering_memorandum"
+  "section_break_3",
+  "status",
+  "commission",
+  "procurement_fee",
+  "potential_commission",
+  "start_date",
+  "expiration_date",
+  "section_break_9",
+  "sale_type",
+  "price",
+  "cap_rate",
+  "noi",
+  "sale_notes",
+  "section_break_40",
+  "documents",
+  "section_break_15",
+  "financial_type",
+  "year",
+  "year_payable",
+  "column_break_18",
+  "gross_rental_income",
+  "other_income",
+  "vacancy_loss",
+  "effective_gross_income",
+  "taxes",
+  "operating_expenses",
+  "total_expenses",
+  "net_operating_income",
+  "column_break_27",
+  "gross_rental_income_sf",
+  "other_income_sf",
+  "vacancy_loss_sf",
+  "effective_gross_income_sf",
+  "taxes_sf",
+  "operating_expenses_sf",
+  "total_expenses_sf",
+  "net_operating_income_sf",
+  "section_break_27",
+  "tenants",
+  "section_break_39",
+  "property_highlights"
  ],
  "fields": [
   {
@@ -21,19 +63,227 @@
    "reqd": 1
   },
   {
-   "fieldname": "offering_memorandum",
-   "fieldtype": "Attach",
-   "in_list_view": 1,
-   "label": "Offering Memorandum"
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Listing"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nEscrow\nUnder Contract\nSold"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Percent",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "procurement_fee",
+   "fieldtype": "Percent",
+   "label": "Procurement Fee"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "expiration_date",
+   "fieldtype": "Date",
+   "label": "Expiration Date"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Sale Details"
+  },
+  {
+   "fieldname": "sale_type",
+   "fieldtype": "Select",
+   "label": "Sale Type",
+   "options": "\nInvestment\nOwner User\nInvestment or Owner User"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "cap_rate",
+   "fieldtype": "Percent",
+   "label": "Cap Rate"
+  },
+  {
+   "fieldname": "noi",
+   "fieldtype": "Currency",
+   "label": "NOI"
+  },
+  {
+   "fieldname": "sale_notes",
+   "fieldtype": "Text",
+   "label": "Sale Notes"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Financials"
+  },
+  {
+   "fieldname": "financial_type",
+   "fieldtype": "Select",
+   "label": "Financial Type",
+   "options": "Actual\nProforma"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Year"
+  },
+  {
+   "fieldname": "year_payable",
+   "fieldtype": "Int",
+   "label": "Year Payable"
+  },
+  {
+   "fieldname": "gross_rental_income",
+   "fieldtype": "Currency",
+   "label": "Gross Rental Income"
+  },
+  {
+   "fieldname": "other_income",
+   "fieldtype": "Currency",
+   "label": "Other Income"
+  },
+  {
+   "fieldname": "vacancy_loss",
+   "fieldtype": "Currency",
+   "label": "Vacancy Loss"
+  },
+  {
+   "fieldname": "effective_gross_income",
+   "fieldtype": "Currency",
+   "label": "Effective Gross Income"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Currency",
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "operating_expenses",
+   "fieldtype": "Currency",
+   "label": "Operating Expenses"
+  },
+  {
+   "fieldname": "total_expenses",
+   "fieldtype": "Currency",
+   "label": "Total Expenses"
+  },
+  {
+   "fieldname": "net_operating_income",
+   "fieldtype": "Currency",
+   "label": "Net Operating Income"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break",
+   "label": "Major Tenants"
+  },
+  {
+   "fieldname": "tenants",
+   "fieldtype": "Table",
+   "label": "Tenants",
+   "options": "Tenants"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gross_rental_income_sf",
+   "fieldtype": "Currency",
+   "label": "Gross Rental Income SF"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_income_sf",
+   "fieldtype": "Currency",
+   "label": "Other Income SF"
+  },
+  {
+   "fieldname": "vacancy_loss_sf",
+   "fieldtype": "Currency",
+   "label": "Vacancy Loss SF"
+  },
+  {
+   "fieldname": "effective_gross_income_sf",
+   "fieldtype": "Currency",
+   "label": "Effective Gross Income SF"
+  },
+  {
+   "fieldname": "taxes_sf",
+   "fieldtype": "Currency",
+   "label": "Taxes SF"
+  },
+  {
+   "fieldname": "operating_expenses_sf",
+   "fieldtype": "Currency",
+   "label": "Operating Expenses SF"
+  },
+  {
+   "fieldname": "total_expenses_sf",
+   "fieldtype": "Currency",
+   "label": "Total Expenses SF"
+  },
+  {
+   "fieldname": "net_operating_income_sf",
+   "fieldtype": "Currency",
+   "label": "Net Operating Income SF"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "property_highlights",
+   "fieldtype": "Table",
+   "label": "Property Highlights",
+   "options": "Property Highlights"
+  },
+  {
+   "fieldname": "section_break_40",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Deal Room Documents"
+  },
+  {
+   "fieldname": "potential_commission",
+   "fieldtype": "Currency",
+   "label": "Potential Commission"
+  },
+  {
+   "fieldname": "listing_name",
+   "fieldtype": "Data",
+   "label": "Listing Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-27 14:51:44.520636",
+ "modified": "2022-04-29 12:29:32.749161",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Listing",
- "naming_rule": "Random",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -60,7 +310,12 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Green",
+   "title": "Live"
+  }
+ ],
  "track_seen": 1,
  "track_views": 1
 }

@@ -5,10 +5,10 @@
 	"js/cre.min.js": [
 		"public/frappe/frappe/public/js/frappe/ui/page.html",
 		"public/frappe/frappe/public/js/frappe/ui/page.js",
-		"public/frappe/frappe/public/js/frappe/ui/toolbar/navbar.html"
-	],
-	"js/react.min.js": [
-		"public/js/hello.jsx"
+		"public/frappe/frappe/public/js/frappe/ui/toolbar/navbar.html",
+		"public/frappe/frappe/public/js/frappe/web_form/web_form.js",
+		"public/frappe/frappe/public/js/frappe/web_form/web_form_list.js",
+		"public/frappe/frappe/public/js/frappe/web_form/webform_script.js"
 	]
-	
+
 }

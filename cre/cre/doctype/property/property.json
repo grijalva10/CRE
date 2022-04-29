@@ -101,9 +101,10 @@
   },
   {
    "fieldname": "rba",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "RBA",
+   "precision": "0",
    "reqd": 1
   },
   {
@@ -456,7 +457,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-27 13:27:14.525211",
+ "modified": "2022-04-28 18:11:44.926553",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",

@@ -3,6 +3,7 @@
  "allow_events_in_timeline": 1,
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "hash",
  "creation": "2022-04-27 11:02:39.266833",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -10,15 +11,21 @@
  "field_order": [
   "first_name",
   "last_name",
-  "organization_name",
-  "email_id",
+  "full_name",
   "mobile_no",
-  "property_name"
+  "email",
+  "company",
+  "role",
+  "document_type",
+  "document_id",
+  "reference"
  ],
  "fields": [
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
+   "ignore_xss_filter": 1,
    "in_list_view": 1,
    "label": "First Name",
    "reqd": 1
@@ -26,22 +33,12 @@
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Last Name",
-   "reqd": 1
+   "label": "Last Name"
   },
   {
-   "fieldname": "organization_name",
+   "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Organization Name"
-  },
-  {
-   "fieldname": "email_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Email ID",
-   "options": "Email",
-   "reqd": 1
+   "label": "Full Name"
   },
   {
    "fieldname": "mobile_no",
@@ -50,17 +47,48 @@
    "options": "Phone"
   },
   {
-   "fieldname": "property_name",
+   "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Property Name"
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "label": "Role",
+   "options": "\nPrinciple\nBroker\nOther"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "label": "Document Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "document_id",
+   "fieldtype": "Dynamic Link",
+   "label": "Document ID",
+   "options": "document_type"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-27 11:50:07.642855",
+ "modified": "2022-04-29 09:37:41.239226",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Web Lead",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {
@@ -77,7 +105,6 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -85,8 +112,7 @@
    "report": 1,
    "role": "Guest",
    "select": 1,
-   "share": 1,
-   "write": 1
+   "share": 1
   }
  ],
  "sort_field": "modified",

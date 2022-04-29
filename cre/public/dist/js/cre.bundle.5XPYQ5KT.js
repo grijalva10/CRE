@@ -291,7 +291,7 @@
       }
       this.card_layout && this.main.addClass("frappe-card");
       let menu_btn = this.menu_btn_group.find("button");
-      menu_btn.attr("title", __("Menu")).tooltip({delay: {"show": 600, "hide": 100}});
+      menu_btn.attr("title", __("Menu")).tooltip({ delay: { "show": 600, "hide": 100 } });
       frappe.ui.keys.get_shortcut_group(this.page_actions[0]).add(menu_btn, menu_btn.find(".menu-btn-group-label"));
       let action_btn = this.actions_btn_group.find("button");
       frappe.ui.keys.get_shortcut_group(this.page_actions[0]).add(action_btn, action_btn.find(".actions-btn-group-label"));
@@ -303,7 +303,7 @@
         sidebar_toggle.remove();
       } else {
         sidebar_toggle.attr("title", __("Toggle Sidebar")).tooltip({
-          delay: {"show": 600, "hide": 100},
+          delay: { "show": 600, "hide": 100 },
           trigger: "hover"
         });
         sidebar_toggle.click(() => {
@@ -348,7 +348,7 @@
 		`);
       button.appendTo(this.icon_group.removeClass("hide"));
       button.click(click);
-      button.attr("title", __(tooltip_label || frappe.unscrub(icon))).tooltip({delay: {"show": 600, "hide": 100}, trigger: "hover"});
+      button.attr("title", __(tooltip_label || frappe.unscrub(icon))).tooltip({ delay: { "show": 600, "hide": 100 }, trigger: "hover" });
       return button;
     }
     clear_indicator() {
@@ -477,7 +477,7 @@
     clear_actions_menu() {
       this.clear_btn_group(this.actions);
     }
-    add_dropdown_item({label, click, standard, parent, shortcut, show_parent = true, icon = null}) {
+    add_dropdown_item({ label, click, standard, parent, shortcut, show_parent = true, icon = null }) {
       if (show_parent) {
         parent.parent().removeClass("hide");
       }
@@ -529,7 +529,7 @@
     prepare_shortcut_obj(shortcut, click, label) {
       let shortcut_obj;
       if (typeof shortcut === "string") {
-        shortcut_obj = {shortcut};
+        shortcut_obj = { shortcut };
       } else {
         shortcut_obj = shortcut;
       }
@@ -757,15 +757,15 @@
       return $("<label class='col-md-1 page-only-label'>" + label + " </label>").appendTo(this.page_form);
     }
     add_select(label, options) {
-      var field = this.add_field({label, fieldtype: "Select"});
+      var field = this.add_field({ label, fieldtype: "Select" });
       return field.$wrapper.find("select").empty().add_options(options);
     }
     add_data(label) {
-      var field = this.add_field({label, fieldtype: "Data"});
+      var field = this.add_field({ label, fieldtype: "Data" });
       return field.$wrapper.find("input").attr("placeholder", label);
     }
     add_date(label, date) {
-      var field = this.add_field({label, fieldtype: "Date", "default": date});
+      var field = this.add_field({ label, fieldtype: "Date", "default": date });
       return field.$wrapper.find("input").attr("placeholder", label);
     }
     add_check(label) {
@@ -787,7 +787,7 @@
       });
       f.refresh();
       $(f.wrapper).addClass("col-md-2").attr("title", __(df.label)).tooltip({
-        delay: {"show": 600, "hide": 100},
+        delay: { "show": 600, "hide": 100 },
         trigger: "hover"
       });
       if (df.fieldtype == "HTML") {
@@ -801,7 +801,7 @@
       }
       if (df.fieldtype == "Button") {
         $(f.wrapper).find(".page-control-label").html("&nbsp;");
-        f.$input.addClass("btn-xs").css({"width": "100%", "margin-top": "-1px"});
+        f.$input.addClass("btn-xs").css({ "width": "100%", "margin-top": "-1px" });
       }
       if (df["default"])
         f.set_input(df["default"]);
@@ -849,4 +849,4 @@
     }
   };
 })();
-//# sourceMappingURL=cre.bundle.55KOTTNM.js.map
+//# sourceMappingURL=cre.bundle.5XPYQ5KT.js.map
