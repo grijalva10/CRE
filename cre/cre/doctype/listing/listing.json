@@ -1,15 +1,17 @@
 {
  "actions": [],
  "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 1,
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:listing_name",
+ "autoname": "field:title",
  "creation": "2022-04-27 13:23:30.496019",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "listing_name",
+  "tab_break_1",
+  "title",
   "property",
   "section_break_3",
   "status",
@@ -24,9 +26,14 @@
   "cap_rate",
   "noi",
   "sale_notes",
-  "section_break_40",
+  "tab_break_170000",
+  "property_city",
+  "property_state",
+  "property_rba",
+  "property_land_area",
+  "tab_break_17",
   "documents",
-  "section_break_15",
+  "tab_break_19",
   "financial_type",
   "year",
   "year_payable",
@@ -48,10 +55,18 @@
   "operating_expenses_sf",
   "total_expenses_sf",
   "net_operating_income_sf",
-  "section_break_27",
+  "tab_break_41",
   "tenants",
   "section_break_39",
-  "property_highlights"
+  "property_highlights",
+  "route",
+  "published",
+  "image",
+  "source",
+  "agent",
+  "property_address",
+  "property_zip_code",
+  "property_type"
  ],
  "fields": [
   {
@@ -59,8 +74,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Property",
-   "options": "Property",
-   "reqd": 1
+   "options": "Property"
   },
   {
    "fieldname": "section_break_3",
@@ -125,11 +139,6 @@
    "label": "Sale Notes"
   },
   {
-   "fieldname": "section_break_15",
-   "fieldtype": "Section Break",
-   "label": "Financials"
-  },
-  {
    "fieldname": "financial_type",
    "fieldtype": "Select",
    "label": "Financial Type",
@@ -184,11 +193,6 @@
    "fieldname": "net_operating_income",
    "fieldtype": "Currency",
    "label": "Net Operating Income"
-  },
-  {
-   "fieldname": "section_break_27",
-   "fieldtype": "Section Break",
-   "label": "Major Tenants"
   },
   {
    "fieldname": "tenants",
@@ -255,10 +259,6 @@
    "options": "Property Highlights"
   },
   {
-   "fieldname": "section_break_40",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "documents",
    "fieldtype": "Table",
    "label": "Documents",
@@ -270,16 +270,110 @@
    "label": "Potential Commission"
   },
   {
-   "fieldname": "listing_name",
+   "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Listing Name",
+   "label": "Title",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "published"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "image"
+  },
+  {
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "Listing"
+  },
+  {
+   "fieldname": "tab_break_17",
+   "fieldtype": "Tab Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "tab_break_19",
+   "fieldtype": "Tab Break",
+   "label": "Financials"
+  },
+  {
+   "fieldname": "tab_break_41",
+   "fieldtype": "Tab Break",
+   "label": "Tenants"
+  },
+  {
+   "fieldname": "tab_break_170000",
+   "fieldtype": "Tab Break",
+   "label": "Property"
+  },
+  {
+   "fetch_from": "property.city",
+   "fieldname": "property_city",
+   "fieldtype": "Data",
+   "label": "Property City"
+  },
+  {
+   "fetch_from": "property.state",
+   "fieldname": "property_state",
+   "fieldtype": "Data",
+   "label": "Property State"
+  },
+  {
+   "fetch_from": "property.rba",
+   "fieldname": "property_rba",
+   "fieldtype": "Float",
+   "label": "Property RBA"
+  },
+  {
+   "fetch_from": "property.land_area",
+   "fieldname": "property_land_area",
+   "fieldtype": "Float",
+   "label": "Property Land Area"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "label": "source"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Data",
+   "label": "agent"
+  },
+  {
+   "fieldname": "property_address",
+   "fieldtype": "Data",
+   "label": "Property Address"
+  },
+  {
+   "fieldname": "property_zip_code",
+   "fieldtype": "Data",
+   "label": "Property Zip Code"
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Link",
+   "label": "Property Type",
+   "options": "Property Type"
   }
  ],
+ "has_web_view": 1,
+ "image_field": "image",
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2022-04-29 12:29:32.749161",
+ "modified": "2022-05-02 14:09:12.909903",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Listing",
@@ -308,6 +402,7 @@
    "share": 1
   }
  ],
+ "route": "listings",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
