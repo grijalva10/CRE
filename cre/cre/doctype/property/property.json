@@ -84,6 +84,11 @@
   {
    "fieldname": "property_type",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Property Type",
    "options": "Property Type"
   },
@@ -353,12 +358,22 @@
   {
    "fieldname": "city",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "City",
    "reqd": 1
   },
   {
    "fieldname": "state",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "State",
    "reqd": 1
   },
@@ -457,7 +472,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-28 18:11:44.926553",
+ "modified": "2022-05-09 10:36:40.999342",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",
@@ -480,5 +495,8 @@
  "search_fields": "address,city,state,zip_code",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

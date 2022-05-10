@@ -1,0 +1,94 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+
+
+
+{% block title %}
+{{ _("Saved Searches") }}
+{% endblock %}
+{% block header %}
+<h1 class="page-title">
+  Saved Searches
+</h1>
+<div class="page-pretitle">
+  Based off of your recent buy actions
+</div>
+{% endblock %}
+{% block header_actions %}
+{% endblock %}
+
+{% block page_content %}
+
+<div class="row row-cards">
+  {% for search in saved_searches %}
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center">
+          <div class="col-auto avatar avatar-md bg-grey-lt">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <line x1="3" y1="21" x2="21" y2="21"></line>
+              <line x1="9" y1="8" x2="10" y2="8"></line>
+              <line x1="9" y1="12" x2="10" y2="12"></line>
+              <line x1="9" y1="16" x2="10" y2="16"></line>
+              <line x1="14" y1="8" x2="15" y2="8"></line>
+              <line x1="14" y1="12" x2="15" y2="12"></line>
+              <line x1="14" y1="16" x2="15" y2="16"></line>
+              <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16"></path>
+            </svg>
+          </div>
+          <div class="col">
+            <h3 class="card-title mb-1">
+              <a href="#" class="text-reset"> {{ search.filter_name }}</a>
+              <span class="card-subtitle badge bg-green">New listings</span>
+            </h3>
+            {% set filters=search.filters %}
+            <p> {{ filters}}</p>
+          </div>
+          <div class="col-auto">
+            <div class="mb-4">
+              <div class="form-label">Notifications</div>
+              <select class="form-select">
+                <option value="1">Real Time</option>
+                <option value="2">Daily</option>
+                <option value="3">Weekly</option>
+                <option value="4">Never</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <a href="#" class="btn btn-outline-primary w-100">
+              View New Listings
+            </a>
+
+          </div>
+          <div class="col-auto">
+            <a href="#" class="btn btn-outline-dark w-100">
+              Edit
+            </a>
+
+          </div>
+          <div class="col-auto">
+            <a href="#" class="btn btn-outline-dark w-100">
+              Delete
+            </a>
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

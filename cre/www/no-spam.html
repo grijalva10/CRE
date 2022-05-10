@@ -1,0 +1,205 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+
+
+
+{% block title %}
+{{ _("My Profile") }}
+{% endblock %}
+{% block header %}
+<h1 class="page-title">
+  Welcome Back {{ current_user.first_name }}
+</h1>
+<div class="page-pretitle">
+  {% set creation=current_user.creation %}
+  Member since {{ frappe.utils.pretty_date(creation) }}
+</div>
+{% endblock %}
+{% block header_actions %}
+{% endblock %}
+
+{% block page_content %}
+
+<div class="row row-cards">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">
+          Personal
+        </h3>
+        <div class="card-actions">
+
+          <a href="#">
+            Edit
+            <!-- Download SVG icon from http://tabler-icons.io/i/edit -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+              <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+              <path d="M16 5l3 3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="card-body">
+       <p>
+           Anti-Spam Terms
+
+These Anti-Spam Terms (“Anti-Spam Terms”) govern all use of electronic messaging Applications or Services provided by Commercial Real Estate Exchange, Inc. (“CREXi”).  The Anti-Spam Terms are fully incorporated by reference into CREXi’s Terms & Conditions (“TOS”), posted at https://www.crexi.com/tos.  Terms herein which are defined in the TOS will have the meanings set forth therein. By continuing to use CREXi’s electronic messaging Services, you agree to these Anti-Spam Terms. 
+
+“Spam” 
+
+“Spam” refers to unsolicited electronic commercial messages, such as advertising, promotional offers, contest participation messages, informational bulletins, etc.  CREXi strictly prohibits use of the CREXi Services to send Spam. 
+
+Use of Services
+
+You agree not to send commercial e-mails or messages via CREXi’s Services unless the recipient has opted-in to receive such messages from You in the manner required by any applicable law, and as discussed herein.  For any opt-in list of e-mail addresses, phone numbers or other contact information used in the CREXi Services, You agree to provide Us with the source of the addresses/contact information, the method used for recipient opt-in and details regarding the process used, as well as any other information related to the transaction or sign-up process used.  This includes, without limitation, the date/time of sign up, the IP address of sign up, the website signed up from, disclosures provided in connection with the sign up, the manner of obtaining the recipient’s agreement and whatever other information You asked of the recipient at the point of sign up.
+
+When using CREXi’s Services to send commercial e-mails or messages, You certify that You will not use purchased, rented or traded lists, e-mail append lists or any list containing e-mail addresses (or phone numbers or other applicable contact information) in any other method besides express opt-in that is specific to You.  CREXi prohibits any use of opt-out lists for such communications.  CREXi reserves the right to review Your lists and e-mails/messages in order to verify that You are abiding by the permission and privacy policies set forth herein.  You are required to comply with Our policies and all applicable laws.
+
+Opt-In
+
+Before using the CREXi Services to send any commercial message, You must have clear, direct authorization or “opt-in” from the recipient to receive Your messages.  Without that opt-in, any commercial message You send will be considered unauthorized Spam. For a more effective e-mail campaign, You should also let recipients know how frequently they can expect to receive messages from You. 
+
+You may obtain a recipient’s opt-in using a plainly-visible form, including for example, a checkbox to indicate voluntary subscription. The box should not be pre-checked on the form.  Sometimes, an implicit consent may be sufficient, if You can prove that You already have a relationship with the recipient; for example, the recipient has previously registered to receive Your messages or purchase Your products or services, has given You an e-mail address during a transaction or contest participation, has had the opportunity to withdraw from Your transmission list but did not do so, etc.  However, please note: taking an e-mail address from someone’s business card is not a valid opt-in.
+
+You May import pre-existing subscribers without using an additional opt-in process via the CREXi Services, if those subscribers already have directly requested, or opted-in to receive, Your messages.  Because direct authorization is required, CREXi does not permit the use of paid, rented or borrowed permission lists.
+
+Compliance 
+
+To comply with the Anti-Spam Terms as well as e-mail laws, at a minimum every message that You transmit must include an unsubscribe (opt-out) link. CREXi will automatically insert this for You, in the e-mail footer.  Each message also must display Your current contact information, including a valid physical postal address.
+
+You must be able to process any opt-out request for at least 30 days after You have sent the message; and You must honor any opt-out request within 10 business days.  Make sure Your spam filter does not block these opt-out requests.
+
+To honor an opt-out request, You may not charge a fee, require the recipient to provide any other personally identifying information besides an e-mail address or require the recipient to take any step besides sending a reply e-mail or visiting a single web page. 
+
+Once you have received an opt-out request from a recipient, you may not sell or transfer that recipient’s e-mail address, individually or as part of a mailing list.  The only exception: You may transfer the addresses to a vendor You have hired to help You comply with anti-spam laws. 
+
+Campaign Results
+
+As part of Our responsibilities in providing e-mail Services, we monitor a variety of metrics to confirm that users are complying with Our acceptable use policy as set forth in CREXi’s Terms & Conditions, and sending messages only to recipients who have directly requested communications from them.  Actual or suspected violation of these Anti-Spam Terms or applicable e-mail laws may result in suspension or termination of Your CREXi account and may also lead to civil or criminalliability.
+
+Content
+
+In addition to the general prohibition on Spam, You may not display or send the following Content using CREXi Services (this is a non-exclusive list):
+
+·       False, misleading,deceptive or unlawful Content
+
+·       Sexually Explicit Materials or Escort/Dating Services
+
+·       Drugs, Dietary Supplements, Male Enhancement Products, Illegal Substances or Goods
+
+·       Gambling, Affiliate Marketing, Work-at-Home, Get-Rich-Quick, Pyramids, Day Trading, Forex, Payday Loans or similar schemes
+
+·       Any other Content prohibited by CREXi’s Terms & Conditions
+       </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">
+          Account
+        </h3>
+      </div>
+      <div class="list-group list-group-flush list-group-hoverable">
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-2  border-end">
+              <h3>Password</h3>
+            </div>
+            <div class="col text-truncate">
+              <div class="d-block text-muted text-truncate mt-n1">Change your password</div>
+            </div>
+            <div class="col-auto">
+              <a href="update-password" class="">
+                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                Edit
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-2  border-end">
+              <h3>Email</h3>
+            </div>
+            <div class="col text-truncate">
+              <div class="d-block text-muted text-truncate mt-n1">Change your email</div>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="">
+                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                Edit
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-2  border-end">
+              <h3>Phone</h3>
+            </div>
+            <div class="col text-truncate">
+              <div class="d-block text-muted text-truncate mt-n1">Change your cell and work phone</div>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="">
+                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                Edit
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">
+          Industry Roles
+        </h3>
+      </div>
+      <div class="list-group list-group-flush list-group-hoverable">
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col-auto fs-3">
+              <a href="#">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-minus" style="stroke: black" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <desc>Download more icon variants from https://tabler-icons.io/i/circle-minus</desc>
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <line x1="9" y1="12" x2="15" y2="12"></line>
+                  </svg>
+
+                </span>
+
+              </a>
+            </div>
+            <div class="col-2  border-end">
+              <h3>Principal</h3>
+            </div>
+            <div class="col text-truncate">
+              <div class="d-block text-muted text-truncate mt-n1">Company, position, and acquisition details</div>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="">
+                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                Edit
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  {% endblock %}

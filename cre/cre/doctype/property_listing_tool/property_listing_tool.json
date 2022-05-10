@@ -1,5 +1,11 @@
 {
- "actions": [],
+ "actions": [
+  {
+   "action": "cre.cre.doctype.property_listing_tool.property_listing_tool.ping",
+   "action_type": "Server Action",
+   "label": "Ping"
+  }
+ ],
  "allow_rename": 1,
  "creation": "2022-05-02 15:42:45.690465",
  "doctype": "DocType",
@@ -7,7 +13,10 @@
  "engine": "InnoDB",
  "field_order": [
   "source",
-  "listings",
+  "column_break_2",
+  "get_listing_urls",
+  "section_break_4",
+  "listing_urls",
   "log"
  ],
  "fields": [
@@ -20,20 +29,38 @@
    "reqd": 1
   },
   {
-   "fieldname": "listings",
-   "fieldtype": "Table",
-   "label": "Listings",
-   "options": "Property Listing Tool Source"
-  },
-  {
    "fieldname": "log",
    "fieldtype": "Long Text",
    "label": "Log"
+  },
+  {
+   "fieldname": "listing_urls",
+   "fieldtype": "Table",
+   "label": "Listing Urls",
+   "options": "Property Listing Tool Source"
+  },
+  {
+   "fieldname": "get_listing_urls",
+   "fieldtype": "Button",
+   "label": "Get Listing Urls"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2022-05-03 10:53:41.762591",
+ "links": [
+  {
+   "link_doctype": "Property Listing Source",
+   "link_fieldname": "property_listing_tool"
+  }
+ ],
+ "modified": "2022-05-03 13:31:06.431189",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property Listing Tool",
@@ -54,5 +81,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

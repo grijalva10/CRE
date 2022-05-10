@@ -1,4 +1,13 @@
 .dropdown-toggle:after {
-    border-bottom: 0px solid;
-    border-left: 0px solid;
+    border-top: 0em transparent;
+    border-right: 0em transparent;
+}
+
+.icon{
+    stroke: currentColor;
+}
+
+[data-doctype="Web Form"] .page_content {
+	max-width: unset;
+	margin: unset;
 }

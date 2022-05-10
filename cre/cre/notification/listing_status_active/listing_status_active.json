@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status=='Active'",
+ "creation": "2022-05-09 16:56:20.388939",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Listing",
+ "enabled": 0,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Updates have been made to 1 property you are interested in {{doc.name}}",
+ "modified": "2022-05-09 18:28:31.762611",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Listing Status Active",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Investor User"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "notifications@jmgind.com",
+ "sender_email": "notifications@jmgind.com",
+ "subject": "Updates have been made to 1 property you are interested in",
+ "value_changed": "status"
+}

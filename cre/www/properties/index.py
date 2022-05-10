@@ -9,11 +9,9 @@ def get_context(context):
 	if frappe.session.user=='Guest':
 		frappe.throw(_("You need to be logged in to access this page"), frappe.PermissionError)
 	
-	context.properties = frappe.get_all('Property', fields=['*'])
-	context.users = frappe.get_all('User', fields=['*'])
+	context.show_sidebar = False
+	context.query_params = frappe.request.environ.get('QUERY_STRING')
+	context.properties = frappe.get_all('Listing', fields=['*'])
+	context.property_types = frappe.get_all('Property Type', pluck='Name')
 	context.properties_count = len(context.properties)
-	context.show_sidebar = True
-	
-
-
-		
+	context.meta = frappe.get_meta('Listing')

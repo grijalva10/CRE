@@ -1,0 +1,52 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("Real Estate Listings") }}
+{% endblock %}
+{% block header %}
+                <h1 class="page-title">
+                   Commercial Properties for Sale
+                </h1>
+{% endblock %}
+{% block header_actions %}
+{% if not create_new %}
+<div class="pull-right">
+  <a href="{{ create_new | abs_url }}" class="btn btn-primary">
+    {{ _("New") }}
+  </a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block page_content %}
+
+  <div class="row row-cards">
+    {% for listing in listings %}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card card-sm">
+        <a href="#" class="d-block"><img src="{{ listing.image }}" class="card-img-top"></a>
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div>
+              {% if listing.price > 0 %} 
+              <div><h2>{{ frappe.format(listing.price, {'fieldtype': 'Currency'}) }}</h2></div>
+              {% else %}  
+              <div><h2>Unpriced</h2></div>
+              {% endif %}
+              <div>
+                <h3>{{listing.title}}</h3>
+              </div>
+              <div class="text-muted">3 days ago</div>
+              <div>{{listing.property_city}}, {{listing.property_state}} {{listing.property_zip_code}} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+
+{% endblock %}

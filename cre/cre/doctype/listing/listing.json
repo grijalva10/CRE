@@ -66,7 +66,10 @@
   "agent",
   "property_address",
   "property_zip_code",
-  "property_type"
+  "property_type",
+  "files",
+  "images",
+  "highlights"
  ],
  "fields": [
   {
@@ -85,7 +88,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nActive\nEscrow\nUnder Contract\nSold"
+   "options": "Draft\nActive\nEscrow\nUnder Contract\nSold"
   },
   {
    "fieldname": "commission",
@@ -121,7 +124,8 @@
   {
    "fieldname": "price",
    "fieldtype": "Currency",
-   "label": "Price"
+   "label": "Price",
+   "precision": "0"
   },
   {
    "fieldname": "cap_rate",
@@ -321,6 +325,9 @@
    "fetch_from": "property.city",
    "fieldname": "property_city",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Property City"
   },
   {
@@ -366,6 +373,21 @@
    "fieldtype": "Link",
    "label": "Property Type",
    "options": "Property Type"
+  },
+  {
+   "fieldname": "files",
+   "fieldtype": "Long Text",
+   "label": "files"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Long Text",
+   "label": "images"
+  },
+  {
+   "fieldname": "highlights",
+   "fieldtype": "Long Text",
+   "label": "Highlights"
   }
  ],
  "has_web_view": 1,
@@ -373,7 +395,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-05-02 14:09:12.909903",
+ "modified": "2022-05-09 15:36:27.913814",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Listing",
@@ -411,6 +433,7 @@
    "title": "Live"
   }
  ],
+ "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
 }

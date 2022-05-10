@@ -1,6 +1,13 @@
 {% extends "templates/web.html" %}
 
 {% block title %}{{ _(title) }}{% endblock %}
+{% block header %}
+                <h1 class="page-title">
+                   {{ _(title) }}
+                </h1>
+{% endblock %}
+
+
 
 {% block breadcrumbs %}{% endblock %}
 
@@ -10,25 +17,30 @@ data-web-form="{{ name }}" data-web-form-doctype="{{ doc_type }}" data-login-req
 
 {% block page_content %}
 
+{% block header_actions %}
+{% if is_list %}
+<div class="btn-list">
+  <div class="list-view-actions"></div>
+</div>
+{% endif %}
+{% endblock %}
+
+
 {% if has_header and login_required and allow_multiple %}
 <!-- breadcrumb -->
 {% include "templates/includes/breadcrumbs.html" %}
-{% else %}
-<div style="height: 3rem"></div>
+
 {% endif %}
 
 <!-- main card -->
-<div class="frappe-card {{ frappe.utils.cint(is_list) and 'list-card' or '' }}">
+<div class="card">
+	<div class="card-body">
 	{% if is_list %}
 	<!-- list -->
-	<div class="d-flex justify-content-between">
-		<h3>{{ _(title) }}</h3>
-		<div class="list-view-actions"></div>
-	</div>
 
 	<div class="web-form-wrapper" {{ container_attributes() }}></div>
-	<div id="list-filters" class="row mt-4"></div>
-	<div id="list-table" class="list-table pt-4 overflow-auto"></div>
+	<div id="list-filters" class="d-flex align-items-center"></div>
+	<div id="list-table" class="table-responsive"></div>
 	<div class="list-view-footer text-right"></div>
 	{% else %}
 	<!-- web form -->
@@ -63,6 +75,7 @@ data-web-form="{{ name }}" data-web-form-doctype="{{ doc_type }}" data-login-req
 	{% endif %} {# attachments #}
 
 	{% endif %}
+	</div>
 </div>
 
 {% if allow_comments and not frappe.form_dict.new and not is_list -%}

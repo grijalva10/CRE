@@ -1,35 +1,52 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "field:url",
  "creation": "2022-05-03 10:47:44.034375",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "source",
-  "property_listing_tool"
+  "property_listing_tool",
+  "url",
+  "status"
  ],
  "fields": [
-  {
-   "fieldname": "source",
-   "fieldtype": "Data",
-   "label": "source"
-  },
   {
    "fieldname": "property_listing_tool",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Property Listing Tool",
    "options": "Property Listing Tool",
    "reqd": 1
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "URL",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Ready\nComplete\nFailed"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-03 10:47:44.034375",
+ "modified": "2022-05-03 11:36:51.660985",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property Listing Source",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
