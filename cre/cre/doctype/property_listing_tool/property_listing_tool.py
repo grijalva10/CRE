@@ -101,13 +101,13 @@ def get_listing(url, sale_type='investment'):
     ld['sale_type'] = 'Investment'
     ld['source'] = url
     title = page_soup.find(class_="title-property")
-    ld['title'] = str(title.text).strip()
+    ld['property_name'] = str(title.text).strip()
     city_state = page_soup.find(class_="state-city")
     city_state = [x.text for x in city_state.find_all('li')]
     if city_state:
-        ld['property_city'] = str(city_state[0]).strip()
-        ld['property_state'] = city_state[1].strip()
-        ld['property_zip_code'] = city_state[2].strip()
+        ld['city'] = str(city_state[0]).strip()
+        ld['state'] = city_state[1].strip()
+        ld['zip_code'] = city_state[2].strip()
 
     keys = [clean_listing_key(k.text) for k in page_soup.find_all(class_="title")]
     values = [clean_listing_value(k.text) for k in page_soup.find_all(class_="info")]
@@ -117,16 +117,16 @@ def get_listing(url, sale_type='investment'):
         kv[keys[i]] = values[i]
 
     if kv['Property Type']:
-        ld['property_type'] = kv['Property Type']
+        ld['type'] = kv['Property Type']
 
     if 'Sale Price' in kv.keys() and kv['Sale Price']:
         ld['price'] = kv['Sale Price']
 
     if 'Total Space Available' in kv.keys() and kv['Total Space Available']:
-        ld['property_rba'] = kv['Total Space Available']
+        ld['rba'] = kv['Total Space Available']
 
     if 'Lot Size (Sq. Ft.)' in kv.keys() and kv['Lot Size (Sq. Ft.)']:
-        ld['property_land_area'] = square_feet_to_acres(kv['Lot Size (Sq. Ft.)'])
+        ld['land_area'] = square_feet_to_acres(kv['Lot Size (Sq. Ft.)'])
 
     agent = [clean_listing_key(k.text) for k in page_soup.find_all(class_="name")]
     if agent:
@@ -156,7 +156,7 @@ def get_listing(url, sale_type='investment'):
         if images:
             ld['image'] = images[0]
         ld['images'] = str(images)
-        ld['doctype'] = 'Listing'
+        ld['doctype'] = 'Property'
 
     return ld
 
@@ -190,7 +190,7 @@ def generate_property_listing(url, listing_type='investment'):
     
     new_listing = get_listing(url, listing_type)
     
-    if new_listing and not frappe.db.exists('Listing', new_listing['title'], cache=True):
+    if new_listing and not frappe.db.exists('Property', new_listing['property_name'], cache=False):
         doc = frappe.get_doc(new_listing)
         doc.insert()
         frappe.db.commit()

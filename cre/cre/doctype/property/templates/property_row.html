@@ -1,0 +1,66 @@
+<div class="col-sm-6 col-lg-3">
+    <div class="card card-sm ">
+        <a href="#" class="d-block"><img src="{{ doc.image }}" class="card-img-top"></a>
+        <div class="card-body">
+            {% if doc.price > 0 %}
+            <h2> {{ frappe.utils.fmt_money(doc.price,currency="$", precision=0) }} </h2>
+            {% else %}
+            <h2>Unpriced</h2>
+            {% endif %}
+            <h3 class="card-hightlight mb-0">{{ doc.property_name }} </h3>
+            {% if doc.card_highlight %}
+            <h4 class="card-hightlight mb-2 text-muted">{{ doc.card_highlight }} </h4>
+            {% else %}
+            <h4 class="card-hightlight mb-2 text-muted">{{ doc.type }} ∙ {{ doc.sale_type }} </h4>
+            {% endif %}
+            <div class="d-flex align-items-center">
+                <div>
+                    {% if doc.address %}
+                    <div class="mb-1 text-muted">{{ doc.address }}</div>
+                    {% endif %}
+                    <div class="mb-4">{{ doc.city }}, {{ doc.state }} {{ doc.zip_code or '' }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer card-footer-transparent">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <a href="{{ doc.route }}" class="fs-3">
+                        View Offering
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <desc>Download more icon variants from https://tabler-icons.io/i/external-link</desc>
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
+                            <line x1="10" y1="14" x2="20" y2="4"></line>
+                            <polyline points="15 4 20 4 20 9"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                <div class="col-auto ms-auto">
+                    <button class="switch-icon switch-icon-flip" data-bs-toggle="switch-icon">
+
+                        <span class="switch-icon-a text-muted">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                            <!-- SVG icon code -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-thumb-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <desc>Download more icon variants from https://tabler-icons.io/i/thumb-up</desc>
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                            </svg>
+                        </span>
+                        <span class="switch-icon-b text-facebook">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                            <!-- SVG icon code with class="icon-filled" -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-thumb-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <desc>Download more icon variants from https://tabler-icons.io/i/thumb-up</desc>
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

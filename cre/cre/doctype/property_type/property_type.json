@@ -25,7 +25,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-04-28 18:49:34.737008",
+ "modified": "2022-05-11 16:30:17.479390",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property Type",
@@ -48,7 +48,7 @@
  ],
  "quick_entry": 1,
  "show_title_field_in_link": 1,
- "sort_field": "modified",
+ "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
  "title_field": "type"

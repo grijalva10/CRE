@@ -1,482 +1,426 @@
 {
  "actions": [],
  "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 1,
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{address}, {city}, {state} {zip_code}",
- "creation": "2022-04-26 15:40:01.612465",
+ "autoname": "hash",
+ "creation": "2022-05-10 14:50:39.570741",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "tab_break_1",
   "property_name",
-  "property_type",
-  "property_subtype",
-  "column_break_4",
+  "section_break_3",
+  "status",
+  "commission",
+  "procurement_fee",
+  "potential_commission",
+  "start_date",
+  "expiration_date",
+  "section_break_9",
+  "sale_type",
+  "price",
+  "cap_rate",
+  "noi",
+  "sale_notes",
+  "tab_break_170000",
+  "city",
+  "state",
   "rba",
   "land_area",
-  "apn",
-  "costar_id",
-  "section_break_4",
-  "address",
-  "city",
-  "column_break_10",
-  "state",
-  "county",
-  "zip_code",
-  "section_break_10",
-  "status",
-  "class",
-  "construction",
+  "tab_break_17",
+  "documents",
+  "tab_break_19",
+  "financial_type",
+  "year",
+  "year_payable",
   "column_break_18",
-  "year_built",
-  "year_renovated",
-  "section_break_18",
-  "floors",
-  "typical_floor",
-  "tenancy",
-  "percent_leased",
-  "column_break_26",
-  "sprinklers",
-  "parking",
-  "parking_ratio",
-  "section_break_24",
-  "zoning",
-  "column_break_34",
-  "zoning_description",
-  "section_break_30",
-  "clear_height_feet",
-  "clear_height_inches",
-  "column_width",
-  "column_depth",
-  "floor_thickness",
-  "drive_ins",
-  "drive_ins_width",
-  "truck_wells",
-  "cranes",
-  "drive_ins_height",
-  "column_break_45",
-  "docks_external",
-  "docks_internal",
-  "cross_docks",
-  "rail_access",
-  "levelators_external",
-  "levelators_internal",
-  "section_break_41",
-  "heavy_power",
-  "amps_min",
-  "amps_max",
-  "volts_min",
-  "volts_max",
-  "phase",
-  "wire",
-  "tab_break_63",
+  "gross_rental_income",
+  "other_income",
+  "vacancy_loss",
+  "effective_gross_income",
+  "taxes",
+  "operating_expenses",
+  "total_expenses",
+  "net_operating_income",
+  "column_break_27",
+  "gross_rental_income_sf",
+  "other_income_sf",
+  "vacancy_loss_sf",
+  "effective_gross_income_sf",
+  "taxes_sf",
+  "operating_expenses_sf",
+  "total_expenses_sf",
+  "net_operating_income_sf",
+  "tab_break_41",
+  "tenants",
+  "section_break_39",
+  "property_highlights",
+  "route",
   "published",
-  "route"
+  "image",
+  "source",
+  "agent",
+  "address",
+  "zip_code",
+  "type",
+  "files",
+  "images",
+  "highlights",
+  "card_highlight"
  ],
  "fields": [
   {
-   "fieldname": "property_name",
-   "fieldtype": "Data",
-   "label": "Property Name"
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "Listing"
   },
   {
-   "fieldname": "property_type",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Property Type",
-   "options": "Property Type"
-  },
-  {
-   "fieldname": "property_subtype",
-   "fieldtype": "Link",
-   "label": "Property Subtype",
-   "options": "Property Subtype"
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Listing"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nExisting\nUnder Renovation"
+   "options": "Draft\nActive\nCall For Offers\nHighest & Best\nContract Pending\nUnder Contract\nEscrow\nSold\nOn Hold\nListing Expired\nNo Longer For Sale"
   },
   {
-   "fieldname": "rba",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "RBA",
-   "precision": "0",
-   "reqd": 1
-  },
-  {
-   "default": "1",
-   "fieldname": "floors",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Floors",
-   "reqd": 1
-  },
-  {
-   "default": "1",
-   "fieldname": "typical_floor",
-   "fieldtype": "Int",
-   "label": "Typical Floor",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "year_built",
-   "fieldtype": "Int",
-   "label": "Year Built",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "year_renovated",
-   "fieldtype": "Int",
-   "label": "Year Renovated",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "tenancy",
-   "fieldtype": "Select",
-   "label": "Tenancy",
-   "options": "\nMulti\nSingle"
-  },
-  {
-   "fieldname": "percent_leased",
+   "fieldname": "commission",
    "fieldtype": "Percent",
-   "label": "Percent Leased"
+   "label": "Commission"
   },
   {
-   "fieldname": "class",
-   "fieldtype": "Select",
-   "label": "Class",
-   "options": "A\nB\nC"
-  },
-  {
-   "fieldname": "construction",
-   "fieldtype": "Select",
-   "label": "Construction",
-   "options": "\nMasonry\nMetal\nReinforced Concrete\nSteel\nWood Frame"
-  },
-  {
-   "fieldname": "sprinklers",
-   "fieldtype": "Select",
-   "label": "Sprinklers",
-   "options": "\nDry\nESFR\nWet"
-  },
-  {
-   "fieldname": "parking",
-   "fieldtype": "Int",
-   "label": "Parking",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "parking_ratio",
+   "fieldname": "procurement_fee",
    "fieldtype": "Percent",
-   "label": "Parking Ratio",
+   "label": "Procurement Fee"
+  },
+  {
+   "fieldname": "potential_commission",
+   "fieldtype": "Currency",
+   "label": "Potential Commission"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "expiration_date",
+   "fieldtype": "Date",
+   "label": "Expiration Date"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Sale Details"
+  },
+  {
+   "fieldname": "sale_type",
+   "fieldtype": "Select",
+   "label": "Sale Type",
+   "options": "\nInvestment\nOwner User\nInvestment or Owner User"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Price",
    "precision": "0"
   },
   {
-   "fieldname": "zoning",
-   "fieldtype": "Data",
-   "label": "Zoning"
+   "fieldname": "cap_rate",
+   "fieldtype": "Percent",
+   "label": "Cap Rate"
   },
   {
-   "fieldname": "zoning_description",
+   "fieldname": "noi",
+   "fieldtype": "Currency",
+   "label": "NOI"
+  },
+  {
+   "fieldname": "sale_notes",
    "fieldtype": "Text",
-   "label": "Zoning Description"
+   "label": "Sale Notes"
   },
   {
-   "fieldname": "land_area",
-   "fieldtype": "Float",
-   "label": "Land Area",
-   "non_negative": 1,
-   "precision": "2"
+   "fieldname": "tab_break_170000",
+   "fieldtype": "Tab Break",
+   "label": "Property"
   },
   {
-   "fieldname": "clear_height_feet",
-   "fieldtype": "Int",
-   "label": "Clear Height Feet",
-   "non_negative": 1
+   "fieldname": "tab_break_17",
+   "fieldtype": "Tab Break",
+   "label": "Documents"
   },
   {
-   "fieldname": "clear_height_inches",
-   "fieldtype": "Int",
-   "label": "Clear Height Inches",
-   "non_negative": 1
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Deal Room Documents"
   },
   {
-   "fieldname": "column_width",
-   "fieldtype": "Int",
-   "label": "Column Width",
-   "non_negative": 1
+   "fieldname": "tab_break_19",
+   "fieldtype": "Tab Break",
+   "label": "Financials"
   },
   {
-   "fieldname": "column_depth",
-   "fieldtype": "Int",
-   "label": "Column Depth",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "floor_thickness",
-   "fieldtype": "Int",
-   "label": "Floor Thickness",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "drive_ins",
-   "fieldtype": "Int",
-   "label": "Drive Ins",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "drive_ins_width",
-   "fieldtype": "Int",
-   "label": "Drive Ins Width",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "drive_ins_height",
-   "fieldtype": "Int",
-   "label": "Drive Ins Height",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "docks_external",
-   "fieldtype": "Int",
-   "label": "Docks External",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "docks_internal",
-   "fieldtype": "Int",
-   "label": "Docks Internal",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "cross_docks",
+   "fieldname": "financial_type",
    "fieldtype": "Select",
-   "label": "Cross Docks",
-   "non_negative": 1,
-   "options": "\nYes\nNo"
+   "label": "Financial Type",
+   "options": "Actual\nProforma"
   },
   {
-   "fieldname": "rail_access",
-   "fieldtype": "Select",
-   "label": "Rail Access",
-   "non_negative": 1,
-   "options": "\nYes\nNo"
-  },
-  {
-   "fieldname": "levelators_external",
+   "fieldname": "year",
    "fieldtype": "Int",
-   "label": "Levelators External",
-   "non_negative": 1
+   "label": "Year"
   },
   {
-   "fieldname": "levelators_internal",
+   "fieldname": "year_payable",
    "fieldtype": "Int",
-   "label": "Levelators Internal",
-   "non_negative": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "heavy_power",
-   "fieldtype": "Check",
-   "label": "Heavy Power"
-  },
-  {
-   "fieldname": "amps_min",
-   "fieldtype": "Int",
-   "label": "Amps Min",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "amps_max",
-   "fieldtype": "Int",
-   "label": "Amps Max",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "volts_min",
-   "fieldtype": "Int",
-   "label": "Volts Min",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "volts_max",
-   "fieldtype": "Int",
-   "label": "Volts Max",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "phase",
-   "fieldtype": "Select",
-   "label": "Phase",
-   "non_negative": 1,
-   "options": "\n1\n3"
-  },
-  {
-   "fieldname": "wire",
-   "fieldtype": "Select",
-   "label": "Wire",
-   "non_negative": 1,
-   "options": "\n3\n4"
-  },
-  {
-   "fieldname": "cranes",
-   "fieldtype": "Int",
-   "label": "Cranes",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "truck_wells",
-   "fieldtype": "Int",
-   "label": "Truck Wells",
-   "non_negative": 1
-  },
-  {
-   "fieldname": "apn",
-   "fieldtype": "Data",
-   "label": "APN"
-  },
-  {
-   "fieldname": "costar_id",
-   "fieldtype": "Data",
-   "label": "Costar ID"
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Data",
-   "label": "Address",
-   "reqd": 1
-  },
-  {
-   "fieldname": "city",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "City",
-   "reqd": 1
-  },
-  {
-   "fieldname": "state",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "State",
-   "reqd": 1
-  },
-  {
-   "fieldname": "county",
-   "fieldtype": "Data",
-   "label": "County"
-  },
-  {
-   "fieldname": "zip_code",
-   "fieldtype": "Data",
-   "label": "Zip Code",
-   "reqd": 1
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_4",
-   "fieldtype": "Section Break",
-   "label": "Address"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_10",
-   "fieldtype": "Section Break",
-   "label": "Building Basic"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_41",
-   "fieldtype": "Section Break",
-   "label": "Power"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_24",
-   "fieldtype": "Section Break",
-   "label": "Land"
-  },
-  {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break",
-   "label": "Building Details"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "section_break_30",
-   "fieldtype": "Section Break",
-   "label": "Industrial"
-  },
-  {
-   "fieldname": "column_break_10",
-   "fieldtype": "Column Break"
+   "label": "Year Payable"
   },
   {
    "fieldname": "column_break_18",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_26",
+   "fieldname": "gross_rental_income",
+   "fieldtype": "Currency",
+   "label": "Gross Rental Income"
+  },
+  {
+   "fieldname": "other_income",
+   "fieldtype": "Currency",
+   "label": "Other Income"
+  },
+  {
+   "fieldname": "vacancy_loss",
+   "fieldtype": "Currency",
+   "label": "Vacancy Loss"
+  },
+  {
+   "fieldname": "effective_gross_income",
+   "fieldtype": "Currency",
+   "label": "Effective Gross Income"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Currency",
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "operating_expenses",
+   "fieldtype": "Currency",
+   "label": "Operating Expenses"
+  },
+  {
+   "fieldname": "total_expenses",
+   "fieldtype": "Currency",
+   "label": "Total Expenses"
+  },
+  {
+   "fieldname": "net_operating_income",
+   "fieldtype": "Currency",
+   "label": "Net Operating Income"
+  },
+  {
+   "fieldname": "column_break_27",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_34",
-   "fieldtype": "Column Break"
+   "fieldname": "gross_rental_income_sf",
+   "fieldtype": "Currency",
+   "label": "Gross Rental Income SF"
   },
   {
-   "fieldname": "column_break_45",
-   "fieldtype": "Column Break"
+   "fieldname": "other_income_sf",
+   "fieldtype": "Currency",
+   "label": "Other Income SF"
   },
   {
-   "fieldname": "tab_break_1",
+   "fieldname": "vacancy_loss_sf",
+   "fieldtype": "Currency",
+   "label": "Vacancy Loss SF"
+  },
+  {
+   "fieldname": "effective_gross_income_sf",
+   "fieldtype": "Currency",
+   "label": "Effective Gross Income SF"
+  },
+  {
+   "fieldname": "taxes_sf",
+   "fieldtype": "Currency",
+   "label": "Taxes SF"
+  },
+  {
+   "fieldname": "operating_expenses_sf",
+   "fieldtype": "Currency",
+   "label": "Operating Expenses SF"
+  },
+  {
+   "fieldname": "total_expenses_sf",
+   "fieldtype": "Currency",
+   "label": "Total Expenses SF"
+  },
+  {
+   "fieldname": "net_operating_income_sf",
+   "fieldtype": "Currency",
+   "label": "Net Operating Income SF"
+  },
+  {
+   "fieldname": "tab_break_41",
    "fieldtype": "Tab Break",
-   "label": "Overview"
+   "label": "Tenants"
   },
   {
-   "fieldname": "tab_break_63",
-   "fieldtype": "Tab Break",
-   "label": "Web"
+   "fieldname": "tenants",
+   "fieldtype": "Table",
+   "label": "Tenants",
+   "options": "Tenants"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "property_highlights",
+   "fieldtype": "Table",
+   "label": "Property Highlights",
+   "options": "Property Highlights"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
   },
   {
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
-   "label": "Published"
+   "label": "published"
   },
   {
-   "fieldname": "route",
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "in_preview": 1,
+   "label": "image"
+  },
+  {
+   "fieldname": "source",
    "fieldtype": "Data",
-   "label": "Route"
+   "label": "source"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Data",
+   "label": "agent"
+  },
+  {
+   "fieldname": "files",
+   "fieldtype": "Long Text",
+   "label": "files"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Long Text",
+   "label": "images"
+  },
+  {
+   "fieldname": "highlights",
+   "fieldtype": "Long Text",
+   "label": "Highlights"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "Zip Code"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "Property Type"
+  },
+  {
+   "fetch_from": "property.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "City"
+  },
+  {
+   "fetch_from": "property.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fetch_from": "property.rba",
+   "fieldname": "rba",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "RBA"
+  },
+  {
+   "fetch_from": "property.land_area",
+   "fieldname": "land_area",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Land Area"
+  },
+  {
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Property Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "card_highlight",
+   "fieldtype": "Data",
+   "label": "Card Highlight"
   }
  ],
+ "has_web_view": 1,
+ "image_field": "image",
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2022-05-09 10:36:40.999342",
+ "modified": "2022-05-11 13:12:47.848402",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",
- "naming_rule": "Expression",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {
@@ -490,12 +434,27 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
   }
  ],
- "search_fields": "address,city,state,zip_code",
+ "route": "properties",
+ "search_fields": "property_name,address,city,state,zip_code",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Green",
+   "title": "Live"
+  }
+ ],
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

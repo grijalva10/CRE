@@ -14,6 +14,7 @@ frappe.ui.form.on('Property Listing Tool', {
 					let urls = r.message;
 					console.log(urls);
 					fetch_listings(urls);
+					console.log('Complete')
 					// do something with linked_doc
 				}
 
