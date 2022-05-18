@@ -14,6 +14,11 @@
 
 {% block page_content %}
 
+{{ frappe.get_doc('Property', name).add_seen() }}
+{% set meta=frappe.get_meta('Property').as_dict() %}
+{% for m in meta.fields %}
+<p>{{ m }}</p>
+{% endfor %}
 <div class="row row-cards">
     <div class="col-sm-6 col-lg-6">
         <div class="card">
@@ -92,7 +97,8 @@
                                 </h2>
                                 <div id="collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordion-example" style="">
                                     <div class="accordion-body pt-0">
-                                        {{ parents }}
+                                        Liked by: {{ meta._liked_by }}
+                                        Liked by: {{ meta._user_tags }}
                                     </div>
                                 </div>
                             </div>
