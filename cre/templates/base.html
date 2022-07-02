@@ -13,7 +13,7 @@
 	<title>{% block title %}{{ title | striptags }}{% endblock %}</title>
 
 	{% block favicon %}
-	<link rel="shortcut icon" href="{{ (favicon or "/assets/frappe/images/frappe-favicon.svg") | abs_url }}" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ (favicon or "/assets/cre/icons/icons/building-skyscraper.svg") | abs_url }}" type="image/x-icon">
 	{% endblock %}
 
 	<link rel="canonical" href="{{ canonical }}">
@@ -25,9 +25,12 @@
 
 	{%- if theme.name != 'Standard' -%}
 	<link type="text/css" rel="stylesheet" href="{{ theme.theme_url }}">
+	<link rel="stylesheet" href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css">
+
 	{%- else -%}
 	{{ include_style('website.bundle.css') }}
 	<link rel="stylesheet" href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css">
+	<link rel="stylesheet" href="/assets/cre/css/ui.css">
 	{%- endif -%}
 
 	{%- for link in web_include_css %}
@@ -56,8 +59,12 @@
 		window.show_language_picker = {{ show_language_picker or 'false' }};
 	</script>
 </head>
-<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="layout-fluid theme-light">
+<body frappe-session-status="{{ 'logged-in' if frappe.session.user != 'Guest' else 'logged-out'}}" data-path="{{ path | e }}" {%- if template and template.endswith('.md') %} frappe-content-type="markdown" {%- endif %} class="theme-light">
 	<div class="page">
+		{% if show_sidebar -%} 
+		{% include "templates/includes/web_vertical.html" %}
+		{%- endif %}
+		
 		{% if web_vertical -%}
 		{% include "templates/includes/web_vertical.html" %}
 		{%- endif %}

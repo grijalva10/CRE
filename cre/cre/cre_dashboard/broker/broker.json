@@ -1,0 +1,25 @@
+{
+ "cards": [
+  {
+   "card": "New Lead (Last 1 Month)"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Emails Sent",
+   "width": "Half"
+  }
+ ],
+ "creation": "2022-05-20 12:08:20.813307",
+ "dashboard_name": "Broker",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2022-05-20 12:08:20.813307",
+ "modified_by": "grijalva10@gmail.com",
+ "module": "CRE",
+ "name": "Broker",
+ "owner": "grijalva10@gmail.com"
+}

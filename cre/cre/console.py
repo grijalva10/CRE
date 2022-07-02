@@ -64,7 +64,16 @@ def get_energy_point_leaderboard(date_range, company = None, field = None, limit
 @frappe.whitelist()
 def get_leads(date_range = None, company = None, field = None, limit = None):
 	all_leads = frappe.db.get_all('Lead',
-		fields = ['title as name', 'phone', 'email_id'],
-		order_by = 'name ASC')
-
+		fields=['title as name', 'phone', 'email_id'],
+		order_by ='name ASC')
 	return all_leads
+	
+
+@frappe.whitelist()
+def get_sidebar(sidebar = None):
+	if not sidebar:
+		sidebar = 'Investor Sidebar'
+	this_sidebar = frappe.get_doc('Website Sidebar', sidebar)
+
+	return this_sidebar
+	

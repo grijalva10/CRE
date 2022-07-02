@@ -10,13 +10,30 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "tab_break_1",
+  "overview_tab_tab",
   "property_name",
+  "image",
+  "type",
+  "section_break_5",
+  "address",
+  "city",
+  "column_break_8",
+  "state",
+  "zip_code",
+  "section_break_11",
+  "units",
+  "rba",
+  "section_break_14",
+  "zoning",
+  "apn",
+  "land_area",
+  "tab_break_1",
   "section_break_3",
   "status",
   "commission",
   "procurement_fee",
   "potential_commission",
+  "column_break_14",
   "start_date",
   "expiration_date",
   "section_break_9",
@@ -24,12 +41,8 @@
   "price",
   "cap_rate",
   "noi",
+  "column_break_20",
   "sale_notes",
-  "tab_break_170000",
-  "city",
-  "state",
-  "rba",
-  "land_area",
   "tab_break_17",
   "documents",
   "tab_break_19",
@@ -56,16 +69,13 @@
   "net_operating_income_sf",
   "tab_break_41",
   "tenants",
+  "tab_break_53",
   "section_break_39",
   "property_highlights",
   "route",
   "published",
-  "image",
   "source",
   "agent",
-  "address",
-  "zip_code",
-  "type",
   "files",
   "images",
   "highlights",
@@ -148,11 +158,6 @@
    "fieldname": "sale_notes",
    "fieldtype": "Text",
    "label": "Sale Notes"
-  },
-  {
-   "fieldname": "tab_break_170000",
-   "fieldtype": "Tab Break",
-   "label": "Property"
   },
   {
    "fieldname": "tab_break_17",
@@ -409,14 +414,66 @@
    "fieldname": "card_highlight",
    "fieldtype": "Data",
    "label": "Card Highlight"
+  },
+  {
+   "default": "1",
+   "fieldname": "units",
+   "fieldtype": "Int",
+   "label": "Units",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "overview_tab_tab",
+   "fieldtype": "Tab Break",
+   "label": "Overview"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_53",
+   "fieldtype": "Tab Break",
+   "label": "Marketing"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "Building"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Land"
+  },
+  {
+   "fieldname": "zoning",
+   "fieldtype": "Data",
+   "label": "Zoning"
+  },
+  {
+   "fieldname": "apn",
+   "fieldtype": "Data",
+   "label": "APN"
   }
  ],
- "has_web_view": 1,
  "image_field": "image",
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-05-11 13:12:47.848402",
+ "modified": "2022-06-21 10:54:04.849639",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",
@@ -447,6 +504,7 @@
  ],
  "route": "properties",
  "search_fields": "property_name,address,city,state,zip_code",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
@@ -455,6 +513,7 @@
    "title": "Live"
   }
  ],
+ "title_field": "property_name",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

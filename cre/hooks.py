@@ -13,15 +13,15 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "assets/css/cre.min.css"
+# app_include_css = "assets/css/ui.css"
 # app_include_js = ["cre.bundle.js"]
 
 # include js, css files in header of web template
-web_include_css = "/assets/cre/css/cre.css"
-# web_include_js = "/assets/cre/js/cre.bundle.js"
+# web_include_css = "/assets/cre/css/erpnext.css"
+# web_include_js = ["/assets/cre/js/cre-web.bundle.js"]
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "cre/public/scss/website"
+website_theme_scss = "cre/public/scss/cre"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -190,12 +190,46 @@ console = ["cre.cre.console.get_leaderboards","cre.cre.console.get_leads_config"
 # ]
 
 website_route_rules = [
-    {"from_route": "/projects/<name>", "to_route": "project"},
-    {"from_route": "/portfolios/<name>", "to_route": "portfolio"},
-    {"from_route": "/offering/<name>", "to_route": "offering"}
+    {"from_route": "/dashboard/properties", "to_route": "Property"},
+    {"from_route": "/dashboard", "to_route": "/dashboard/home"},
+    {"from_route": "/dashboard/project", "to_route": "Project"},
+    {"from_route": "/dashboard/profile", "to_route": "me"},
+    {"from_route": "/dashboard/investments/<name>", "to_route": "investment"},
+    # {"from_route": "/dashboard/notifications", "to_route": "Notification Log"}
+    # {"from_route": "/dashboard/project", "to_route": "Project"}
+    # {"from_route": "/projects/<name>", "to_route": "project"},
+    # {"from_route": "/portfolios/<name>", "to_route": "portfolio"},
+    # {"from_route": "/offering/<name>", "to_route": "offering"}
     
+]
+extend_website_page_controller_context = {
+    "frappe.www.project": "cre.pages.context_project"
+}
+
+portal_menu_items = [
+    {"title": "Dashboard", "route": "/dashboard", "role": "Customer", "icon": "home"},
+    {"title": "Marketplace", "route": "/dashboard/properties/all", "role": "Customer", "icon": "trending-up"},
+    {"title": "Investments", "route": "/dashboard/investments", "role": "Customer", "icon": "trending-up"},
+    {"title": "Offers", "route": "/dashboard", "role": "Customer", "icon": "license"},
+    {"title": "Transactions", "route": "/dashboard/documents", "role": "Customer", "icon": "folder"},
+    {"title": "Files", "route": "/dashboard/files", "role": "Customer"},
+    {"group_title": "ACCOUNT", "role": "Customer", "group_items": 
+        [{"title": "Account Settings", "route": "/dashboard/project", "role": "Customer"},
+        {"title": "Notification Settings", "route": "/dashboard/documents", "role": "Customer"},
+        {"title": "Messages", "route": "/dashboard/files", "role": "Customer"}]
+        
+    },
 ]
 
 fixtures = [{'dt':'Property Type'},
 {'dt': 'Property Market'},
 {'dt':'Custom Field', "filters": [["name", "in", ["tabler_icon"]]]}]
+
+
+scheduler_events = {
+    "cron": {
+        "* * * * *": [
+            "frappe.email.queue.flush"
+        ]
+    }
+}

@@ -1,0 +1,226 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-01 13:23:48.988812",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_break_1",
+  "column_break_2",
+  "price",
+  "earnest_money_deposit",
+  "phone_number",
+  "closing_period",
+  "due_diligence_period",
+  "tab_break_7",
+  "offer_highlights",
+  "offer_contingent_upon_financing",
+  "explain_financing_contingency",
+  "investor_info_tab",
+  "first_name",
+  "last_name",
+  "phone",
+  "email",
+  "company_name",
+  "investor_profile",
+  "section_break_18",
+  "co_first_name",
+  "co_last_name",
+  "co_phone",
+  "co_email",
+  "tab_break_23",
+  "estimated_buying_power",
+  "assets_under_management_amount",
+  "assets_under_management_property_count",
+  "1031_exchange",
+  "interested_in_financing",
+  "purchase_entity_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "Offer Terms"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "earnest_money_deposit",
+   "fieldtype": "Currency",
+   "label": "Earnest Money Deposit"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone number"
+  },
+  {
+   "fieldname": "closing_period",
+   "fieldtype": "Int",
+   "label": "Closing period"
+  },
+  {
+   "fieldname": "due_diligence_period",
+   "fieldtype": "Int",
+   "label": "Due diligence period"
+  },
+  {
+   "fieldname": "tab_break_7",
+   "fieldtype": "Tab Break",
+   "label": "Offer Details"
+  },
+  {
+   "fieldname": "offer_highlights",
+   "fieldtype": "Small Text",
+   "label": "Offer highlights"
+  },
+  {
+   "default": "0",
+   "fieldname": "offer_contingent_upon_financing",
+   "fieldtype": "Check",
+   "label": "Offer Contingent upon financing"
+  },
+  {
+   "fieldname": "explain_financing_contingency",
+   "fieldtype": "Small Text",
+   "label": "Explain financing contingency"
+  },
+  {
+   "fieldname": "investor_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Investor Info"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name"
+  },
+  {
+   "fieldname": "investor_profile",
+   "fieldtype": "Select",
+   "label": "Investor profile",
+   "options": "Principal Investor\nIndividual\nBroker"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Co-op Broker/Agent (optional)"
+  },
+  {
+   "fieldname": "co_first_name",
+   "fieldtype": "Data",
+   "label": "Co First name"
+  },
+  {
+   "fieldname": "co_last_name",
+   "fieldtype": "Data",
+   "label": "Co Last name"
+  },
+  {
+   "fieldname": "co_phone",
+   "fieldtype": "Data",
+   "label": "co Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "co_email",
+   "fieldtype": "Data",
+   "label": "co Email",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "estimated_buying_power",
+   "fieldtype": "Currency",
+   "label": "Estimated buying power"
+  },
+  {
+   "fieldname": "assets_under_management_amount",
+   "fieldtype": "Currency",
+   "label": "Assets under management Amount"
+  },
+  {
+   "fieldname": "assets_under_management_property_count",
+   "fieldtype": "Currency",
+   "label": "Assets under management Property Count"
+  },
+  {
+   "default": "0",
+   "fieldname": "1031_exchange",
+   "fieldtype": "Check",
+   "label": "1031 Exchange"
+  },
+  {
+   "default": "0",
+   "fieldname": "interested_in_financing",
+   "fieldtype": "Check",
+   "label": "interested in financing"
+  },
+  {
+   "fieldname": "purchase_entity_name",
+   "fieldtype": "Data",
+   "label": "Purchase Entity Name"
+  },
+  {
+   "fieldname": "tab_break_23",
+   "fieldtype": "Tab Break",
+   "label": "Investor Background"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-01 13:28:33.523846",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Offer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,18 +1,11 @@
-{% macro avatar(user_id=None, css_style=None, size="avatar-small") %}
+{% macro avatar(user_id=None, size="lg") %}
 {% set user_info = frappe.utils.get_user_info_for_avatar(user_id) %}
-<span class="avatar {{ size }} rounded-circle" title="{{ user_info.name }}" style="{{ css_style or '' }}">
-	{% if user_info.image  %}
-	<img
-		class="avatar-frame standard-image"
-		src="{{ user_info.image }}"
-		title="{{ user_info.name }}">
-	</span>
-	{% else %}
-	<span
-		class="avatar-frame standard-image"
-		title="{{ user_info.name }}">
-		{{ frappe.utils.get_abbr(user_info.name).upper() }}
-	</span>
-	{% endif %}
-</span>
+
+{% if user_info.image  %}
+<span class="avatar avatar-{{ size }} rounded-circle" style="background-image: url({{ user_info.image }})"></span>
+
+{% else %}
+<span class="avatar avatar-{{ size }} rounded-circle">{{ frappe.utils.get_abbr(user_info.name).upper() }}</span>
+{% endif %}
+
 {% endmacro %}

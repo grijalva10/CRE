@@ -1,7 +1,13 @@
 frappe.listview_settings['Lead'] = {
+	hide_name_column: true,
+	add_fields: ['lead_owner'],
+	filters: [
+		['archived', '=', 'No']
+	],
+
 	onload: function(listview) {
 		if (frappe.boot.user.can_create.includes("Prospect")) {
-			listview.page.add_action_item(__("New Prospect"), function() {
+			listview.page.add_action_item(__("Create Prospect"), function() {
 				frappe.model.with_doctype("Prospect", function() {
 					let prospect = frappe.model.get_new_doc("Prospect");
 					let leads = listview.get_checked_items();
@@ -24,5 +30,14 @@ frappe.listview_settings['Lead'] = {
 				});
 			});
 		}
-	}
+		listview.$page.find(`div[data-fieldname='name']`).addClass('hide');
+	},
 };
+
+frappe.listview_settings['Lead'].formatters = {
+
+	contact_date(value) {
+		if (!value) return ''
+		return moment(value).fromNow();
+	}
+}

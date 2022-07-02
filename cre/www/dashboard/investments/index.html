@@ -1,0 +1,158 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("My Account") }}
+{% endblock %}
+{% block header %}
+<div class="mb-1">
+  <ol class="breadcrumb" aria-label="breadcrumbs">
+    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="#">Investments</a></li>
+  </ol>
+</div>
+{% endblock %}
+{% block page_content %}
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="list-group card-list-group">
+        {% for doc in docs %}
+        <div class="list-group-item">
+          <div class="row g-3 align-items-center">
+            <div class="col">
+              {{ doc.property }}
+              <div class="text-muted">
+                {{ doc.city }}, {{ doc.state }}
+                | {{ doc.property_use }}
+                | Initial Cap Rate {{ doc.cap_rate }}
+              </div>
+            </div>
+            <div class="col-auto text-muted">
+             {{ frappe.utils.fmt_money(doc.price_sf,currency="$") }} / SF
+            </div>
+            <div class="col-auto">
+              <a href="/dashboard/investments/{{doc.name}}" class="link-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <polyline points="9 6 15 12 9 18"></polyline>
+                </svg> </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!--<div class="col-lg-4">-->
+  <!--  <h3 class="mb-3">Top tracks</h3>-->
+  <!--  <div class="row row-cards">-->
+  <!--    <div class="col-md-6 col-lg-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="row row-0">-->
+  <!--          <div class="col-auto">-->
+  <!--            <img src="./static/tracks/c976bfc96d5e44820e553a16a6097cd02a61fd2f.jpg" class="rounded-start" alt="Shape of You" width="80" height="80">-->
+  <!--          </div>-->
+  <!--          <div class="col">-->
+  <!--            <div class="card-body">-->
+  <!--              Shape of You-->
+  <!--              <div class="text-muted">-->
+  <!--                Ed Sheeran-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="col-md-6 col-lg-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="row row-0">-->
+  <!--          <div class="col-auto">-->
+  <!--            <img src="./static/tracks/c9a8350feee77e9345eec4155cddc96694803d1a.jpg" class="rounded-start" alt="Alone" width="80" height="80">-->
+  <!--          </div>-->
+  <!--          <div class="col">-->
+  <!--            <div class="card-body">-->
+  <!--              Alone-->
+  <!--              <div class="text-muted">-->
+  <!--                Alan Walker-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="col-md-6 col-lg-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="row row-0">-->
+  <!--          <div class="col-auto">-->
+  <!--            <img src="./static/tracks/fe4ee21d30450829e5b172e806b3c1e14ca1e5f3.jpg" class="rounded-start" alt="Langrennsfar" width="80" height="80">-->
+  <!--          </div>-->
+  <!--          <div class="col">-->
+  <!--            <div class="card-body">-->
+  <!--              Langrennsfar-->
+  <!--              <div class="text-muted">-->
+  <!--                Ylvis-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="col-md-6 col-lg-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="row row-0">-->
+  <!--          <div class="col-auto">-->
+  <!--            <img src="./static/tracks/f4e96086f44c4dff1758b1fc1338cd88c1b5ce9c.jpg" class="rounded-start" alt="Skibidi - Romantic Edition" width="80" height="80">-->
+  <!--          </div>-->
+  <!--          <div class="col">-->
+  <!--            <div class="card-body">-->
+  <!--              Skibidi - Romantic Edition-->
+  <!--              <div class="text-muted">-->
+  <!--                Little Big-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="col-md-6 col-lg-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="row row-0">-->
+  <!--          <div class="col-auto">-->
+  <!--            <img src="./static/tracks/73f4938130140174efb1cc0a82ececb277e40932.jpg" class="rounded-start" alt="Miracle" width="80" height="80">-->
+  <!--          </div>-->
+  <!--          <div class="col">-->
+  <!--            <div class="card-body">-->
+  <!--              Miracle-->
+  <!--              <div class="text-muted">-->
+  <!--                Caravan Palace-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="col-md-6 col-lg-12">-->
+  <!--      <div class="card">-->
+  <!--        <div class="row row-0">-->
+  <!--          <div class="col-auto">-->
+  <!--            <img src="./static/tracks/cfb2a532996512eff95c4b0d566d067384aaa441.jpg" class="rounded-start" alt="Different World (feat. CORSAK)" width="80" height="80">-->
+  <!--          </div>-->
+  <!--          <div class="col">-->
+  <!--            <div class="card-body">-->
+  <!--              Different World (feat. CORSAK)-->
+  <!--              <div class="text-muted">-->
+  <!--                Alan Walker,-->
+  <!--                K-391,-->
+  <!--                Sofia Carson,-->
+  <!--                CORSAK-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+</div>
+
+{% endblock %}

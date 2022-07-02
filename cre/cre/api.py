@@ -26,4 +26,16 @@ def new_lead(first_name, last_name, email, cell_phone):
         return doc
     else:
         return True
+
+@frappe.whitelist(allow_guest=True)
+def sidebar():
+    menus = frappe.get_all('JMG Menu', fields=['*'])
     
+    all_menus = []
+    for menu in menus:
+        items = frappe.get_all('JMG Menu Item', fields=['*'])
+        m = {'menu': menu.menu_name, 'items' : items }
+           
+        all_menus.append(m)
+    
+    return all_menus

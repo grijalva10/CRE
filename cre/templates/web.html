@@ -31,7 +31,6 @@
 			</div>
 		</div>
 	</div>
-
 	{% block page_container %}
 	<div class="page-body">
 		<main class="{% if not full_width %}container-xl{% endif %}">
@@ -44,7 +43,6 @@
 			</div>
 		</main>
 	</div>
-
 	{% endblock %}
 </div>
 {% endmacro %}
@@ -65,19 +63,12 @@ id="page-{{ name or route | e }}" data-path="{{ pathname | e }}"
 
 {% if show_sidebar %}
 <div class="page-wrapper">
-
 	<div class="container-xl">
-		<div class="row" {{ container_attributes() }}>
-			{%- set columns = sidebar_columns or 2 -%}
-			{%- if not sidebar_right -%}
-			{{ sidebar() }}
-			{%- endif -%}
-			<div class="main-column col-sm-{{ 12 - columns }}">
-				{{ main_content() }}
-			</div>
-			{%- if sidebar_right -%}
-			{{ sidebar() }}
-			{%- endif -%}
+
+		<div class="page-body" {{ container_attributes() }}>
+			{{ main_content() }}
+
+
 		</div>
 	</div>
 </div>

@@ -1,7 +1,12 @@
 {
- "charts": [],
- "content": "[]",
- "creation": "2022-04-25 12:40:42.773025",
+ "charts": [
+  {
+   "chart_name": "Incoming Leads",
+   "label": "Incoming Leads"
+  }
+ ],
+ "content": "[{\"type\":\"chart\",\"data\":{\"chart_name\":\"Incoming Leads\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Docs\",\"col\":4}}]",
+ "creation": "2022-04-25 12:44:35.600549",
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -9,27 +14,35 @@
  "icon": "users",
  "idx": 0,
  "label": "Leads",
- "links": [],
- "modified": "2022-04-25 12:43:28.560734",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Docs",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leads",
+   "link_count": 0,
+   "link_to": "Lead",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-06-22 12:03:55.392056",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Leads",
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
- "roles": [
-  {
-   "role": "Broker User"
-  }
- ],
- "sequence_id": 0.0,
- "shortcuts": [
-  {
-   "doc_view": "List",
-   "label": "Lead",
-   "link_to": "Lead",
-   "type": "DocType"
-  }
- ],
+ "roles": [],
+ "sequence_id": 6.0,
+ "shortcuts": [],
  "title": "Leads"
 }

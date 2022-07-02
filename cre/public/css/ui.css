@@ -1,0 +1,22 @@
+/*.widget{*/
+/*    background-color: #8bd7d3 !important;*/
+/*}*/
+
+/*.container, .container-sm, .container-md, .container-lg, .container-xl {*/
+/*    max-width: 100% !important;*/
+/*}*/
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+	padding-right: 0.3rem;
+	padding-left: 0.3rem;
+}
+
+.icon-dashboard {
+   background:url('/assets/cre/icons/icons/dashboard.svg');
+   
+}
+
+.nav-link-icon svg {
+	display: block;
+	height: 100%;
+}

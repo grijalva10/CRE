@@ -4,14 +4,14 @@
 {% if not result -%}
 	<div class="empty-apps-state">
 		<img class="empty-list-icon" src="/assets/frappe/images/ui-states/list-empty-state.svg"/>
-		<div class="mt-4">{{ no_result_message or _("Nothing to show") }}</div>
+		<div class="mt-4">{{ no_result_message or _("Nothing to show yet.") }}</div>
 	</div>
 {% else %}
 	<div class="website-list" data-doctype="{{ doctype }}"
 		data-txt="{{ txt or '[notxt]' | e }}">
 		<!-- {% if not hide_filters -%}
-			{% include "templates/includes/list/filters.html" %}
-		{%- endif %} -->
+		<!--	{% include "templates/includes/list/filters.html" %}-->
+		<!--{%- endif %} -->
 		{% if result_heading_template %}{% include result_heading_template %}{% endif %}
 
 		<div class="result">

@@ -1,0 +1,167 @@
+{% extends "templates/web.html" %}
+
+{% block title %}
+{{ doc.name }}
+{% endblock %}
+
+{% block head_include %}
+<link rel="stylesheet" href="/assets/frappe/css/font-awesome.css">
+{% endblock %}
+
+{% block header %}
+<h1>{{ doc.name }}</h1>
+{% endblock %}
+
+
+{% block page_content %}
+
+<div class="row row-deck row-cards">
+  <div class="col-sm-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">
+          Property Location
+        </h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-4">Property</dt>
+          <dd class="col-8">{{ doc.property }}</dd>
+          <dt class="col-5">Address</dt>
+          <dd class="col-7">{{ doc.address }}</dd>
+          <dt class="col-5">City & State</dt>
+          <dd class="col-7">{{ doc.city }}, {{ doc.state }}</dd>
+          <dt class="col-5">Zip Code</dt>
+          <dd class="col-7">{{ doc.zip_code }}</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-6 col-lg-6">
+    <div class="card">
+      <div class="card-header ">
+        <h3 class="card-title">
+          Contact Information
+        </h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-5">Name</dt>
+          <dd class="col-7">Jeff Grijalva</dd>
+          <dt class="col-5">Brokerage</dt>
+          <dd class="col-7">Daum Commercial</dd>
+          <dt class="col-5">Phone</dt>
+          <dd class="col-7">(949) 939-2654</dd>
+          <dt class="col-5">Email</dt>
+          <dd class="col-7">jgrijalva@daumcommercial.com</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-6 col-lg-6">
+    <div class="card">
+      <div class="card-header ">
+        <h3 class="card-title">
+          Property Description
+        </h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-5">Year Built</dt>
+          <dd class="col-7">{{ doc.year_built }}</dd>
+          <dt class="col-5">Construction</dt>
+          <dd class="col-7">{{ doc.construction }}</dd>
+          <dt class="col-5">Rentable Area</dt>
+          <dd class="col-7"> {{ doc.floors }} floor(s) {{ doc.rba }} SF</dd>
+          <dt class="col-5">Land Area</dt>
+          <dd class="col-7">{{ doc.land_area }} acres</dd>
+          <dt class="col-5">Parking</dt>
+          <dd class="col-7">{{ doc.parking }} spaces</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-6 col-lg-6">
+    <div class="card">
+      <div class="card-header ">
+        <h3 class="card-title">
+          Negotiation Schedule
+        </h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-5">Offering Received</dt>
+          <dd class="col-7">{{ doc.offering_received }}</dd>
+          <dt class="col-5">Preliminary IC Approval</dt>
+          <dd class="col-7">{{ doc.preliminary_ic_approval }}</dd>
+          <dt class="col-5"> LOI Submitted</dt>
+          <dd class="col-7">{{ doc.loi_submitted }}</dd>
+          <dt class="col-5"> LOI Executed</dt>
+          <dd class="col-7">{{ doc.loi_executed }}</dd>
+          <dt class="col-5">Purchase Contract Executed</dt>
+          <dd class="col-7">{{ doc.purchase_contract_executed }}</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-6 col-lg-6">
+    <div class="card">
+      <div class="card-header ">
+        <h3 class="card-title">
+          Tenant
+        </h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-5">Property Use</dt>
+          <dd class="col-7">{{ doc.property_use }}</dd>
+          <dt class="col-5">Tenant</dt>
+          <dd class="col-7">{{ doc.tenant }}</dd>
+          <dt class="col-5">Credit</dt>
+          <dd class="col-7">{{ doc.credit }}</dd>
+          <dt class="col-5">Lease</dt>
+          <dd class="col-7">{{ doc.lease_periods }} {{ doc.lease_period_tf }}; {{ doc.lease_type }}</dd>
+                    <dt class="col-5">Operating Exp.</dt>
+          <dd class="col-7">{{ doc.opex }}</dd>
+                              <dt class="col-5">Remaining Lease Term</dt>
+          <dd class="col-7">{{ doc.remaining_lease_term }} {{ doc.remain_lease_term_tf }}</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-6 col-lg-6">
+    <div class="card">
+      <div class="card-header ">
+        <h3 class="card-title">
+          Due Diligence Schedule
+        </h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-5">Due Diligence Begins</dt>
+          <dd class="col-7">{{ doc.due_diligence_begins }}</dd>
+          <dt class="col-5">Tenant Interview</dt>
+          <dd class="col-7">{{ doc.tenant_interview }}</dd>
+          <dt class="col-5">Due Diligence Complete</dt>
+          <dd class="col-7">{{ doc.due_diligence_complete }}</dd>
+          <dt class="col-5">Final IC Approval</dt>
+          <dd class="col-7">{{ doc.final_ic_approval }}</dd>
+                    <dt class="col-5"> Remove All Conditions</dt>
+          <dd class="col-7">{{ doc.remove_all_conditions }}</dd>
+                    <dt class="col-5">Close of Escrow</dt>
+          <dd class="col-7">{{ doc.close_of_escrow }}</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

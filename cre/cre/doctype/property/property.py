@@ -2,13 +2,13 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.website.website_generator import WebsiteGenerator
+from frappe.model.document import Document
 
-class Property(WebsiteGenerator):
+class Property(Document):
     
     def get_context(self, context):
         context.no_breadcrumbs = True
-        context.show_sidebar = False
+        context.show_sidebar = True
 
 def get_list_context(context=None):
     list_context = frappe._dict(get_list = get_property_list,

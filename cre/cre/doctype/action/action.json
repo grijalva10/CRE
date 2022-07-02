@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-23 10:29:33.547426",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject",
+  "type",
+  "section_break_3",
+  "due_date",
+  "column_break_5",
+  "due_time",
+  "column_break_7",
+  "duration",
+  "column_break_9",
+  "section_break_10",
+  "note",
+  "deal_id",
+  "lead_id",
+  "person_id",
+  "org_id",
+  "location",
+  "public_description",
+  "user_id",
+  "done"
+ ],
+ "fields": [
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "due_time",
+   "fieldtype": "Time",
+   "label": "Due Time"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "deal_id",
+   "fieldtype": "Link",
+   "label": "Deal ID",
+   "options": "Opportunity"
+  },
+  {
+   "fieldname": "lead_id",
+   "fieldtype": "Link",
+   "label": "Lead ID",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "person_id",
+   "fieldtype": "Link",
+   "label": "Person ID",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "org_id",
+   "fieldtype": "Link",
+   "label": "Org ID",
+   "options": "Prospect"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "HTML Editor",
+   "label": "Note"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "location"
+  },
+  {
+   "fieldname": "public_description",
+   "fieldtype": "Data",
+   "label": "Public Description"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "Call",
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "Call",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Call\nMeeting\nTask\nDeadline\nEmail\nLunch\nOther"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "done",
+   "fieldtype": "Check",
+   "label": "Done"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-23 10:37:24.798214",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Action",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

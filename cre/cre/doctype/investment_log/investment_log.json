@@ -1,0 +1,289 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2022-06-29 13:57:03.169397",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "property",
+  "address",
+  "city",
+  "state",
+  "zip_code",
+  "year_built",
+  "construction",
+  "land_area",
+  "parking",
+  "rba",
+  "floors",
+  "users",
+  "property_use",
+  "tenant",
+  "credit",
+  "lease_periods",
+  "lease_period_tf",
+  "lease_type",
+  "opex",
+  "remaining_lease_term",
+  "remain_lease_term_tf",
+  "contact_name",
+  "contact_company",
+  "contact_email",
+  "contact_phone",
+  "offering_received",
+  "preliminary_ic_approval",
+  "loi_submitted",
+  "loi_executed",
+  "purchase_contract_executed",
+  "due_diligence_begins",
+  "due_diligence_complete",
+  "tenant_interview",
+  "final_ic_approval",
+  "remove_all_conditions",
+  "close_of_escrow",
+  "price",
+  "price_sf",
+  "cap_rate",
+  "other"
+ ],
+ "fields": [
+  {
+   "fieldname": "property",
+   "fieldtype": "Data",
+   "label": "Property"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "Zip Code"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Data",
+   "label": "Year Built"
+  },
+  {
+   "fieldname": "land_area",
+   "fieldtype": "Data",
+   "label": "Land Area"
+  },
+  {
+   "fieldname": "parking",
+   "fieldtype": "Data",
+   "label": "Parking"
+  },
+  {
+   "fieldname": "users",
+   "fieldtype": "Table",
+   "label": "Users",
+   "options": "Investment Log User"
+  },
+  {
+   "fieldname": "rba",
+   "fieldtype": "Float",
+   "label": "RBA",
+   "non_negative": 1,
+   "precision": "0"
+  },
+  {
+   "default": "1",
+   "fieldname": "floors",
+   "fieldtype": "Int",
+   "label": "floors"
+  },
+  {
+   "fieldname": "property_use",
+   "fieldtype": "Data",
+   "label": "Property Use"
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Data",
+   "label": "Tenant"
+  },
+  {
+   "fieldname": "credit",
+   "fieldtype": "Data",
+   "label": "Credit"
+  },
+  {
+   "fieldname": "lease_periods",
+   "fieldtype": "Int",
+   "label": "Lease Periods"
+  },
+  {
+   "fieldname": "lease_period_tf",
+   "fieldtype": "Select",
+   "label": "Lease Period TF",
+   "options": "months\nyears"
+  },
+  {
+   "fieldname": "lease_type",
+   "fieldtype": "Data",
+   "label": "Lease Type"
+  },
+  {
+   "fieldname": "opex",
+   "fieldtype": "Currency",
+   "label": "Opex",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "remaining_lease_term",
+   "fieldtype": "Int",
+   "label": "Remaining Lease Term"
+  },
+  {
+   "fieldname": "remain_lease_term_tf",
+   "fieldtype": "Select",
+   "label": "Remain Lease Term TF",
+   "options": "months\nyears"
+  },
+  {
+   "fieldname": "contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name"
+  },
+  {
+   "fieldname": "contact_company",
+   "fieldtype": "Data",
+   "label": "Contact Company"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone"
+  },
+  {
+   "fieldname": "offering_received",
+   "fieldtype": "Date",
+   "label": "Offering Received"
+  },
+  {
+   "fieldname": "preliminary_ic_approval",
+   "fieldtype": "Date",
+   "label": "Preliminary IC Approval"
+  },
+  {
+   "fieldname": "loi_submitted",
+   "fieldtype": "Date",
+   "label": "LOI Submitted"
+  },
+  {
+   "fieldname": "loi_executed",
+   "fieldtype": "Date",
+   "label": "LOI Executed"
+  },
+  {
+   "fieldname": "purchase_contract_executed",
+   "fieldtype": "Date",
+   "label": "Purchase Contract Executed"
+  },
+  {
+   "fieldname": "due_diligence_begins",
+   "fieldtype": "Date",
+   "label": "Due Diligence Begins"
+  },
+  {
+   "fieldname": "tenant_interview",
+   "fieldtype": "Date",
+   "label": "Tenant Interview"
+  },
+  {
+   "fieldname": "final_ic_approval",
+   "fieldtype": "Date",
+   "label": "Final IC Approval"
+  },
+  {
+   "fieldname": "remove_all_conditions",
+   "fieldtype": "Date",
+   "label": " Remove All Conditions"
+  },
+  {
+   "fieldname": "close_of_escrow",
+   "fieldtype": "Date",
+   "label": "Close of Escrow"
+  },
+  {
+   "fieldname": "construction",
+   "fieldtype": "Data",
+   "label": "Construction"
+  },
+  {
+   "fieldname": "due_diligence_complete",
+   "fieldtype": "Date",
+   "label": "Due Diligence Complete"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "price_sf",
+   "fieldtype": "Currency",
+   "label": "Price SF"
+  },
+  {
+   "fieldname": "cap_rate",
+   "fieldtype": "Percent",
+   "label": "Cap Rate"
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Small Text",
+   "label": "Other"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-30 16:21:52.427591",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Investment Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "property",
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,0 +1,76 @@
+{% from "frappe/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("Projects | Jmgind.com") }}
+{% endblock %}
+{% block header %}
+<h3 class="my-account-header"></h3>
+{% endblock %}
+{% block page_content %}
+<div class="row row-cards">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">{{_("My Projects") }}</h3>
+      </div>
+      <div class="list-group list-group-flush">
+         {% for doc in investments %}
+        <div class="list-group-item">
+          <div class="row align-items-center">
+            <div class="col text-truncate">
+              <a href="projects/{{ doc.name }}" class="text-reset d-block">{{ doc.project_name }}</a>
+            </div>
+                  <div class="col-xs-3 text-center">
+        {% if doc.percent_complete %}
+          {% set pill_class = "green" if doc.percent_complete | round == 100 else
+            "orange" %}
+          <div class="ellipsis">
+            <span class="indicator-pill {{ pill_class }} filterable ellipsis">
+              <span>{{ frappe.utils.cint(doc.percent_complete) }}
+                %</span>
+            </span>
+          </div>
+        {% else %}
+          <span class="indicator-pill {{ " red" if doc.status=="Open" else "darkgrey" }}">
+            {{ doc.status }}</span>
+        {% endif %}
+      </div>
+      {% if doc["_assign"] %}
+        {% set assigned_users = json.loads(doc["_assign"])%}
+        <div class="col-xs-2 project-users">
+          {% for user in assigned_users %}
+            {% set user_details = frappe
+              .db
+              .get_value("User", user, [
+                "full_name", "user_image"
+              ], as_dict = True) %}
+            {% if user_details.user_image %}
+              <span class="avatar avatar-small" style="width:32px; height:32px;" title="{{ user_details.full_name }}">
+                <img src="{{ user_details.user_image }}">
+              </span>
+            {% else %}
+              <span class="avatar avatar-small" style="width:32px; height:32px;" title="{{ user_details.full_name }}">
+                <div class='standard-image' style="background-color: #F5F4F4; color: #000;">
+                  {{ frappe.utils.get_abbr(user_details.full_name) }}
+                </div>
+              </span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="col-xs-3 text-right small text-muted project-modified-on">
+        {{ frappe.utils.pretty_date(doc.modified) }}
+      </div>
+
+          </div>
+        </div>
+          {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[]",
+ "creation": "2022-06-16 16:56:51.489676",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "check",
+ "idx": 0,
+ "label": "Activities",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tasks",
+   "link_count": 0,
+   "link_to": "Task",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-06-16 17:07:45.806252",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Activities",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [],
+ "title": "Activities"
+}

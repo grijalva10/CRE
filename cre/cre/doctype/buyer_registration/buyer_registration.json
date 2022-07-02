@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-27 16:30:20.528460",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "buyer",
+  "email",
+  "phone",
+  "company",
+  "industry_role",
+  "asset_class",
+  "desired_markets",
+  "asset_strategy",
+  "last_asset_acquired",
+  "equity",
+  "deadline",
+  "in_exchange",
+  "financing"
+ ],
+ "fields": [
+  {
+   "fieldname": "buyer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Buyer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "industry_role",
+   "fieldtype": "Select",
+   "label": "Industry Role",
+   "options": "Principal\nBroker\nThird-Party",
+   "reqd": 1
+  },
+  {
+   "fieldname": "asset_class",
+   "fieldtype": "Select",
+   "label": "Asset Class",
+   "options": "Multifamily\nMixed-Use\nNet-Leased\nRetail\nOffice\nMedical Office\nIndustrial\nSelf Storage\nHospitality\nLand",
+   "reqd": 1
+  },
+  {
+   "fieldname": "desired_markets",
+   "fieldtype": "Small Text",
+   "label": "Desired Markets"
+  },
+  {
+   "fieldname": "asset_strategy",
+   "fieldtype": "Select",
+   "label": "Asset Strategy",
+   "options": "Development/Redevelopment\nStabilized\nValue Add",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_asset_acquired",
+   "fieldtype": "Select",
+   "label": "Last Asset Acquired",
+   "options": "< 6 Month\n6 - 18 Months\n18 Months +\nThis is My First Acquisition",
+   "reqd": 1
+  },
+  {
+   "fieldname": "equity",
+   "fieldtype": "Currency",
+   "label": "Equity",
+   "non_negative": 1,
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "deadline",
+   "fieldtype": "Select",
+   "label": "Deadline",
+   "options": "< 3 Months\n3- 12 Months\n12 Months +\nI'm Just Researching",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "in_exchange",
+   "fieldtype": "Check",
+   "label": "In Exchange"
+  },
+  {
+   "fieldname": "financing",
+   "fieldtype": "Select",
+   "label": "Financing",
+   "options": "Acquisition\nRefinance\nBridge\nConstruction\nHard Money"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-27 16:37:13.935465",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Buyer Registration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
