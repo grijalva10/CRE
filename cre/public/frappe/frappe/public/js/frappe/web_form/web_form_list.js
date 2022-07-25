@@ -151,7 +151,7 @@ export default class WebFormList {
 
 				empty_state.innerHTML = `
 					<div class="text-center">
-						<div>
+						<div class="empty-img">
 							<img
 								src="/assets/frappe/images/ui-states/list-empty-state.svg"
 								alt="Generic Empty State"
@@ -183,7 +183,7 @@ export default class WebFormList {
 		th.appendChild(checkbox);
 		row.appendChild(th);
 
-		add_heading(row, __("Sr"));
+		add_heading(row, __("#"));
 		this.columns.forEach(col => {
 			add_heading(row, __(col.label));
 		});

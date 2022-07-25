@@ -1,16 +1,18 @@
-{% from "cre/templates/includes/avatar_macro.html" import avatar %}
+{% from "cre/templates/includes/avatar_macro.html" import menu_avatar %}
 
 {% macro render_icon(icon_name) %}
 
-<img src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">
+<!--<img style="filter: invert(94%) sepia(6%) saturate(22%) hue-rotate(277deg) brightness(105%) contrast(108%);" src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">-->
+<img style="filter: invert(); height: 20px;" src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">
+
 {% endmacro %}
 
 {% macro render_sidebar_item(item) %}
 
 {%- if item.group_title -%}
 <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false">
-    <span class="nav-link-icon d-md-none d-lg-inline-block">
+  <a class="nav-link dropdown-toggle text-white" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false">
+    <span class="nav-link-icon d-lg-inline-block">
       {% if item.icon %}
       {{ render_icon(item.icon) }}
       {% endif %}
@@ -34,9 +36,9 @@
 
 {% if item.type != 'input' %}
 {%- set item_route = item.route[1:] if item.route[0] == '/' else item.route -%}
-<li class="nav-item {{ 'active' if pathname == item_route else '' }}">
+<li class="nav-item {{ 'active' if pathname == item_route else '' }} text-center">
   <a class="nav-link {{ 'active' if pathname == item_route else '' }}" href="{{ item.route }}">
-    <span class="nav-link-icon d-md-none d-lg-inline-block">
+    <span class="nav-link-icon d-lg-inline-block">
       {% if item.icon %}
       {{ render_icon(item.icon) }}
       {% endif %}
@@ -85,6 +87,57 @@
 {% endif %}
 {% endmacro %}
 
+
+{% macro render_top_item(item) %}
+
+{%- if not item.parent_label -%}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle text-white" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false">
+    <span class="nav-link-icon d-lg-inline-block">
+      {% if item.icon %}
+      {{ render_icon(item.icon) }}
+      {% endif %}
+    </span>
+    <span class="nav-link-title">
+      {{ item.label }}
+    </span>
+  </a>
+  <div class="dropdown-menu" data-bs-popper="static">
+    {%- if item.child_items | len > 0 -%}
+
+    {% for dropdown_item in item.child_items -%}
+    {{ render_dropdown_item(dropdown_item) }}
+    {%- endfor %}
+
+    {%- endif -%}
+
+  </div>
+</li>
+
+
+{%- endif -%}
+
+{% endmacro %}
+
+{% macro render_dropdown_item(item) %}
+
+{%- set item_route = item.route[1:] if item.route[0] == '/' else item.route -%}
+
+<a class="dropdown-item {{ 'active' if pathname == item_route else '' }}" href="{{ item.route }}">{{ _(item.title or item.label) }}</a>
+
+{% endmacro %}
+
+{% macro render_top_items(items) %}
+{%- if items | len > 0 -%}
+<ul class="navbar-nav pt-lg-3 d-lg-none">
+  {% for item in items -%}
+  {{ render_top_item(item) }}
+  {%- endfor %}
+</ul>
+{%- endif -%}
+{% endmacro %}
+
+
 <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
@@ -95,8 +148,36 @@
         <!--<img src="./static/logo-white.svg" alt="Tabler" class="navbar-brand-image" width="110" height="32">-->
       </a>
     </h1>
+    {% if frappe.session.user != 'Guest' %}
+    <div class="navbar-nav flex-row d-lg-none">
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu" aria-expanded="false">
+          <!--<span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>-->
+          {{ menu_avatar(frappe.session.user) }}
+        </a>
+        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          {%- for child in post_login -%}
+          {%- if child.url -%}
+          <a class="dropdown-item" href="{{ child.url | abs_url }}" {% if child.open_in_new_tab %} target="_blank" {% endif %} rel="nofollow">{{ child.label }}</a>
+          {%- endif -%}
+          {%- endfor -%}
+
+          {% if not hide_login %}
+          <div class="dropdown-divider"></div>
+          <a class="nav-link btn-login-area" href="/login">{{ _("Login") }}</a>
+
+          {%- endif -%}
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
 
     <div id="navbar-menu" class="collapse navbar-collapse">
+      {% if top_bar_items -%}
+      {{ render_top_items(top_bar_items) }}
+      {%- endif %}
+      
       {{ render_sidebar_items(sidebar_items) }}
     </div>
   </div>

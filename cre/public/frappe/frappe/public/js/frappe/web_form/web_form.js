@@ -79,11 +79,11 @@ export default class WebForm extends frappe.ui.FieldGroup {
 		if (!me.is_multi_step_form) {
 			return;
 		}
-
+		
 		$('.web-form-footer').after(`
-			<div id="form-step-footer" class="text-right">
-				<button class="btn btn-default btn-previous btn-sm ml-2">${__("Previous")}</button>
-				<button class="btn btn-default btn-next btn-sm ml-2">${__("Next")}</button>
+			<div id="form-step-footer" class="btn-list justify-content-end">
+				<button class="btn btn-secondary btn-previous">${__("Previous")}</button>
+				<button class="btn btn-primary btn-next">${__("Next")}</button>
 			</div>
 		`);
 
@@ -148,7 +148,7 @@ export default class WebForm extends frappe.ui.FieldGroup {
 
 	add_button(name, type, action, wrapper_class=".web-form-actions") {
 		const button = document.createElement("button");
-		button.classList.add("btn", "btn-" + type, "btn-sm", "ml-2");
+		button.classList.add("btn", "btn-" + type, "ml-2", "py-1", "mx-1");
 		button.innerHTML = name;
 		button.onclick = action;
 		document.querySelector(wrapper_class).appendChild(button);

@@ -1,0 +1,19 @@
+{
+ "creation": "2022-07-24 16:11:47.218283",
+ "docstatus": 0,
+ "doctype": "Data Migration Plan",
+ "idx": 0,
+ "mappings": [
+  {
+   "enabled": 1,
+   "mapping": "Asset to Property"
+  }
+ ],
+ "modified": "2022-07-25 13:39:45.862493",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Crexi Sync",
+ "owner": "Administrator",
+ "plan_name": "Crexi Sync",
+ "preprocess_method": ""
+}

@@ -6,7 +6,18 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "property_types"
+  "investor",
+  "cash_to_close",
+  "purchase_price",
+  "property_types",
+  "ltv",
+  "interest_rate",
+  "amortization",
+  "prepayment_penalty_amount",
+  "financing_fee",
+  "loan_payment_monthly",
+  "ads",
+  "dev"
  ],
  "fields": [
   {
@@ -16,12 +27,75 @@
    "in_filter": 1,
    "in_standard_filter": 1,
    "label": "Property Types",
-   "options": "Investment Criteria Property Type"
+   "options": "Property Type Link"
+  },
+  {
+   "default": "500000",
+   "fieldname": "cash_to_close",
+   "fieldtype": "Currency",
+   "label": "Cash To Close"
+  },
+  {
+   "fieldname": "purchase_price",
+   "fieldtype": "Currency",
+   "label": "Purchase Price"
+  },
+  {
+   "default": "65",
+   "fieldname": "ltv",
+   "fieldtype": "Percent",
+   "label": "LTV"
+  },
+  {
+   "default": "5",
+   "fieldname": "interest_rate",
+   "fieldtype": "Float",
+   "label": "Interest Rate"
+  },
+  {
+   "default": "30",
+   "fieldname": "amortization",
+   "fieldtype": "Int",
+   "label": "Amortization"
+  },
+  {
+   "default": "0",
+   "fieldname": "prepayment_penalty_amount",
+   "fieldtype": "Currency",
+   "label": "prepayment_penalty_amount"
+  },
+  {
+   "fieldname": "financing_fee",
+   "fieldtype": "Percent",
+   "label": "Financing Fee"
+  },
+  {
+   "fieldname": "loan_payment_monthly",
+   "fieldtype": "Currency",
+   "label": "loan_payment_monthly",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ads",
+   "fieldtype": "Currency",
+   "label": "ADS"
+  },
+  {
+   "fieldname": "dev",
+   "fieldtype": "Long Text",
+   "label": "dev",
+   "options": "Python"
+  },
+  {
+   "fieldname": "investor",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor Account"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-03-21 17:21:31.743060",
+ "modified": "2022-07-08 16:09:08.462819",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Investment Criteria",

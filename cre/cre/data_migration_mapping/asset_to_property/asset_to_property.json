@@ -1,0 +1,25 @@
+{
+ "creation": "2022-07-24 16:15:41.500026",
+ "docstatus": 0,
+ "doctype": "Data Migration Mapping",
+ "fields": [
+  {
+   "is_child_table": 0,
+   "local_fieldname": "is_sold",
+   "remote_fieldname": "isSold"
+  }
+ ],
+ "idx": 0,
+ "local_doctype": "Property",
+ "local_primary_key": "crexi_id",
+ "mapping_name": "Asset to Property",
+ "mapping_type": "Pull",
+ "migration_id_field": "crexi_sync_id",
+ "modified": "2022-07-25 13:39:45.888298",
+ "modified_by": "Administrator",
+ "name": "Asset to Property",
+ "owner": "Administrator",
+ "page_length": 10,
+ "remote_objectname": "Asset",
+ "remote_primary_key": "id"
+}

@@ -1,0 +1,30 @@
+{% macro data_item(label, value, format, precision=2, label_2="") %}
+
+{% if value %}
+
+<dt class="col-5"><small>{{ label }}</small></dt>
+                                        
+{% if format == 'currency' %}
+<dd class="col-7">${{ frappe.utils.fmt_money(value,currency="") }}</dd>
+{% endif %}
+
+{% if format == 'number' %}
+<dd class="col-7">{{ frappe.utils.fmt_money(value, precision=precision, currency='') }} {{label_2}}</dd>
+
+{% endif %}
+
+{% if format == 'percent' %}
+
+
+<dd class="col-7">{{ frappe.utils.fmt_money(value, precision=precision, currency='')}}%</dd>
+
+{% endif %}
+
+{% if format == 'data' %}
+<dd class="col-7">{{ value }}</dd>
+
+{% endif %}
+
+{% endif %}
+
+{% endmacro %}

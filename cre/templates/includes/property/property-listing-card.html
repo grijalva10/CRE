@@ -1,0 +1,112 @@
+ <div class="col-sm-6 col-lg-4">
+     <a class="card card-link" href="/dashboard/property/{{ doc.name }}">
+         <div class="card card-sm">
+             <div class="card-header bg-dark text-white" style="padding:0.25rem;">
+                 <div class="col-auto align-items-center pr-0 px-1">
+                     
+                     {% if doc.property_type is defined and doc.property_type|length > 0 %}
+                     {% set list1 = doc.property_type.split(',') %}
+                     {% set type1 =  list1[0] | replace("[", "") %}
+                     {% set type1 =  type1 | replace("]", "") %}
+                     {% set type1 =  type1 | replace("'", "") %}
+                     
+                  
+                       <h6 class="mb-0 text-white">{{ type1 }} </h6>
+                     
+                     {% endif %}
+                   
+                 </div>
+                 <div class="col">
+                     <h6 class="mb-0 text-white"> Core-Plus</h6>
+                 </div>
+                 <div class="col-auto">
+                     <h6 class="mb-0 text-green">{{ doc.status }}</h6>
+                 </div>
+
+             </div>
+             <div class="embed-responsive embed-responsive-16by9">
+                 <a href="/dashboard/property/{{ doc.name }}" class="d-block"><img src="{{ doc.image }}" class="card-img-top embed-responsive-item" style="object-fit: cover;"></a>
+             </div>
+             <div class="card-body">
+                 <div class="row">
+                     <div class="col">
+                         <h5 class="mb-0 text-orange"> {{doc.city}}, {{doc.state}}</h5>
+                     </div>
+                     <!--<div class="col-auto">-->
+                     <!--    <div data-bs-toggle="tooltip" data-bs-placement="bottom" title="Save Property">-->
+                     <!--        <a href="#" class="btn d-none d-sm-inline-block btn-icon like-icon  px-1">-->
+                     <!--            <button class="switch-icon property-like-button" data-bs-toggle="switch-icon">-->
+                     <!--                <span class="switch-icon-a">-->
+                                         <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                     <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star p-0" style="display:inline;" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">-->
+                     <!--                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>-->
+                     <!--                        <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>-->
+                     <!--                    </svg>-->
+                                         <!-- SVG icon code -->
+                     <!--                </span>-->
+                     <!--                <span class="switch-icon-b text-yellow">-->
+                                         <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                     <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star icon-filled" style="display:inline;" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">-->
+                     <!--                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>-->
+                     <!--                        <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>-->
+                     <!--                    </svg>-->
+                                         <!-- SVG icon code with class="icon-filled" -->
+                     <!--                </span>-->
+                     <!--            </button>-->
+
+                     <!--        </a>-->
+                     <!--        <a href="#" class="btn d-sm-none btn-icon like-icon px-1">-->
+                     <!--            <button class="switch-icon property-like-button" data-bs-toggle="switch-icon">-->
+                     <!--                <span class="switch-icon-a">-->
+                                         <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                     <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star p-0" style="display:inline;" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">-->
+                     <!--                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>-->
+                     <!--                        <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>-->
+                     <!--                    </svg>-->
+                                         <!-- SVG icon code -->
+                     <!--                </span>-->
+                     <!--                <span class="switch-icon-b text-yellow">-->
+                                         <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                     <!--                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star icon-filled" style="display:inline;" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">-->
+                     <!--                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>-->
+                     <!--                        <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"></path>-->
+                     <!--                    </svg>-->
+                                         <!-- SVG icon code with class="icon-filled" -->
+                     <!--                </span>-->
+                     <!--            </button>-->
+
+                     <!--        </a>-->
+                     <!--    </div>-->
+                     <!--</div>-->
+
+                     <h2 class="mb-3 text-truncate">{{ doc.property_name }}</h2>
+                     <div class="text-muted mb-3" style="-webkit-line-clamp: 3; overflow : hidden; text-overflow: ellipsis; display: -webkit-box;-webkit-box-orient: vertical;">
+                         {{ doc.tag_line| title }}
+                     </div>
+                     {% set highlights = frappe.get_all('Property Highlights', filters={'parent': doc.name, 'parenttype': 'Property'}, fields=['highlight'], page_length=3) %}
+
+                     {% if highlights %}
+                     <h4 class="mb-2">Investment Highlights</h4>
+                     {% endif %}
+
+                     {% for highlight in highlights %}
+
+                     <div class="divide-y-2 mt-2" style="border-top: 1px solid rgba(98,105,118,.16) !important; padding-top:.5rem !important;">
+                         <div>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="icon text-green" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                 <path d="M5 12l5 5l10 -10"></path>
+                             </svg>
+                             {{ highlight.highlight }}
+                         </div>
+
+                     </div>
+                     {% endfor %}
+                 </div>
+             </div>
+     </a>
+ </div>
+    </a>
+ </div>
+
+ 

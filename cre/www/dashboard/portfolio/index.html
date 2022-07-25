@@ -1,0 +1,29 @@
+{% from "cre/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("My Portfolio") }}
+{% endblock %}
+{% block header %}
+<h3>Portfolio</h3>
+{% endblock %}
+
+{% block page_content %}
+<div class="card">
+                  <div class="empty">
+                    <div class="empty-img"><img src="/assets/cre/images/undraw_investment_re_rpk5.svg" alt="" height="128">
+                    </div>
+                    <p class="empty-title">You have no investments.</p>
+                    <p class="empty-subtitle text-muted">
+                      Review current offerings or <a href="#">learn more about real estate investing</a>
+                    </p>
+                    <div class="empty-action">
+                      <a href="./." class="btn btn-primary">
+                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="10" cy="10" r="7"></circle><line x1="21" y1="21" x2="15" y2="15"></line></svg>
+                        Review current offerings
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+{% endblock %}

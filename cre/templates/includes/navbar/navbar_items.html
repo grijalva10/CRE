@@ -1,3 +1,10 @@
+{% macro render_icon(icon_name) %}
+
+<!--<img style="filter: invert(94%) sepia(6%) saturate(22%) hue-rotate(277deg) brightness(105%) contrast(108%);" src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">-->
+<img style="filter: invert(); height: 20px;" src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">
+
+{% endmacro %}
+
 {% macro render_item(item, submenu=False, parent=False) %}
 {% if item.child_items %}
 
@@ -60,6 +67,7 @@
 {% endif %}
 {% endmacro %}
 
+{% if not sidebar_items %}
 {% if top_bar_items -%}
 <ul class="navbar-nav">
 	{%- for item in top_bar_items -%}
@@ -69,6 +77,7 @@
 	{%- endfor %}
 </ul>
 {%- endif %}
+{% endif %}
 <ul class="navbar-nav flex-row order-md-last">
 	{% include "templates/includes/navbar/navbar_search.html" %}
 	{%- for item in top_bar_items -%}
@@ -87,7 +96,17 @@
 		<li class="nav-item">
 			{% if item.type != 'input' %}
 			<a href="{{ item.route }}" class="nav-link {{ 'text-dark' if pathname==item.route else 'text-muted'}}" {% if item.target %}target="{{ item.target }}" {% endif %}>
-				{{ _(item.title or item.label) }}
+				<span class="nav-link-icon d-md-none d-lg-inline-block">
+					{% if item.icon %}
+					{{ render_icon(item.icon) }}
+					{% endif %}
+				</span>
+				<span class="nav-link-title">
+					{{ _(item.title or item.label) }}
+
+
+				</span>
+
 			</a>
 			{% endif %}
 		</li>
@@ -99,7 +118,7 @@
 	{% include "templates/includes/navbar/navbar_login.html" %}
 
 </ul>
-{%- if call_to_action -%}
+{%- if call_to_action and not show_sidebar -%}
 <a class="btn btn-primary navbar-cta" href="{{ call_to_action_url | abs_url }}">
 	{{ call_to_action }}
 </a>

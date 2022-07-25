@@ -7,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "use_salutation",
-  "use_gender"
+  "use_gender",
+  "log"
  ],
  "fields": [
   {
@@ -20,12 +21,17 @@
    "fieldname": "use_gender",
    "fieldtype": "Data",
    "label": "Use Gender"
+  },
+  {
+   "fieldname": "log",
+   "fieldtype": "Long Text",
+   "label": "log"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-05-20 14:40:16.173290",
+ "modified": "2022-07-22 12:03:41.004290",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "CRE Settings",

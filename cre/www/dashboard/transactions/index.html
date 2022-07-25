@@ -1,0 +1,164 @@
+{% from "cre/templates/includes/avatar_macro.html" import avatar %}
+{% from "cre/templates/includes/empty_list_macro.html" import empty_list %}
+{% extends "templates/page.html" %}
+{% block title %}
+{{ _("My Portfolio") }}
+{% endblock %}
+{% block header %}
+yoo
+{% endblock %}
+
+{% block page_actions %}
+<div class="col-12 col-md-auto ms-auto d-print-none">
+  <div class="btn-list">
+    <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+      <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="12" cy="12" r="9"></circle>
+        <line x1="12" y1="17" x2="12" y2="17.01"></line>
+        <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
+      </svg>
+      Get Help
+    </a>
+    <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+      <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="12" cy="12" r="9"></circle>
+        <line x1="12" y1="17" x2="12" y2="17.01"></line>
+        <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
+      </svg>
+      Help
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+{% block page_content %}
+
+
+<div class="card">
+
+  <div class="card-header">
+    <h3 class="card-title"></h3>
+    <div class="card-actions">
+      {{ frappe.render_template('templates/includes/ui/sort_selector.html', {}) }}
+      <!--<div class="input-group">-->
+      <!--  <button data-bs-toggle="dropdown" type="button" class="btn dropdown-toggle" aria-expanded="false">Sort</button>-->
+      <!--  <div class="dropdown-menu dropdown-menu-end" style="">-->
+      <!--    <a class="dropdown-item" href="#">-->
+      <!--      Action-->
+      <!--    </a>-->
+      <!--    <a class="dropdown-item" href="#">-->
+      <!--      Another action-->
+      <!--    </a>-->
+      <!--  </div>-->
+      <!--</div>-->
+    </div>
+  </div>
+  {% if not doc_list %}
+  {{ empty_list(title="You have no offers.",subtitle="Review current offerings and submit an offer through the marketplace or with your advisor.",button_text='Marketplace',button_url='/dashboard/properties/all') }}
+
+  {% else %}
+
+  <div class="list-group list-group-flush">
+
+    {% for doc in doc_list %}
+
+    <div class="list-group-item">
+      <div class="row align-items-center">
+        <div class="col">
+          <h3><a href="/dashboard/transactions/{{doc.name}}" class="text-reset d-block">{{doc.property_name }}</a></h3>
+        </div>
+        <div class="col">
+
+          {% if doc.status == 'Pending' %}{% set status_color = 'blue' %}{% endif %}
+
+          {% if doc.status == 'Sent' %}{% set status_color = 'green' %}{% endif %}
+
+          {% if doc.status == 'In Review' %}{% set status_color = 'orange' %}{% endif %}
+
+          {% if doc.status == 'Accepted' %}{% set status_color = 'green' %} {% endif %}
+
+          {% if doc.status == 'Counteroffer' %}{% set status_color = 'azure' %}{% endif %}
+
+          {% if doc.status == 'Rejected' %}{% set status_color = 'red' %}{% endif %}
+
+
+
+          <span class="status status-{{ status_color }}">
+            <span class="status-dot status-dot-animated"></span>
+            {{doc.status}}
+          </span>
+        </div>
+        <div class="col"> <small>{{ frappe.utils.pretty_date(doc.modified) }}</small></div>
+        <div class="col-auto">
+          <div class="btn-list">
+            <div data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print">
+              <a href="/printview?doctype=Offer&name={{ doc.name }}&format=Standard" class="btn d-none d-sm-inline-block btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2"></path>
+                  <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4"></path>
+                  <rect x="7" y="13" width="10" height="8" rx="2"></rect>
+                </svg>
+              </a>
+              <a href="/printview?doctype=Offer&name={{ doc.name }}&format=Standard" class="btn d-sm-none btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-printer" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2"></path>
+                  <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4"></path>
+                  <rect x="7" y="13" width="10" height="8" rx="2"></rect>
+                </svg> </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+  {% endif %}
+
+
+  <div class="card-footer d-flex align-items-center">
+    <ul class="pagination m-0 mx-auto">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <!-- Download SVG icon from http://tabler-icons.io/i/chevron-left -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline points="15 6 9 12 15 18"></polyline>
+          </svg>
+          Previous
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">
+          Next
+          <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <polyline points="9 6 15 12 9 18"></polyline>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  frappe.ready(() => {
+    
+    // let sort_selector = new frappe.ui.SortSelector();
+    
+
+  });
+</script>
+{% endblock %}

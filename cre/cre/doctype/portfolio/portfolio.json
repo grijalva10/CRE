@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-08 16:23:27.041324",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "investor",
+  "portfolio_name",
+  "type",
+  "asset_category",
+  "ownership_type",
+  "primary_usage_type",
+  "secondary_usage_type",
+  "market_value",
+  "currency"
+ ],
+ "fields": [
+  {
+   "fieldname": "portfolio_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Portfolio Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nAggressive\nDefensive\nIncome\nSpeculative\nHybrid"
+  },
+  {
+   "default": "Real Estate",
+   "fieldname": "asset_category",
+   "fieldtype": "Data",
+   "label": "Asset Category"
+  },
+  {
+   "fieldname": "ownership_type",
+   "fieldtype": "Select",
+   "label": "Ownership Type",
+   "options": "\nSole-Ownership\nTenant-In-Common\nDelaware Statutory Trust\nReal Estate Investment Trust\nReal Estate Fund"
+  },
+  {
+   "fieldname": "primary_usage_type",
+   "fieldtype": "Data",
+   "label": "Primary Usage Type"
+  },
+  {
+   "fieldname": "secondary_usage_type",
+   "fieldtype": "Data",
+   "label": "Secondary Usage Type"
+  },
+  {
+   "fieldname": "market_value",
+   "fieldtype": "Data",
+   "label": "Market Value"
+  },
+  {
+   "default": "USD",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "investor",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor Account"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Property",
+   "link_fieldname": "portfolio"
+  },
+  {
+   "link_doctype": "Portfolio Strategy",
+   "link_fieldname": "portfolio"
+  }
+ ],
+ "modified": "2022-07-13 12:44:32.339830",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Portfolio",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

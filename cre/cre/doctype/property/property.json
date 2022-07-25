@@ -12,14 +12,33 @@
  "field_order": [
   "overview_tab_tab",
   "property_name",
-  "image",
-  "type",
+  "investment_type",
+  "occupancy",
+  "property_types",
+  "property_type",
+  "subtypes",
+  "subtype",
+  "tenancy",
+  "year_built",
+  "investment_description",
+  "marketing_description",
   "section_break_5",
   "address",
   "city",
   "column_break_8",
   "state",
   "zip_code",
+  "tab_break_76",
+  "lease_type",
+  "lease_term",
+  "tenant_credit",
+  "column_break_16",
+  "lease_expiration",
+  "lease_commencement",
+  "number_of_tenants",
+  "tab_break_77",
+  "class",
+  "opportunity_zone",
   "section_break_11",
   "units",
   "rba",
@@ -28,6 +47,11 @@
   "apn",
   "land_area",
   "tab_break_1",
+  "image",
+  "has_flyer",
+  "has_om",
+  "is_sold",
+  "is_paid",
   "section_break_3",
   "status",
   "commission",
@@ -36,50 +60,28 @@
   "column_break_14",
   "start_date",
   "expiration_date",
+  "last_updated_on",
   "section_break_9",
   "sale_type",
   "price",
   "cap_rate",
   "noi",
   "column_break_20",
-  "sale_notes",
-  "tab_break_17",
-  "documents",
-  "tab_break_19",
-  "financial_type",
-  "year",
-  "year_payable",
-  "column_break_18",
-  "gross_rental_income",
-  "other_income",
-  "vacancy_loss",
-  "effective_gross_income",
-  "taxes",
-  "operating_expenses",
-  "total_expenses",
-  "net_operating_income",
-  "column_break_27",
-  "gross_rental_income_sf",
-  "other_income_sf",
-  "vacancy_loss_sf",
-  "effective_gross_income_sf",
-  "taxes_sf",
-  "operating_expenses_sf",
-  "total_expenses_sf",
-  "net_operating_income_sf",
-  "tab_break_41",
-  "tenants",
+  "tag_line",
   "tab_break_53",
   "section_break_39",
   "property_highlights",
+  "card_highlight",
+  "price_sf",
+  "gallery",
+  "detail_title",
+  "broker",
+  "tab_break_78",
   "route",
   "published",
-  "source",
-  "agent",
-  "files",
-  "images",
-  "highlights",
-  "card_highlight"
+  "crexi_id",
+  "portfolio",
+  "investor"
  ],
  "fields": [
   {
@@ -155,142 +157,6 @@
    "label": "NOI"
   },
   {
-   "fieldname": "sale_notes",
-   "fieldtype": "Text",
-   "label": "Sale Notes"
-  },
-  {
-   "fieldname": "tab_break_17",
-   "fieldtype": "Tab Break",
-   "label": "Documents"
-  },
-  {
-   "fieldname": "documents",
-   "fieldtype": "Table",
-   "label": "Documents",
-   "options": "Deal Room Documents"
-  },
-  {
-   "fieldname": "tab_break_19",
-   "fieldtype": "Tab Break",
-   "label": "Financials"
-  },
-  {
-   "fieldname": "financial_type",
-   "fieldtype": "Select",
-   "label": "Financial Type",
-   "options": "Actual\nProforma"
-  },
-  {
-   "fieldname": "year",
-   "fieldtype": "Int",
-   "label": "Year"
-  },
-  {
-   "fieldname": "year_payable",
-   "fieldtype": "Int",
-   "label": "Year Payable"
-  },
-  {
-   "fieldname": "column_break_18",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "gross_rental_income",
-   "fieldtype": "Currency",
-   "label": "Gross Rental Income"
-  },
-  {
-   "fieldname": "other_income",
-   "fieldtype": "Currency",
-   "label": "Other Income"
-  },
-  {
-   "fieldname": "vacancy_loss",
-   "fieldtype": "Currency",
-   "label": "Vacancy Loss"
-  },
-  {
-   "fieldname": "effective_gross_income",
-   "fieldtype": "Currency",
-   "label": "Effective Gross Income"
-  },
-  {
-   "fieldname": "taxes",
-   "fieldtype": "Currency",
-   "label": "Taxes"
-  },
-  {
-   "fieldname": "operating_expenses",
-   "fieldtype": "Currency",
-   "label": "Operating Expenses"
-  },
-  {
-   "fieldname": "total_expenses",
-   "fieldtype": "Currency",
-   "label": "Total Expenses"
-  },
-  {
-   "fieldname": "net_operating_income",
-   "fieldtype": "Currency",
-   "label": "Net Operating Income"
-  },
-  {
-   "fieldname": "column_break_27",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "gross_rental_income_sf",
-   "fieldtype": "Currency",
-   "label": "Gross Rental Income SF"
-  },
-  {
-   "fieldname": "other_income_sf",
-   "fieldtype": "Currency",
-   "label": "Other Income SF"
-  },
-  {
-   "fieldname": "vacancy_loss_sf",
-   "fieldtype": "Currency",
-   "label": "Vacancy Loss SF"
-  },
-  {
-   "fieldname": "effective_gross_income_sf",
-   "fieldtype": "Currency",
-   "label": "Effective Gross Income SF"
-  },
-  {
-   "fieldname": "taxes_sf",
-   "fieldtype": "Currency",
-   "label": "Taxes SF"
-  },
-  {
-   "fieldname": "operating_expenses_sf",
-   "fieldtype": "Currency",
-   "label": "Operating Expenses SF"
-  },
-  {
-   "fieldname": "total_expenses_sf",
-   "fieldtype": "Currency",
-   "label": "Total Expenses SF"
-  },
-  {
-   "fieldname": "net_operating_income_sf",
-   "fieldtype": "Currency",
-   "label": "Net Operating Income SF"
-  },
-  {
-   "fieldname": "tab_break_41",
-   "fieldtype": "Tab Break",
-   "label": "Tenants"
-  },
-  {
-   "fieldname": "tenants",
-   "fieldtype": "Table",
-   "label": "Tenants",
-   "options": "Tenants"
-  },
-  {
    "fieldname": "section_break_39",
    "fieldtype": "Section Break"
   },
@@ -318,31 +184,6 @@
    "label": "image"
   },
   {
-   "fieldname": "source",
-   "fieldtype": "Data",
-   "label": "source"
-  },
-  {
-   "fieldname": "agent",
-   "fieldtype": "Data",
-   "label": "agent"
-  },
-  {
-   "fieldname": "files",
-   "fieldtype": "Long Text",
-   "label": "files"
-  },
-  {
-   "fieldname": "images",
-   "fieldtype": "Long Text",
-   "label": "images"
-  },
-  {
-   "fieldname": "highlights",
-   "fieldtype": "Long Text",
-   "label": "Highlights"
-  },
-  {
    "fieldname": "address",
    "fieldtype": "Data",
    "label": "Address"
@@ -351,17 +192,6 @@
    "fieldname": "zip_code",
    "fieldtype": "Data",
    "label": "Zip Code"
-  },
-  {
-   "fieldname": "type",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Type",
-   "options": "Property Type"
   },
   {
    "fetch_from": "property.city",
@@ -425,7 +255,7 @@
   {
    "fieldname": "overview_tab_tab",
    "fieldtype": "Tab Break",
-   "label": "Overview"
+   "label": "Investment"
   },
   {
    "fieldname": "column_break_14",
@@ -441,6 +271,7 @@
    "label": "Marketing"
   },
   {
+   "collapsible": 1,
    "fieldname": "section_break_5",
    "fieldtype": "Section Break",
    "label": "Address"
@@ -468,12 +299,207 @@
    "fieldname": "apn",
    "fieldtype": "Data",
    "label": "APN"
+  },
+  {
+   "fieldname": "price_sf",
+   "fieldtype": "Currency",
+   "label": "price_sf"
+  },
+  {
+   "fieldname": "gallery",
+   "fieldtype": "Table",
+   "label": "Gallery",
+   "options": "Property Gallery"
+  },
+  {
+   "fieldname": "tag_line",
+   "fieldtype": "Small Text",
+   "label": "Tag Line"
+  },
+  {
+   "fieldname": "detail_title",
+   "fieldtype": "Data",
+   "label": "Detail Title"
+  },
+  {
+   "fieldname": "broker",
+   "fieldtype": "Link",
+   "label": "Broker",
+   "options": "Broker"
+  },
+  {
+   "fieldname": "tab_break_76",
+   "fieldtype": "Tab Break",
+   "label": "Business"
+  },
+  {
+   "fieldname": "tab_break_77",
+   "fieldtype": "Tab Break",
+   "label": "Property"
+  },
+  {
+   "fieldname": "tab_break_78",
+   "fieldtype": "Tab Break",
+   "label": "Admin"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_flyer",
+   "fieldtype": "Check",
+   "label": "Has Flyer"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_om",
+   "fieldtype": "Check",
+   "label": "Has OM"
+  },
+  {
+   "default": "0",
+   "fieldname": "opportunity_zone",
+   "fieldtype": "Check",
+   "label": "Opportunity Zone"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_sold",
+   "fieldtype": "Check",
+   "label": "Is Sold"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_paid",
+   "fieldtype": "Check",
+   "label": "Is Paid"
+  },
+  {
+   "fieldname": "crexi_id",
+   "fieldtype": "Data",
+   "label": "CREXI ID"
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Data",
+   "label": "Class"
+  },
+  {
+   "fieldname": "investment_description",
+   "fieldtype": "HTML Editor",
+   "label": "Investment Description"
+  },
+  {
+   "fieldname": "marketing_description",
+   "fieldtype": "HTML Editor",
+   "label": "Marketing Description"
+  },
+  {
+   "fieldname": "last_updated_on",
+   "fieldtype": "Datetime",
+   "label": "Last Updated On"
+  },
+  {
+   "fieldname": "lease_type",
+   "fieldtype": "Data",
+   "label": "Lease Type"
+  },
+  {
+   "fieldname": "lease_term",
+   "fieldtype": "Data",
+   "label": "Lease Term"
+  },
+  {
+   "fieldname": "tenant_credit",
+   "fieldtype": "Data",
+   "label": "Tenant Credit"
+  },
+  {
+   "fieldname": "lease_commencement",
+   "fieldtype": "Date",
+   "label": "Lease Commencement"
+  },
+  {
+   "fieldname": "lease_expiration",
+   "fieldtype": "Date",
+   "label": "Lease Expiration"
+  },
+  {
+   "fieldname": "number_of_tenants",
+   "fieldtype": "Float",
+   "label": "Number of Tenants",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "occupancy",
+   "fieldtype": "Percent",
+   "label": "Occupancy"
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Data",
+   "label": "Property Type"
+  },
+  {
+   "fieldname": "subtype",
+   "fieldtype": "Data",
+   "label": "Subtype"
+  },
+  {
+   "fieldname": "tenancy",
+   "fieldtype": "Data",
+   "label": "Tenancy"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Data",
+   "label": "Year Built"
+  },
+  {
+   "fieldname": "investment_type",
+   "fieldtype": "Data",
+   "label": "Investment Type"
+  },
+  {
+   "fieldname": "property_types",
+   "fieldtype": "Table MultiSelect",
+   "label": "Property Types",
+   "options": "Property Type Link"
+  },
+  {
+   "fieldname": "subtypes",
+   "fieldtype": "Table MultiSelect",
+   "label": "Subtypes",
+   "options": "Property Type Link"
+  },
+  {
+   "fieldname": "portfolio",
+   "fieldtype": "Link",
+   "label": "Portfolio",
+   "options": "Portfolio"
+  },
+  {
+   "fieldname": "investor",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor Account"
   }
  ],
  "image_field": "image",
  "is_published_field": "published",
- "links": [],
- "modified": "2022-06-21 10:54:04.849639",
+ "links": [
+  {
+   "link_doctype": "Financial",
+   "link_fieldname": "property"
+  },
+  {
+   "link_doctype": "Valuation",
+   "link_fieldname": "property"
+  }
+ ],
+ "modified": "2022-07-19 12:47:00.810599",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property",
@@ -500,6 +526,16 @@
    "report": 1,
    "role": "Guest",
    "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Investor",
+   "share": 1,
+   "write": 1
   }
  ],
  "route": "properties",

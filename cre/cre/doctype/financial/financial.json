@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2022-07-06 13:54:54.268390",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "financial_type",
+  "year",
+  "year_payable",
+  "gross_rental_income",
+  "other_income",
+  "vacancy_loss",
+  "effective_gross_income",
+  "taxes",
+  "operating_expenses",
+  "total_expenses",
+  "net_operating_income",
+  "property"
+ ],
+ "fields": [
+  {
+   "fieldname": "financial_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Financial Type",
+   "options": "Actual\nProforma"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year"
+  },
+  {
+   "fieldname": "year_payable",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year Payable"
+  },
+  {
+   "fieldname": "gross_rental_income",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross Rental Income"
+  },
+  {
+   "fieldname": "other_income",
+   "fieldtype": "Currency",
+   "label": "Other Income"
+  },
+  {
+   "fieldname": "vacancy_loss",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Vacancy Loss"
+  },
+  {
+   "fieldname": "effective_gross_income",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Effective Gross Income"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "operating_expenses",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Operating Expenses"
+  },
+  {
+   "fieldname": "total_expenses",
+   "fieldtype": "Currency",
+   "in_standard_filter": 1,
+   "label": "Total Expenses"
+  },
+  {
+   "fieldname": "net_operating_income",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Operating Income"
+  },
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "label": "Property",
+   "options": "Property"
+  }
+ ],
+ "links": [],
+ "modified": "2022-07-06 13:55:59.760522",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Financial",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

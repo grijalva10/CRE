@@ -18,6 +18,7 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/cre/css/erpnext.css"
+web_include_css = "erpnext-web.bundle.css"
 # web_include_js = ["/assets/cre/js/cre-web.bundle.js"]
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -190,11 +191,13 @@ console = ["cre.cre.console.get_leaderboards","cre.cre.console.get_leads_config"
 # ]
 
 website_route_rules = [
-    {"from_route": "/dashboard/properties", "to_route": "Property"},
+    {"from_route": "/dashboard/properties", "to_route": "/dashboard/properties/all"},
+    {"from_route": "/dashboard/property/<name>", "to_route": "property"},
     {"from_route": "/dashboard", "to_route": "/dashboard/home"},
     {"from_route": "/dashboard/project", "to_route": "Project"},
     {"from_route": "/dashboard/profile", "to_route": "me"},
     {"from_route": "/dashboard/investments/<name>", "to_route": "investment"},
+    {"from_route": "/dashboard/transactions/<name>", "to_route": "transaction"}
     # {"from_route": "/dashboard/notifications", "to_route": "Notification Log"}
     # {"from_route": "/dashboard/project", "to_route": "Project"}
     # {"from_route": "/projects/<name>", "to_route": "project"},
@@ -207,16 +210,20 @@ extend_website_page_controller_context = {
 }
 
 portal_menu_items = [
-    {"title": "Dashboard", "route": "/dashboard", "role": "Customer", "icon": "home"},
-    {"title": "Marketplace", "route": "/dashboard/properties/all", "role": "Customer", "icon": "trending-up"},
-    {"title": "Investments", "route": "/dashboard/investments", "role": "Customer", "icon": "trending-up"},
-    {"title": "Offers", "route": "/dashboard", "role": "Customer", "icon": "license"},
-    {"title": "Transactions", "route": "/dashboard/documents", "role": "Customer", "icon": "folder"},
-    {"title": "Files", "route": "/dashboard/files", "role": "Customer"},
-    {"group_title": "ACCOUNT", "role": "Customer", "group_items": 
-        [{"title": "Account Settings", "route": "/dashboard/project", "role": "Customer"},
-        {"title": "Notification Settings", "route": "/dashboard/documents", "role": "Customer"},
-        {"title": "Messages", "route": "/dashboard/files", "role": "Customer"}]
+    {"title": "Dashboard", "route": "/dashboard", "role": "Investor", "icon": "gauge"},
+    {"title": "Marketplace", "route": "/dashboard/properties/all", "role": "Investor", "icon": "target"},
+    {"title": "Offers", "route": "/dashboard/offers", "role": "Investor", "icon": "target"},
+    {"title": "Transactions", "route": "/dashboard/transactions", "role": "Investor", "icon": "checks"},
+    {"title": "Portfolio", "route": "/dashboard/portfolio", "role": "Investor", "icon": "stack-2"},
+    
+    {"title": "Documents", "route": "/dashboard/documents", "role": "Investor", "icon": "files"},
+    {"title": "Messages", "route": "/dashboard/messages", "role": "Investor", "icon": "message"},
+    {"group_title": "Account", "role": "Investor","label": "Account", "icon": "user", "group_items": 
+        [
+            {"title": "Account Settings", "route": "/dashboard/profile", "role": "Investor"},
+            {"title": "Notification Settings", "route": "/dashboard/documents", "role": "Investor"},
+            {"title": "Investments", "route": "/dashboard/investments", "role": "Investor", "icon": "trending-up"}
+        ]
         
     },
 ]

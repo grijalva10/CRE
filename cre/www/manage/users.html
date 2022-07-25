@@ -1,0 +1,81 @@
+{% from "cre/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+
+
+{% block title %}
+{{ _("My Profile") }}
+{% endblock %}
+
+{% block header %}
+<h3>Welcome Back {{current_user.first_name }}</h3>
+<p class="mb-1 text-muted">Member since {{ frappe.format_date(current_user.creation) }}</p>
+{% endblock %}
+
+{% block page_content %}
+
+
+<div class="row row-cards jmg-content">
+    <div class="align-items-start">
+        <div class="card">
+            <table class="templates table table-vcenter card-table" data-path="/">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Modified</th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="template-row" data-type="template" data-uid="tpl_ryxdR2gKTQ4QNRrc6b">
+                        <td>
+                            <a class="name link-secondary link-with-icon" title="Unnamed Template" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/edit"><i class="fas fa-file-code type-icon" style="color: #4f80ea;"></i>
+                                <ol aria-label="breadcrumbs" class="breadcrumb breadcrumb-arrows align-items-center">
+                                    <li class="breadcrumb-item">
+                                        tpl_ryxdR2gKTQ4QNRrc6b
+                                    </li>
+                                </ol>
+                            </a>
+                        </td>
+                        <td class="nowrap"><span title="" data-toggle="tooltip" data-original-title="12:33:38 pm, Jul 11, 2022">Jul 11, 2022</span></td>
+                        <td class="actions">
+                            <div class="dropdown dropleft">
+                                <a class="btn btn-icon" data-toggle="dropdown">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z"></path>
+                                        <circle cx="5" cy="12" r="1"></circle>
+                                        <circle cx="12" cy="12" r="1"></circle>
+                                        <circle cx="19" cy="12" r="1"></circle>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-item flex-column align-items-end copy-record-id">
+                                        <input class="form-control" name="record_id" readonly="" type="text" value="tpl_ryxdR2gKTQ4QNRrc6b">
+                                        <a class="link-secondary copy-input-text small pt-2 pb-1" href="#">Copy ID to clipboard</a>
+                                    </div>
+                                    <div class="dropdown-divider mt-0"></div>
+                                    <a class="dropdown-item" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/edit">Edit</a>
+                                    <a class="dropdown-item" rel="nofollow" data-method="post" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/copy">Duplicate</a>
+                                    <a class="rename-btn dropdown-item" data-target="#rename-modal" data-toggle="modal" href="#">Rename</a>
+                                    <a class="dropdown-item" rel="nofollow" data-method="put" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/toggle_lock">Lock</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/submissions">Submissions</a>
+                                    <a target="_blank" rel="noopener noreferrer" class="dropdown-item" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/form">Web Form</a>
+                                    <a class="json-schema-btn dropdown-item" data-schema-url="https://app.docspring.com/api/v1/templates/tpl_ryxdR2gKTQ4QNRrc6b/schema" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/json_schema_modal">JSON Schema</a>
+                                    <a class="code-example-btn dropdown-item" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b/curl_example?download_script=true">cURL Example</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a data-confirm="Are you sure you want to delete this template?" class="text-red dropdown-item" rel="nofollow" data-method="delete" href="/templates/tpl_ryxdR2gKTQ4QNRrc6b">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% from "cre/templates/includes/avatar_macro.html" import avatar %}
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("My Profile") }}
+{% endblock %}
+{% block header %}
+<h3>Welcome Back {{current_user.first_name }}</h3>
+<p class="mb-1 text-muted">Member since {{ frappe.format_date(current_user.creation) }}</p>
+
+{% endblock %}
+{% block page_content %}
+<div class="row row-cards">
+    <div class="col-12">
+        <div class="row row-cards">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Personal</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-auto">
+                                {{avatar(current_user.name)}}
+                            </div>
+                            <div class="col">
+                                <p class="mb-1 font-weight-medium">{{current_user.full_name }} <span class="badge bg-blue">Pro</span></p>
+                                <p class="mb-1 text-muted">Newport Beach, CA</p>
+                                <div><span class="badge bg-secondary-lt">Investor</span></div>
+                            </div>
+                            <div class="col-auto"><a href="/update-profile?name={{ user }}">Edit</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Account</h3>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col text-truncate">
+                                    <a href="#" class="text-reset d-block">Password</a>
+                                    <div class="d-block text-muted text-truncate mt-n1">Change your password</div>
+                                </div>
+                                <div class="col-auto"><a href="/update-password">Edit</a></div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col text-truncate">
+                                    <a href="#" class="text-reset d-block">Phone</a>
+                                    <div class="d-block text-muted text-truncate mt-n1">Change your cell and work phone</div>
+                                </div>
+                                <div class="col-auto"><a href="/update-password">Edit</a></div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col text-truncate">
+                                    <a href="#" class="text-reset d-block">Email</a>
+                                    <div class="d-block text-muted text-truncate mt-n1">Change your email</div>
+                                </div>
+                                <div class="col-auto"><a href="/update-password">Edit</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

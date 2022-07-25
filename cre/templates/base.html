@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css">
 
 	{%- else -%}
-	{{ include_style('website.bundle.css') }}
+	<!--{{ include_style('website.bundle.css') }}-->
 	<link rel="stylesheet" href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css">
 	<link rel="stylesheet" href="/assets/cre/css/ui.css">
 	{%- endif -%}
@@ -126,6 +126,7 @@
 	{%- endif %}
 	{%- endblock %}
 	<script src="https://unpkg.com/@tabler/core@latest/dist/js/tabler.min.js"></script>
+	<script src="https://unpkg.com/imask"></script>
 
 	<!-- csrf_token -->
 	{%- block body_include %}{{ body_include or "" }}{% endblock -%}

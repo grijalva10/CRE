@@ -1,0 +1,61 @@
+
+
+<script type="text/javascript">
+	frappe.ready(() => {
+		let like = parseInt("{{ user_liked or 0 }}");
+		let like_count = parseInt("{{ like_count or 0 }}");
+
+		let update_like = function() {
+			like = !like;
+			console.log(like);
+			toggle_like_icon(like);
+		}
+
+		let toggle_like_icon = function(active) {
+			active ? $('.property-like-button').addClass('active') : $('.property-like-button').removeClass('active');
+		}
+
+		//  $('.like-icon').append(frappe.utils.icon('heart', 'md'))
+		toggle_like_icon(like);
+
+		// $('.like-count').text(like_count);
+
+		$('.property-like-button').click(() => {
+			console.log('LIKED!');
+			console.log('{{ doctype }}')
+			update_like();
+			console.log(update_feedback());
+		})
+
+		// let update_feedback = function() {
+		// 	return frappe.call({
+		// 		method: "cre.templates.includes.cre-feedback.cre-feedback.give_feedback",
+		// 		args: {
+		// 			reference_doctype: "{{ reference_doctype or doctype }}",
+		// 			reference_name: "{{ reference_name or name }}",
+		// 			like
+		// 		}
+		// 	});
+		// }
+		let update_feedback = function() {
+			let liked = ''
+			if (like) {
+				liked = 'Yes'
+				
+			} else {
+				liked = 'No'
+				
+			}
+			console.log(liked);
+			return frappe.call({
+				method: "frappe.desk.like.toggle_like",
+				args: {
+					doctype: "{{ doctype }}",
+					name: "{{ name }}",
+					add: liked
+					
+				}
+			});
+		}
+	});
+</script>

@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-13 12:40:10.812281",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "portfolio",
+  "strategy_name",
+  "investment_type",
+  "strategy_objective_targets_steering",
+  "strategy_objective_values_steering",
+  "strategy_objective_unit_steering",
+  "strategy_objective_targets",
+  "strategy_objective_values",
+  "strategy_objective_unit",
+  "source"
+ ],
+ "fields": [
+  {
+   "fieldname": "portfolio",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Portfolio",
+   "options": "Portfolio",
+   "reqd": 1
+  },
+  {
+   "fieldname": "strategy_name",
+   "fieldtype": "Data",
+   "label": "Strategy Name"
+  },
+  {
+   "fieldname": "investment_type",
+   "fieldtype": "Data",
+   "label": "Investment Type"
+  },
+  {
+   "fieldname": "strategy_objective_targets_steering",
+   "fieldtype": "Data",
+   "label": "Strategy Objective Targets Steering"
+  },
+  {
+   "fieldname": "strategy_objective_values_steering",
+   "fieldtype": "Float",
+   "label": "Strategy Objective Values Steering"
+  },
+  {
+   "fieldname": "strategy_objective_unit_steering",
+   "fieldtype": "Data",
+   "label": "Strategy Objective Unit Steering"
+  },
+  {
+   "fieldname": "strategy_objective_targets",
+   "fieldtype": "Data",
+   "label": "Strategy Objective Targets"
+  },
+  {
+   "fieldname": "strategy_objective_values",
+   "fieldtype": "Float",
+   "label": "Strategy Objective Values"
+  },
+  {
+   "fieldname": "strategy_objective_unit",
+   "fieldtype": "Data",
+   "label": "Strategy Objective Unit"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "label": "Source"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-13 12:44:04.745381",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Portfolio Strategy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

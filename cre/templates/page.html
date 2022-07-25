@@ -1,0 +1,131 @@
+{% extends base_template_path %}
+{% block hero %}{% endblock %}
+
+{% block content %}
+
+{% macro main_content() %}
+<div class="page-content-wrapper page-wrapper">
+	{% if header %}
+	<div class="{% if not full_width %}container-xl{% endif %}">
+		<div class="page-header d-print-none">
+			<div class="row align-items-center mw-100">
+				<div class="col">
+					<div class="mb-1">
+						<!-- breadcrumbs -->
+						<div class="page-breadcrumbs">
+							{% block breadcrumbs %}
+							{% include 'templates/includes/breadcrumbs.html' %}
+							{% endblock %}
+						</div>
+
+					</div>
+					{% block header %}{% endblock %}
+				</div>
+				<div class="col-auto">
+					{% if self.header_actions() %}
+					<div class="page-header-actions-block btn-list">
+						{% block header_actions %}{% endblock %}
+					</div>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	
+	{% block page_container %}
+	<div class="container-xl">
+          <!-- Page title -->
+           
+          <div class="page-header d-print-none m-0">
+            <div class="row g-2 align-items-center">
+            	{% block page_title %}
+              <div class="col">
+                {% if title %}
+                <h2 class="page-title">
+                  {{ title }}
+                </h2>
+                {% endif %}
+               <!-- Page pre-title -->
+                {% if subtitle %}
+                <div class="page-pretitle">
+                 {{ subtitle }}
+                </div>
+                {% endif %}
+              </div>
+              {% endblock %}
+              <!-- Page title actions -->
+              {% block page_actions %}
+              <div class="col-12 col-md-auto ms-auto d-print-none">
+                <div class="btn-list">
+                  <span class="d-none d-sm-inline">
+                    <a href="#" class="btn btn-white">
+                      New view
+                    </a>
+                  </span>
+                  <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Create new report
+                  </a>
+                  <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  </a>
+                </div>
+              </div>
+              {% endblock %}
+
+              
+            </div>
+          </div>
+        </div>
+
+	<div class="page-body">
+		<main class="{% if not full_width %}container-xl{% endif %}">
+			<div class="page_content">
+				{%- block page_content -%}{%- endblock -%}
+			</div>
+
+			<div class="page-footer">
+				{%- block page_footer -%}{%- endblock -%}
+			</div>
+		</main>
+	</div>
+	{% endblock %}
+</div>
+{% endmacro %}
+
+{% macro container_attributes() -%}
+id="page-{{ name or route | e }}" data-path="{{ pathname | e }}"
+{%- if page_or_generator=="Generator" %}source-type="Generator" data-doctype="{{ doctype }}"{%- endif %}
+{%- if source_content_type %}source-content-type="{{ source_content_type }}"{%- endif %}
+{%- endmacro %}
+
+{% macro sidebar() %}
+<div class="sidebar-column col-sm-{{ columns }}">
+	{% block page_sidebar %}
+	{% include "templates/includes/web_sidebar.html" %}
+	{% endblock %}
+</div>
+{% endmacro %}
+
+{% if show_sidebar %}
+<div class="page-wrapper">
+	<div class="container-xl">
+
+		<div class="page-body" {{ container_attributes() }}>
+			{{ main_content() }}
+
+
+		</div>
+	</div>
+</div>
+{% else %}
+<div {{ container_attributes() }}>
+	{{ main_content() }}
+</div>
+{% endif %}
+
+{% endblock %}

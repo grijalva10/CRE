@@ -1,0 +1,143 @@
+{
+ "actions": [
+  {
+   "action": "/dashboard/transactions/new",
+   "action_type": "Route",
+   "label": "New Transaction"
+  }
+ ],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2022-07-11 11:38:28.308851",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "offer",
+  "investor",
+  "property",
+  "property_name",
+  "type",
+  "status",
+  "buyer_broker",
+  "seller_broker",
+  "buyer",
+  "seller",
+  "effective_date",
+  "closing_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "label": "Property",
+   "options": "Property"
+  },
+  {
+   "fieldname": "buyer_broker",
+   "fieldtype": "Link",
+   "label": "Buyer Broker",
+   "options": "Broker"
+  },
+  {
+   "fieldname": "seller_broker",
+   "fieldtype": "Link",
+   "label": "Seller Broker",
+   "options": "Broker"
+  },
+  {
+   "fieldname": "buyer",
+   "fieldtype": "Data",
+   "label": "Buyer"
+  },
+  {
+   "fieldname": "seller",
+   "fieldtype": "Data",
+   "label": "Seller"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nClosed\nLost"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Acquisition\nDisposition\nFinancing"
+  },
+  {
+   "fetch_from": "property.property_name",
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Property Name"
+  },
+  {
+   "fieldname": "investor",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor Account"
+  },
+  {
+   "fieldname": "offer",
+   "fieldtype": "Link",
+   "label": "Offer",
+   "options": "Offer"
+  },
+  {
+   "fieldname": "effective_date",
+   "fieldtype": "Date",
+   "label": "Effective Date"
+  },
+  {
+   "fieldname": "closing_date",
+   "fieldtype": "Date",
+   "label": "Closing Date"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-20 14:21:30.800523",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Investor",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

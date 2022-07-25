@@ -2,35 +2,28 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:type",
- "creation": "2022-03-21 17:12:06.216352",
+ "autoname": "Prompt",
+ "creation": "2022-07-06 15:44:16.588004",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "type"
+  "description"
  ],
  "fields": [
   {
-   "allow_in_quick_entry": 1,
-   "fieldname": "type",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Type",
-   "reqd": 1,
-   "unique": 1
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-11 16:30:17.479390",
+ "modified": "2022-07-07 14:27:48.584410",
  "modified_by": "Administrator",
  "module": "CRE",
  "name": "Property Type",
- "name_case": "Title Case",
- "naming_rule": "By fieldname",
+ "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [
   {
@@ -46,10 +39,7 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
- "show_title_field_in_link": 1,
- "sort_field": "creation",
+ "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "type"
+ "states": []
 }

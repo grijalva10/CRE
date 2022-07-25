@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-22 12:44:39.489218",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "investor",
+  "location",
+  "price_min",
+  "price_max",
+  "cap_rate_min",
+  "cap_rate_max",
+  "remaining_term_min",
+  "remaining_term_max",
+  "property_types",
+  "occupancy_min",
+  "occupancy_max",
+  "class",
+  "lease_types",
+  "tenants",
+  "debug",
+  "filter",
+  "filter_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "investor",
+   "fieldtype": "Link",
+   "label": "Investor",
+   "options": "Investor Account"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "price_min",
+   "fieldtype": "Currency",
+   "label": "Price Min"
+  },
+  {
+   "fieldname": "price_max",
+   "fieldtype": "Currency",
+   "label": "Price Max"
+  },
+  {
+   "fieldname": "cap_rate_min",
+   "fieldtype": "Percent",
+   "label": "Cap Rate Min"
+  },
+  {
+   "fieldname": "cap_rate_max",
+   "fieldtype": "Percent",
+   "label": "Cap Rate Max"
+  },
+  {
+   "fieldname": "remaining_term_min",
+   "fieldtype": "Int",
+   "label": "Remaining Term Min"
+  },
+  {
+   "fieldname": "remaining_term_max",
+   "fieldtype": "Int",
+   "label": "Remaining Term Max"
+  },
+  {
+   "fieldname": "occupancy_min",
+   "fieldtype": "Percent",
+   "label": "Occupancy Min"
+  },
+  {
+   "fieldname": "occupancy_max",
+   "fieldtype": "Percent",
+   "label": "Occupancy Max"
+  },
+  {
+   "fieldname": "class",
+   "fieldtype": "Data",
+   "label": "Class"
+  },
+  {
+   "fieldname": "lease_types",
+   "fieldtype": "Data",
+   "label": "Lease Types"
+  },
+  {
+   "fieldname": "tenants",
+   "fieldtype": "Table MultiSelect",
+   "label": "Tenants",
+   "options": "Tenant Brand Link"
+  },
+  {
+   "fieldname": "property_types",
+   "fieldtype": "Table MultiSelect",
+   "label": "Property Types",
+   "options": "Property Type Link"
+  },
+  {
+   "fieldname": "debug",
+   "fieldtype": "Long Text",
+   "label": "Debug",
+   "read_only": 1
+  },
+  {
+   "fieldname": "filter",
+   "fieldtype": "Long Text",
+   "label": "filter"
+  },
+  {
+   "fieldname": "filter_type",
+   "fieldtype": "Select",
+   "label": "Filter Type",
+   "options": "Crexi\nCostar\nDAUM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-25 13:57:23.975681",
+ "modified_by": "Administrator",
+ "module": "CRE",
+ "name": "Property Sales Filter",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

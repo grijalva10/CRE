@@ -1,6 +1,8 @@
 # Copyright (c) 2022, JMG and contributors
 # For license information, please see license.txt
 import json
+
+import requests
 import frappe
 import frappe.sessions
 from frappe.model.document import Document
@@ -14,7 +16,28 @@ def account():
     
     return account
 
+@frappe.whitelist(allow_guest=True)
+def crexi_search(crexi_filter):
+    
+    url = 'https://api.crexi.com/assets/search'
+    # url = f'https://api.crexi.com/assets/{asset_id}'
+    try:
+        response = requests.post(url, json=crexi_filter).json()
+    except Exception as e:
+        print('Error', e)
+        return e
+    return response
 
+@frappe.whitelist(allow_guest=True)
+def get_crexi_asset(asset_id):
+    url = f'https://api.crexi.com/assets/{asset_id}'
+    try:
+        response = requests.get(url).json()
+    except Exception as e:
+        print('Error', e)
+
+    return response
+    
 @frappe.whitelist(allow_guest=True)
 def search():
     listings = frappe.db.get_list('Listing',  fields=['*'])

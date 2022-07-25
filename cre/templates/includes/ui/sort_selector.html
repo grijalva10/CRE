@@ -1,0 +1,71 @@
+{% macro render_icon(icon_name) %}
+
+<!--<img style="filter: invert(94%) sepia(6%) saturate(22%) hue-rotate(277deg) brightness(105%) contrast(108%);" src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">-->
+<img style="height: 20px;" src="{{ frappe.render_template("/assets/cre/icons/icons/" + icon_name + ".svg", {})|safe }}">
+
+{% endmacro %}
+
+
+<div class="input-group">
+    <button type="button" class="btn btn-sm sort-order-button">
+        
+    </button>
+    <div class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" type="button" aria-expanded="true">
+    </div>
+    <div class="dropdown-menu dropdown-menu-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 38px);" data-popper-placement="bottom-end">
+        <a class="dropdown-item" href="#">
+            Action
+        </a>
+        <a class="dropdown-item" href="#">
+            Another action
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    frappe.ready(() => {
+        // 'sort_field': 'modified', 'sort_order': 'DESC'
+
+        let sort_order = 'DESC'
+
+        let sort_ascending = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sort-ascending m-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="6" x2="11" y2="6"></line>
+        <line x1="4" y1="12" x2="11" y2="12"></line>
+        <line x1="4" y1="18" x2="13" y2="18"></line>
+        <polyline points="15 9 18 6 21 9"></polyline>
+        <line x1="18" y1="6" x2="18" y2="18"></line></svg>`;
+
+        let sort_descending = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sort-descending m-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="6" x2="13" y2="6"></line>
+        <line x1="4" y1="12" x2="11" y2="12"></line>
+        <line x1="4" y1="18" x2="11" y2="18"></line>
+        <polyline points="15 15 18 18 21 15"></polyline>
+        <line x1="18" y1="6" x2="18" y2="18"></line></svg>`;
+
+        $('.sort-order-button').append(sort_descending)
+
+
+        $('.sort-order-button').click(() => {
+            console.log('clicked')
+
+            if (sort_order == 'DESC') {
+                $('.sort-order-button').empty();
+                $('.sort-order-button').append(sort_ascending);
+                sort_order = 'ASC';
+
+            }
+            else {
+                $('.sort-order-button').empty();
+                $('.sort-order-button').append(sort_descending);
+                sort_order = 'DESC';
+
+            }
+
+        })
+        // let sort_selector = new frappe.ui.SortSelector();
+
+
+    });
+</script>

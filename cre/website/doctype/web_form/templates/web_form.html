@@ -1,4 +1,4 @@
-{% extends "templates/web.html" %}
+{% extends "templates/page.html" %}
 
 {% block title %}{{ _(title) }}{% endblock %}
 {% block header %}
@@ -6,6 +6,18 @@
                    {{ _(title) }}
                 </h1>
 {% endblock %}
+
+ {% block page_actions %}
+ <div class="col-12 col-md-auto ms-auto d-print-none">
+ 	{% if is_list %}
+<div class="btn-list">
+  <div class="list-view-actions"></div>
+</div>
+{% endif %}
+ 	
+ </div>
+ 
+ {% endblock %}
 
 
 
@@ -17,13 +29,13 @@ data-web-form="{{ name }}" data-web-form-doctype="{{ doc_type }}" data-login-req
 
 {% block page_content %}
 
-{% block header_actions %}
-{% if is_list %}
-<div class="btn-list">
-  <div class="list-view-actions"></div>
-</div>
-{% endif %}
-{% endblock %}
+<!--{% block header_actions %}-->
+<!--{% if is_list %}-->
+<!--<div class="btn-list">-->
+<!--  <div class="list-view-actions"></div>-->
+<!--</div>-->
+<!--{% endif %}-->
+<!--{% endblock %}-->
 
 
 {% if has_header and login_required and allow_multiple %}
@@ -33,26 +45,31 @@ data-web-form="{{ name }}" data-web-form-doctype="{{ doc_type }}" data-login-req
 {% endif %}
 
 <!-- main card -->
-<div class="card">
-	<div class="card-body">
-	{% if is_list %}
-	<!-- list -->
-
+<div class="container-tight py-4">
+		<div class="row row-cards">
+			<div class="col-12">
+					<div class="">
+					{% if is_list %}
+					<!-- list -->
 	<div class="web-form-wrapper" {{ container_attributes() }}></div>
 	<div id="list-filters" class="d-flex align-items-center"></div>
 	<div id="list-table" class="table-responsive"></div>
 	<div class="list-view-footer text-right"></div>
 	{% else %}
 	<!-- web form -->
-	<div class="d-flex justify-content-between web-form-head">
-		<h3>{{ _(title) }}</h3>
-		<div class="web-form-actions"></div>
+	<div class="card">
+		<div class="card-header web-form-head">
+			<h3 class="card-title">{{ _(title) }}</h3>
+			<div class="web-form-actions card-actions"></div>
 	</div>
-	<div role="form">
+	<div role="form" class="card-body">
 		<div id="introduction" class="text-muted hidden"></div>
 		<div class="web-form-wrapper" {{ container_attributes() }}></div>
-		<div class="web-form-footer text-right"></div>
+		<div class="web-form-footer card-footer text-right"></div>
 	</div>
+		
+	</div>
+
 
 	{% if show_attachments and not frappe.form_dict.new and attachments %}
 	<div class="attachments">
@@ -76,7 +93,14 @@ data-web-form="{{ name }}" data-web-form-doctype="{{ doc_type }}" data-login-req
 
 	{% endif %}
 	</div>
+
+	</div>
+	</div>
+	
 </div>
+
+	
+
 
 {% if allow_comments and not frappe.form_dict.new and not is_list -%}
 <!-- comments -->
